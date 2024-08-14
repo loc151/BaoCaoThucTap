@@ -10,7 +10,7 @@
 - Heading: Sử dụng các đánh dấu `<h1>, <h2>, ..., <h6>` hoặc dùng dấu # tương ứng.
 - Paragraph: Sử dụng đánh dấu `<p>` để xuống dòng giữa các văn bản.
 - Italic: Sử dụng đánh dấu `<i>` hoặc thêm dấu `*`, `_` trước và sau từ cần in nghiêng.
-- Bold: Sử dụng đánh dấu `<b>` hoặc thêm dấu `**`,``
+- Bold: Sử dụng đánh dấu `<b>` hoặc thêm dấu `**`
 - Italic & Bold: Sử dụng dấu `***` hoặc `___`
 - Strikethrough: Sử dụng dấu `~` trước và sau từ cần gạch giữa
 - Inline code: dùng 2 dấu ` ở trước và sau từ đó
