@@ -46,7 +46,7 @@
   - Khi kết nối lần đầu với server, có thể thấy cảnh báo về host key của server không được lưu trữ trong registry, ấn `Yes` để kết nối.
   - Sau khi kết nối thành công sẽ xuất hiện một cửa số terminal. Nó sẽ yêu cầu username và password.
   ![image](https://github.com/user-attachments/assets/323ff7ae-dac7-4f07-8358-43921da77323)
-  - Sau khi đăng nhập thành công, ta có thể nhập vào cửa sổ terminal. Bây giờ đã kết nối với server và mọi thứ nhập vào cửa sổ terminal sẽ được gửi đến server.
+  - Sau khi đăng nhập thành công, ta có thể nhập vào cửa sổ terminal. Bây giờ đã kết nối với server và mọi thứ nhập vào cửa sổ terminal sẽ được gửi đến server.<p>
   ![image](https://github.com/user-attachments/assets/05f5bf16-bd0d-4c5e-a277-83d0cd6ba727)
 - Ưu điểm: 
   - Miễn phí và phổ biến
