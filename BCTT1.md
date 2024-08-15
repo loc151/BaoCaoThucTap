@@ -103,12 +103,56 @@
 - SSD Cloud Server: là một máy chủ đám mây sử dụng ổ cứng SSD, giúp hệ thống hoạt động ổn định và mượt mà, hiệu suất nhanh chóng. Nó hoạt động thông qua việc ảo hoá các máy chủ vật lý, cho phép người dùng dễ dàng truy cập và Server mọi thời điểm. Các phần mềm điều khiển và quản lý được cài đặt trên các máy chủ vật lý. Các tài nguyên ảo được phân phối qua Cloud
   - Ưu điểm: tính chất giống và rẻ hơn **SSD Cloud VPS**
   - Nhược điểm: hiệu suất kém hơn so với **SSD Cloud VPS**
-- VPS Quốc tế: <p>
-||VPS Việt Nam|VPS Quốc tế|
-|:---|:---|:---|
-|Nền tảng hạ tầng|Phát triển kém hơn, website trong nước không mạnh và mượt như website nước ngoài |Tốt hơn, An toàn bảo mật thông tin tối đa, băng thông lớn giúp cho đường truyền dữ liệu nhanh và ổn định|
-- Cloud Storage, Cloud Backup.
-- `Máy chủ:` Thuê máy chủ, Chỗ đặt máy chủ, Backup365, Quản trị máy chủ.
+- VPS Quốc tế: Cơ sở hạ tầng tốt hơn, An toàn bảo mật thông tin tối đa, băng thông lớn giúp cho đường truyền dữ liệu nhanh và ổn định. Nhưng chi phí lăp đặt VPS quốc tế cao hơn trong nước và cần khách hàng có trình độ Tiếng Anh nhất định để giao tiếp với các nhà cung cấp.
+- Cloud Storage: hình thức lưu trữ đám mây, cho phép người dùng **lưu giữ, sắp xếp, quản lý, chia sẻ và sao lưu dữ liệu** trên hệ thống lưu trữ cở cơ sở bên ngoài được duy trì bởi các nhà cung cấp dịch vụ.
+  - Các tính năng nổi bật: <p>
+  `Tự động sao lưu (Automatically backup)`: Dữ liệu sẽ được tự động sao lưu trong đám mây và luôn sẵn sàng trên tài khoản người dùng, không cần thực hiện sao lưu thủ công. <p>
+  `Phục hồi dữ liệu (Recovery)`: cho phép **truy xuất và phục hồi dữ liệu** một cách nhanh chóng, hiệu quả; tránh tình trạng mất, hỏng dữ liệu. Có thể truy xuất và phục hồi dữ liệu trên mọi hệ điều hành cà các thiết bị, miễn là có kết nối internet. <p>
+  `Testing`: Nhờ có hiệu suất cao, quy mô linh hoạt và tiết kiệm chi phí, cho phép tạo ra những môi trường độc lập, giúp người dùng kiếm tra và thử nghiệm phần mềm. <p>
+  `Sharing`: Cho phép người dùng dễ dàng chia sẻ và di chuyển dữ liệu giữa các cá nhân trong 1 doanh nghiệp với nhau. Điều này giúp đảm bảo tính bảo mật, tránh tình trạng dữ liệu bị truyền ra ngoài
+  - Ưu điểm: `Tiết kiệm chi phí`, `Khả năg mở rộng linh hoạt`, `Dễ dàng truy cập`, `Hỗ trợ quản lý từ xa`, `Tiết kiệm thời gian`, `Sao lưu và khôi phục dữ liệu hiệu quả`
+  - Nhược điểm: `Rủi ro bảo mật`, `Kiểm soát quản trị`, `Có độ trễ khi truyền dữ liệu`, `Tuân thủ quy định`.
+  - Phân loại:
+  - `Object storage`: Lưu trữ đối tượng, là hình thức lưu trữ dữ liệu dưới dạng các đơn vị riêng biệt. Đặc điểm:
+    - Sử dụng cơ chế ngang hàng để lưu trữ đối tượng không phân cấp
+    - Tự động sao lưu và đồng bộ dữ liệu trong mọi trường hợp
+    - Trang bị đường truyền SSD giúp truy xuất dữ liệu nhanh chóng, hiệu quả
+  - `File storage`: Lưu trữ dưới dạng tệp theo cấu trúc phân cấp dưới cùng 1 định dạng. Đặc điểm:
+    - Data được lưu trữ dưới dạng tập tin và thư mục
+    - Truy xuất dữ liệu thông qua việc sử dụng giao thức hệ thống Tệp mạng (NFSZ) cho Unix & Linux hoặc giao thức Chặn thư máy chủ (SMB) cho Windows
+    - Cho phép lưu nhiều định dạng file khác nhau
+  - `Block storage`: Lưu trữ dữ liệu dưới dạng khối trên các thiết bị lưu trữ như ổ cứng, SSD hay thiết bị lưu trữ mạng. Khối dữ liệu sẽ được truy cập thông qua đỉa chỉ duy nhất là block, được sắp xếp, đọc và ghi 1 cách độc lập. Đặc điểm:
+    - Cho phép người dùng thay đổi dung lượng lưu trữ
+    - Cung cấp các tính năng về phân chia và quản lý dữ liệu
+    - Sử dụng công nghệ mã hoã và tính năng kiếm soát truy cập
+- Cloud Backup.
+- `Máy chủ:`
+- Thuê máy chủ: `Dedicated server` là dịch vụ thuê máy chủ để lưu trữ thông tin trên mạng internet
+- Ưu điểm:
+  - Không giới hạn cài đặt phần mềm. Hiệu suất hoạt động cao, tốc độ trao đổi thông tin lớn.
+  - Có khả năng mở rộng tối ưu, không giới hạn.
+  - Cho phép kết hợp nhiều dịch vụ, đem đến sự thuận tiện cho quá trình vận hành của người dùng
+  - Kiểm soát tối đa quá trình sử dụng và truy cập
+  - Quản lý tài nguyên tập trung
+- Nhược điểm:
+  - Không linh hoạt trong việc mở rộng hay thu hẹp tài nguyên. Khi xảy ra sự cố mất thông tin sẽ không thể thay bằng thiết bị khác, đồng thời không hỗ trợ tính năng dự phòng
+  - Cần am hiểu vê kiến thức chuyên ngành mới có thể vận hành và quản lý máy chủ
+  - Chi phí đầu tư cao
+- Chỗ đặt máy chủ: cung cấp không gian để đặt các máy chủ vật lý tại các trung tâm dữ liệu. Các máy chủ sẽ được lắp lên các tủ Rack chuẩn, đảm bảo về môi trường hoạt động tối ưu như kết nối mạng, nhiệt độ, hệ thống chữa cháy, ...
+- Backup365: dịch vụ sao lưu và khôi phục dữ liệu theo mô hình điện toán đám mây, sử dụng các công nghệ hiện đại và phát triển dựa vào mạng Internet <p>
+  **Tính năng nổi bật**
+  - 'Speed': chỉ sao lưu những thay đổi mới nhất, giảm đáng kể dung lượng lưu trữ và mang lợi thế lớn về tốc độ cho mỗi quá trình
+  - `Enterprise`: Đáp ứng hầu hết các tiêu chí mà doanh nghiệp lớn yêu cầu nhưng mức giá phù hợp với doanh nghiệp vừa và nhỏ
+  - `Time flexibility`: Có thể thiết lập thời gian sao lưu linh hoạt theo tần suất. Dữ liệu luôn được bảo vệ ở mức cao nhất, giảm thiểu rủi ro
+  - `Multi platform`: Hoạt động tốt trên các hệ điều hành và tích hợp sao lưu Control Panel, Database
+  - `Recovery Points`: dễ dàng truy cập các thời điểm được sao lưu thông qua trình duyệt web
+  - `Automation`: việc backup dữ liệu được thực hiện hoàn toàn tự động theo lịch đã cài sẵn, đồng thời thông báo đến mail của người dùng.
+- Quản trị máy chủ: là quá trình quản lý, giám sát và duy trì hoạt động ổn định của các máy chủ vật lý hoặc ảo trong 1 môi trường mạng. Nhiệm vụ chính bao gồm:
+  - `Cài đặt và cấu hình`: thiết lập hệ điều hành, phầm mềm và các dịch vụ trên máy chủ
+  - `Giám sát và bảo mật`: theo dõi hiệu suất, tình trạng và bảo mật của máy chủ
+  - `Tối ưu hoá và mở rộng`: tối ưu hoá tài nguyên, mở rộng dung lượng lưu trữ và đảm bảo khả năng mở rộng
+  - `Sao lưu và phục hồi`: đảm bảo dữ liệu được sao lưu định kì và có kế hoạch phục hồi khi cần thiết
+  - `Quản lý người dùng và quyền truy cập`: thêm, xoá, và quản lý tài khoản người dùng trên máy chủ.
 - `Email:` Umail, Google Workspace, Email Microsoft 365, Email server riêng, Hybrid Email & Email Marketting.
 - `SSL (Secure Socker Layer):` Comodo SSL, Geotrust SSL, Digicert SSL.
 - `Website:` Cung cấp các thiết kế dành cho trang web.
