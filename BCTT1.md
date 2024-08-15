@@ -105,7 +105,7 @@
   - Nhược điểm: hiệu suất kém hơn so với **SSD Cloud VPS**
 - VPS Quốc tế: <p>
 ||VPS Việt Nam|VPS Quốc tế|
-|--o|--o|--o|
+|:--|:--|:--|
 - Cloud Storage, Cloud Backup.
 - `Máy chủ:` Thuê máy chủ, Chỗ đặt máy chủ, Backup365, Quản trị máy chủ.
 - `Email:` Umail, Google Workspace, Email Microsoft 365, Email server riêng, Hybrid Email & Email Marketting.
