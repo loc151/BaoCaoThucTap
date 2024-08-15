@@ -153,7 +153,27 @@
   - `Tối ưu hoá và mở rộng`: tối ưu hoá tài nguyên, mở rộng dung lượng lưu trữ và đảm bảo khả năng mở rộng
   - `Sao lưu và phục hồi`: đảm bảo dữ liệu được sao lưu định kì và có kế hoạch phục hồi khi cần thiết
   - `Quản lý người dùng và quyền truy cập`: thêm, xoá, và quản lý tài khoản người dùng trên máy chủ.
-- `Email:` Umail, Google Workspace, Email Microsoft 365, Email server riêng, Hybrid Email & Email Marketting.
+- `Email:`
+  - Umail: là dịch vụ email theo tên miền riêng của doanh nghiệp, giúp nâng cao sự chuyên nghiệp và đảm bảo uy tín tuyệt đối khi giao tiếp với khách hàng hoặc đối tác. Đặc trưng:
+    - Tạo email doanh nghiệp nhanh chóng và bảo mật: được mã hoá trong suốt quá trình truyền tải và sử dụng cổng kết nối SSL/TLS để nâng cao tính bảo mật
+    - Quản lý hộp thư dễ dàng: Giao diện thân thiện, cho phép thiết lập người dùng và bí danh nhóm, thiết lập chính sách kiểm duyệt nội dung
+    - Không bỏ sót email quan trọng: luôn có các máy chủ định tuyến và dự phòng SMTP để đảm bảo hoạt động ổn định
+    - Tìm kiếm dễ dàng: tạo quy tắc tự động chuyển hướng email người gửi thư vào đúng thư mục chỉ định
+  - Google Workspace: Là bộ ứng dụng thông minh dựa trên nền tảng điện toán đám mây với nhiều ứng dụng cộng tác hữu ích như: Gmail, Drive, Docs, Sheets,… Bộ công cụ này mang đến sự thuậntiện cho người dùng trong suốt quá trình làm việc cũng như kết nối với khách hàng và tổ chức cho dù họ đang ở bất cứ đâu.
+  - Email Microsoft 365: là dịch vụ email do Microsoft cung cấp. Tích hợp với các công cụ văn phòng và dịch vụ điện toán đám mây, cho phép gửi, nhận và quản lý email trực tuyến. Nó cung cấp các tính năng như hộp thư đến, gửi, lịch làm việc và danh bạ, có khả năng đồng bộ hoá dữ liệu trên nhiều thiết bị khác nhau.
+  - Email server riêng: là 1 máy chủ email được cấu hình và vận hành bởi 1 tổ chức hoặc cá nhân cụ thể để quản lý và chuyển tiếp thư điện tử. Các tính năng của Private Email Server:
+    - Kiếm soát hoàn toàn: Tuỳ chỉnh cấu hình theo nhu cầu, quản lý người dùng và áp dụng biện pháp bảo mật riêng để bảo vệ thông tin
+    - Bảo mật cao: triển khai mã hoá dữ liệu, chứng thực người dùng và kiểm soát truy cập
+    - IP riêng: sử dụng IP riêng, hạn chế IP bị blacklist và tăng tính riêng tư
+    - Quản lý tài khoản: Dễ dàng quản lý và cấu hình tài khoản người dùng
+    - Tuỳ chỉnh giao diện: Tạo trải nghiệm email riêng biệt cho người dùng
+    - Dung lượng linh hoạt: Mở rộng dung lượng lưu trữ theo nhu cầu người dùng
+    - Không phụ thuộc và dịch vụ bên ngoài: Không bị hạn chế hoặc thay đổi bởi nhà cung cấp dịch vụ
+    - Bảo vệ quyền riêng tư: Dữ liệu thư điện tử không bị truy cập bởi bên thứ 3
+    - Sao lưu vào phục hồi: Dễ dàng sao lưu và phục hồi dữ liệu
+    - Chống spam và malware: Triển khai giải pháp chống spam và phần mềm chống malware
+    - Khả năng điều khiển nội dung: Áp dụng chính sách để kiểm soát nội dung thư điện tử
+  - Hybrid Email & Email Marketting.
 - `SSL (Secure Socker Layer):` Comodo SSL, Geotrust SSL, Digicert SSL.
 - `Website:` Cung cấp các thiết kế dành cho trang web.
 - `Giải pháp:` Cung cấp các giải pháp như Tổng đài VFone, hoá đơn điện tử, hợp đồng điện tử, eSIM du lịch.
