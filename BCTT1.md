@@ -173,10 +173,32 @@
     - Sao lưu vào phục hồi: Dễ dàng sao lưu và phục hồi dữ liệu
     - Chống spam và malware: Triển khai giải pháp chống spam và phần mềm chống malware
     - Khả năng điều khiển nội dung: Áp dụng chính sách để kiểm soát nội dung thư điện tử
-  - Hybrid Email & Email Marketting.
-- `SSL (Secure Socker Layer):` Comodo SSL, Geotrust SSL, Digicert SSL.
-- `Website:` Cung cấp các thiết kế dành cho trang web.
-- `Giải pháp:` Cung cấp các giải pháp như Tổng đài VFone, hoá đơn điện tử, hợp đồng điện tử, eSIM du lịch.
+  - Hybrid Email: giải pháp kết hợp Email Hosting/Email Server/Umail và các hệ thống Email khác như Google Workspace, Microsoft Email 365
+    - Cách hoạt động của Email Hybrid:
+      - Từ môi trường Internet, email sẽ được gửi đến máy chủ Microsoft. Nếu địa chỉ không tồn tại trên máy chủ Microsoft, thư sẽ được chuyển tiếp về máy chủ Email Hosting
+      - Các email từ môi trường Internet khi gửi đến tên miền đều sẽ được Microsoft lọc và xử lý trước. Điều này đảm bảo độ an toàn cao hơn, loại bỏ các mối nguy hiểm như thư giả mạo bằng AI và thư rác <p>
+      
+![image](https://github.com/user-attachments/assets/ddcac283-7c09-4d7b-9d6f-354befc86c6d)
+    - Ưu điểm:
+      - Tối ưu chi phí
+      - Tính nhất quán và tiện lợi
+  - Email Marketting: là hình thức tiếp thị trực tiếp sử dụng email để quảng bá sản phẩm hoặc dịch vụ, giúp truyền tải thông tin về thương hiệu tới khách hàng và duy trì mối quan hệ.
+- `SSL (Secure Socker Layer):` là tiêu chuẩn công nghệ bảo mật, truyền thông mã hoá giữa máy chủ Web server và trình duyệt. Nó đảm bảo rằng các dữ liệu được truyền giữa các máy chủ web và trình duyệt đều riêng tư và toàn vẹn. Chứng chỉ SSL là chứng thực số đóng của CA (Certificate Ạuthority) đảm bảo tính xác thực của website và mã hoá dữ liệu truyền tải:
+- Các loại SSL:
+  - Domain Validation (DV): Chứng thư số SSL chứng thực cho Domain Name - Website. Khi 1 website sử dụng DV SSL thì sẽ được xác thực tên miền, website đã được mã hoá an toàn khi trao đổi dữ liệu.
+  - Organization Validation (OV): Chứng thư số SSL chứng thực cho Website và xác thực doanh nghiệp đang sở hữu website đó.
+  - Extended Validation (EV): Chứng thư số SSL có độ bảo mật cao nhất và được rà soát pháp lý kỹ càng
+  - Wildcard SSL: là chứng chỉ SSL/TLS được dùng cho domain và subdomain của 1 domain website. Nó giúp bảo mật các trang web bằng HTTPS và có chi phí rẻ hơn khi mua từng chứng chỉ cho từng subdomain. 
+  - Comodo SSL: là một tiêu chuẩn SSL bảo mật Internet thuộc thương hiệu Comodo, được xem là chứng chỉ phố biến và tốt nhất hiện nay. Chửng chỉ này giúp bảo vệ thông tin trên Email và Website và có khả năng tương thích trình duyệt tốt.
+  - Geotrust SSL: là 1 tiêu chuẩn SSL bảo mật Internet thuộc thương hiệu GeoTrust. Chứng chỉ của họ cung cấp thuật toán SHA-256 cấp cao với kích thước khoá 2048 bit
+  - Digicert SSL: là 1 tiêu chuẩn SSL bảo mật Internet thuộc DigiCert
+- `Website`: là tập hợp các trang web và nội dung liên quan được xác định bằng 1 tên miền chung và được xuất bản trên ít nhất 1 máy chủ web. Mỗi trang web có thể chứa nội dung văn bản, hình ảnh, video, âm thanh, ... được trình bày dưới dạng trang web đơn lẻ hoặc theo các trang liên kết với nhau. 
+- `Giải pháp:`
+  - Tổng đài VFone: là tổng đài điện thoại ứng dụng công nghệ VoIP trên nền tảng Internet giúp doanh nghiệp có thể triển khai nhanh chóng, không phải đầu tư cơ sở hạ tầng.
+  - Hợp đồng điện tử: là 1 dạng hợp đồng mà các bên thực hiện thông qua việc sử dụng các phương tiện điện tử. Trong hợp đồng điện tử, các thông tin và tài liệu được trao đổi, lưu trữ và xử lý bằng các phương tiện điện tử thay vì giấy tờ truyền thống
+  - Hoá đơn điện tử: là hình thức hoá đơn hiện đại sử dụng trên nền tảng điện tử. Nó được tạo, phát hành và truyền qua hệ thống điện tử hoặc máy tính của tổ chức, thay vì in và gửi bằng giấy truyền thống
+  - Chứng từ điện tử: là thông tin được tạo ra, gửi đi, nhận và lưu trữ bằng phương thức điện tử để thực hiện các thủ tục đăng ký thuế, khai thuế, nộp thuế, hoàn thuế và tra cứu thông tin của người nộp thuế, thông báo của cơ quan thuế đối với người nộp thuế. Nó không thể hiện bằng bản giấy mà được hệ thống bởi các dữ liệu điện tử.
+  - eSIM du lịch: là 1 loại điện tử được tích hợp vào phần cứng của thiết bị di động. Nó giúp người dùng kết nối với dịch vụ của nhà mạng 1 cách đơn giản. Nó có kích thước nhỏ hơn so với SIM bình thường.
 
 ## 2. Văn hoá giao tiếp trong doanh nghiệp: 
 - Hoà đồng, lễ phép với người hơn tuổi
