@@ -177,4 +177,23 @@ truyền độc lập trên các tuyến khác nhau
     - Không có cập nhật nào kể từ 30 năm trước
   - User Datagram Protocol (UDP): Giao thức gói dữ liệu người dùng là một trong những giao thức cốt lõi của bộ IP. Nó là một giao thức truyền thông được sử dụng trên Internet như phát video hay tìm kiếm DNS. UDP không kết nối và không đảm bảo phân phối, ưu tiên và kiểm tra lỗi, làm cho nó trở nên nhẹ và hiệu quả cho 1 số loại truyền dữ liệu nhất định.
   ![image](https://github.com/user-attachments/assets/94cd2417-bd23-49f4-976a-17c668dba663)
+    - `UDP Header`: là 1 tiêu đề cố định và đơn giản với 8 byte. 8 byte đầu tiên chứa tất cả thông tin cần thiết và phần còn lại bao gồm dữ liệu. Các trường số cổng UDP dài mỗi trường 16 bit, do đó phạm vi cho số cổng được xác định từ 0 -> 65535; cổng số 0 được dành riêng. Số cổng giúp phân biệt các yêu cầu hoặc quy trình khác nhau của người dùng
+    ![image](https://github.com/user-attachments/assets/c6d6aacc-ec28-4c79-a851-dca07b00e7c7)
+    - Cổng nguồn: dùng để xác định số cổng của nguồn, dài 2 Byte
+    - Cổng đích: dùng để xác định cổng của gói tin đích (2 Byte)
+    - Độ dài: bao gồm tiêu đề và dữ liệu (2 Byte)
+    - Tổng kiểm tra: Phần bổ sung 16 bit của checksum UDP Header, pseudo-header từ IP header và dữ liệu, được đệm bằng 0 octet ở cuối (nếu cần) để tạo bội số của 2 octet
+  - Ứng dụng:
+    - Sử dụng cho giao tiếp Request-Respond đơn giản
+    - Phù hợp để đa hướng vì UDP hỗ trợ chuyển đổi gói
+    - Được sử dụng cho 1 số giao thức cập nhật định tuyến như RIP
+    - Sử dụng cho các ứng dụng thời gian thực không thể chịu được sự chậm trễ không đồng đều giữa các phần tin nhắn đã nhận
+    - Các dịch vụ VoIP (Voice over Internet Protocol)
+    - DNS (Domain Name System)
+    - DHCP (Dynamic Host Configuration Protocol)
+  - Ưu điểm:
+    - `Tốc độ`: nhanh hơn TCP do không có thiết lập kết nối và đảm bảo phân phối dữ liệu đáng tin cậy
+    - `Độ trễ thấp hơn`: Độ trễ thấp hơn và thời gian phản hồi nhanh hơn
+    - `Đơn giản`: thiết kế giao thức đơn giản hơn TCP, giúp thực hiện và quản lý dễ dàng hơn
+
 
