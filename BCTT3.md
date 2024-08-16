@@ -44,9 +44,9 @@ truyền độc lập trên các tuyến khác nhau
   - `Point-to-Point`: có một đường dẫn (liên kết) hoàn toàn dành riêng để mang dữ liệu giữa 2 thiết bị
   - `Multi-Point`: có 1 đường dẫn (liên kết) thông qua đó nhiều thiết bị được kết nối
 - Modes of Transmission Medium (Phương thức truyền dẫn):
-  - Simplex mode: trong số 2 thiết bị, chỉ có 1 thiết bị có thể truyền dữ liệu và thiết bị còn lại chỉ có thển nhận dữ liệu. VD: đầu vào từ bàn phím, màn hình, phát thanh, ...
-  - Half Duplex Mode: trong số 2 thiết bị, cả 2 đều có thể gửi và nhận dữ liệu nhưng chỉ có 1 thiết bị tại một thời điểm không đồng thời
-  - Full-Duplex mode: cả 2 thiết bị đều có thể gửi và nhận dữ liệu 1 cách đồng thời.
+  - `Simplex mode`: trong số 2 thiết bị, chỉ có 1 thiết bị có thể truyền dữ liệu và thiết bị còn lại chỉ có thển nhận dữ liệu. VD: đầu vào từ bàn phím, màn hình, phát thanh, ...
+  - `Half Duplex Mode`: trong số 2 thiết bị, cả 2 đều có thể gửi và nhận dữ liệu nhưng chỉ có 1 thiết bị tại một thời điểm không đồng thời
+  - `Full-Duplex mode`: cả 2 thiết bị đều có thể gửi và nhận dữ liệu 1 cách đồng thời.
     
 2. Lớp liên kết dữ liệu: Chịu trách nhiệm phân phối dữ liệu từ nút này đến nút khác, vai trò chính của nó là đảm bảo việc truyền thông thông tin không có lỗi. Nó cũng chịu trách nhiệm mã hoá, giải mã và tổ chức dữ liệu đi và đến
 - Các lớp con của DLL:
@@ -93,4 +93,15 @@ truyền độc lập trên các tuyến khác nhau
   - Quy trình truy cấp liên kết (Link Access Procedure): là 1 giao thức DLL được yêu cầu để đóng khung và truyền dữ liệu qua các liên kết Point-to-Point. Nó cũng bao gồm 1 số tính năng dịch vụ đáng tin cậy. Có 3 loại LAP, bao gồm: LAPB (Balanced), LAPD (D-Channel) và LAPF (Frame-Mode Bearer Services)
   - Giao thức điều khiển mạng (Network Control Protocol): Cho phép người dùng có quyền truy cập để sử dụng máy tính và 1 số thiết bị tại các điểm từ xa và cũng có thể truyền tệp giữa 2 hoặc nhiều máy tính. Nó thường là 1 tập hợp các giao thức đang tạo thành 1 phần của PPP. NCP luôn có sẵn cho mỗi và mọi giao thức lớp cao hơn được hỗ trợ bởi PPP
 
-3. Lớp mạng: là 1 phần quá trình giao tiếp trong mạng máy tính. Công việc chính là di chuyển các gói dữ liệu giữa các mạng khác nhau. Nó giúp định tuyến các gói này từ người gửi đến người nhận qua nhiều đường dẫn và mạng. Kết nối mạng với mạng cho phép Internet hoạt động. Các kết nối này xảy ra ở "lớp mạng", gửi các gói dữ liệu giữa các mạng khác nhau. Giao thức Internet (IP) là giao thức chính được sử dụng ở lớp này, cùng với các giao thức khác để định tuyến, kiểm tra và mã hoã
+3. Lớp mạng: là 1 phần quá trình giao tiếp trong mạng máy tính. Công việc chính là di chuyển các gói dữ liệu giữa các mạng khác nhau. Nó giúp định tuyến các gói này từ người gửi đến người nhận qua nhiều đường dẫn và mạng. Kết nối Network-to-network cho phép Internet hoạt động. Các kết nối này xảy ra ở "lớp mạng", gửi các gói dữ liệu giữa các mạng khác nhau. Giao thức Internet (IP) là giao thức chính được sử dụng ở lớp này, cùng với các giao thức khác để định tuyến, kiểm tra và mã hoã
+- Đặc điểm:
+  - Mang các gói dữ liệu từ nguồn đến đích mà không thay đổi hoặc sử dụng chúng
+  - Nếu các gói quá lớn để phan phối, chúng sẽ bị phân mảnh - chia thành các gói nhỏ hơn
+  - Quyết định tuyến đường mà các gói sẽ đi từ nguồn đến đích trong số nhiều tuyến có sẵn trong mạng (định tuyến)
+  - Địa chỉ nguồn và đích được thêm vào các gói dữ liệu bên trong lớp mạng.
+- Các dịch vụ:
+  - `Đóng gói (Packetizing)`: Quá trình đóng gói dữ liệu nhận được từ các lớp trên của mạng (tải trọng) trong gói lớp mạng tại nguồn và giải mã tải trọng từ gói lớp mạng tại đích
+    ![image](https://github.com/user-attachments/assets/a1e7eaae-a436-420d-b303-fc3b22efca84)
+    - Máy chủ nguồn thêm 1 tiêu đề chứa địa chỉ nguồn và đích cũng như 1 số thông tin liên quan khác mà giao thức lớp mạng yêu cầu vào tải trọng nhận được từ giao thức lớp trên và phân phối gói đến lớp liên kết dữ liệu
+    - Máy chủ đích nhận gói lớp mạng từ lớp liên kết dữ liệu của nó, giải mã gói và phân phối tải trọng đến giao thức lớp trên tương ứng. Các bộ định tuyến trong đường dẫn không được phép thay đổi địa chỉ nguồn hoặc đích. Các bộ định tuyến trong đường dẫn không được phép giải mã các gói mà chúng nhận được trừ khi chúng cần được phân mảnh.
+  - `Định tuyến (Routing)`: là quá trình di chuyển dữ liệu từ thiết bị này sang thiết bị khác. Đây là 2 dịch vụ khác được cung cấp bởi lớp mạng. Trong 1 mạng, có 1 số tuyến đường có sẵn từ nguồn đến đích. Lớp 
