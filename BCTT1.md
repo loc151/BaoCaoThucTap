@@ -205,6 +205,9 @@
 - Giao tiếp thường xuyên giữa các ban trong công ty
 
 ## 3. Nội quy, cách tương tác, làm việc, báo cáo, trao đổi email trong khi làm việc:
-- Nội quy: Làm việc từ thứ 2 đến thứ 6 và 2-3 ngày thứ 7 trong tháng (tuỳ tháng), sáng từ 8h-12h, nghỉ trưa 1.5h, chiều từ 13h30-17h30.
+- Nội quy:
+  - Làm việc từ thứ 2 đến thứ 6 và 2-3 ngày thứ 7 trong tháng (tuỳ tháng), sáng từ 8h-12h, nghỉ trưa 1.5h, chiều từ 13h30-17h30.
+  - Các quy tắc chấm công: Đi muộn/về sớm quá 30' với lý do cá nhân, đi muộn/về sớm dưới 30' với lí do cá nhân, không chấm công khi đến/về với lí do cá nhân
+  - Thực hiện 5S tại văn phòng Công ty TNHH Phần mềm Nhân Hoà. 
 - Trao đổi với các anh chị trong ban hoặc khác ban qua email (từ xa) hoặc trao đổi trực tiếp (tại công ty).
   
