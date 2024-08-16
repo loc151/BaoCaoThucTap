@@ -104,4 +104,77 @@ truyền độc lập trên các tuyến khác nhau
     ![image](https://github.com/user-attachments/assets/a1e7eaae-a436-420d-b303-fc3b22efca84)
     - Máy chủ nguồn thêm 1 tiêu đề chứa địa chỉ nguồn và đích cũng như 1 số thông tin liên quan khác mà giao thức lớp mạng yêu cầu vào tải trọng nhận được từ giao thức lớp trên và phân phối gói đến lớp liên kết dữ liệu
     - Máy chủ đích nhận gói lớp mạng từ lớp liên kết dữ liệu của nó, giải mã gói và phân phối tải trọng đến giao thức lớp trên tương ứng. Các bộ định tuyến trong đường dẫn không được phép thay đổi địa chỉ nguồn hoặc đích. Các bộ định tuyến trong đường dẫn không được phép giải mã các gói mà chúng nhận được trừ khi chúng cần được phân mảnh.
-  - `Định tuyến (Routing)`: là quá trình di chuyển dữ liệu từ thiết bị này sang thiết bị khác. Đây là 2 dịch vụ khác được cung cấp bởi lớp mạng. Trong 1 mạng, có 1 số tuyến đường có sẵn từ nguồn đến đích. Lớp 
+  - `Định tuyến (Routing)`: là quá trình di chuyển dữ liệu từ thiết bị này sang thiết bị khác. Đây là 2 dịch vụ khác được cung cấp bởi lớp mạng.
+    - Trong 1 mạng, có 1 số tuyến đường có sẵn từ nguồn đến đích.
+    - Lớp mạng chỉ định 1 số chiến lược tìm ra tuyến đường tốt nhất có thể
+    - Có 1 số giao thức định tuyến được sử dụng trong quá trình này và chúng nên được chạy để giúp các bộ định tuyến phối hợp với nhau và giúp thiết lập liên lạc trên toàn mạng
+    ![image](https://github.com/user-attachments/assets/cd41f88e-8b1c-4f64-9c38-423b7c3077e9)
+  - `Forwarding (Chuyển tiếp)`: Hành động được áp dụng bởi mỗi bộ định tuyến khi gói đến 1 trong các giao diện của nó
+    - Khi 1 bộ định tuyến nhận được 1 gói từ 1 trong các mạng được đính kém của nó, nó cần chuyển tiếp gói đó đến một mạng được đính kèm khác (unicast routing) hoặc tới 1 số mạng được đính kèm (multicast)
+    - Bộ định tuyến được sử dụng trên mạng để chuyển tiếp gói từ mạng cục bộ sang mạng từ xa.
+    - Quá trình định tuyến liên quan đến việc chuyển tiếp gói từ giao diện đầu vào sang giao diện thoát
+  ![image](https://github.com/user-attachments/assets/e09fd2a5-7820-4060-846a-cf6122740bad)
+<p>
+  
+**So sánh giữa Routing và Forwarding** <p>
+  
+|Routing|Forwarding|
+|:--|:--|
+|Quá trình di chuyển dữ liệu từ thiết bị này sang thiết bị khác|Hành động được áp dụng bởi mỗi bộ định tuyển khi gói đến 1 trong các giao diện của nó|
+|Hoạt động trên lớp mạng|Hoạt động trên lớp mạng|
+|Công việc dựa trên bảng chuyển tiếp|Kiếm tra bảng chuyển tiếp và làm việc theo đó|
+|Hoạt động trên Routing Information Protocol (RIP) |Hoạt động trên Encapsulating Security Payloads (UDP)|
+
+  - Ưu điểm:
+    - Dịch vụ đóng gói trong lớp mạng giúp dễ dàng vận chuyển các gói dữ liệu
+    - Việc đóng gói cũng loại bỏ các điểm lỗi duy nhất trong hệ thống truyền thông dữ liệu
+    - Giảm lưu lượng mạng bằng cách tạo các miền xung đột và quảng bá
+    - Các gói dữ liệu được chuyển từ nơi này sang nơi khác trong mạng với sự trợ giúp của Forwarding
+  - Nhược điểm:
+    - Thiếu sự kiểm soát luồng trong thiết kế của lớp mạng
+    - Sự tắc nghẽn đôi khi xảy ra do có quá nhiều datagram vượt quá khả năng của mạng hoặc bộ định tuyến. Do đó, 1 số bộ định tuyến có thể loại bỏ 1 số datagram và 1 số thông tin quan trọng có thể bị mất
+    - Thiếu cơ chế kiểm soát lỗi thích hợp do sự hiện diện của các gói dữ liệu bị phân mảnh nên việc kiểm soát lỗi trở nên khó thực hiện 
+
+4. Lớp vận chuyển: Là lớp end-to-end được sử dụng để gửi tin nhắn đến máy chủ. Nó được gọi là lớp end-to-end vì nó cung cấp kết nối point-to-point. Đơn vị đóng gói dữ liệu trong lớp vận chuyển là 1 phân đoạn
+- Hoạt động: Nhận các dịch vụ từ lớp Ứng dụng và cung cấp các dịch vụ cho lớp Mạng
+  - Ở phía người gửi: Lớp vận chuyển nhận dữ liệu (tin nhắn) từ lớp Ứng dụng và sau đó thực hiện Phân đoạn, chia tin nhắn thực tế thành các phân đoạn, thêm số cổng của nguồn và đích vào tiêu đề của phân đoạn và chuyển tin nhắn đến lớp Mạng
+  - Ở phía người nhận: Lớp vận chuyển nhận dữ liệu từ lớp Mạng, tập hợp lại các dữ liệu đã phân đoạn, đọc tiêu đề, xác đinh số cổng và chuyển tiếp tin nhắn đến cổng thích hợp trong lớp Ứng dụng.
+- Trách nhiệm:
+  - Quy trình xử lý giao vận: yêu cầu số cổng để phân phối chính xác các phân đoạn dữ liệu đến đúng quy trình trong số nhiều quy trình đang chạy trên 1 máy chủ cụ thể. Số cổng là địa chỉ 16 bit được sử dụng để nhận dạng duy nhất bất kỳ chương trình client-server
+  ![image](https://github.com/user-attachments/assets/decec4cd-9b79-413f-a273-44452a044039)
+
+  - Kết nối đầu cuối giữa các máy chủ: chủ yếu sử dụng TCP và UDP
+  ![image](https://github.com/user-attachments/assets/216e5c07-72b1-4c60-802f-140c630da4e7)
+
+  - Ghép kênh và phân kênh:
+    - `Ghép kênh (Multiplexing)`: khi dữ liệu được lấy từ 1 số quy trình từ người gửi và được hợp nhất thành 1 gói cùng với các tiêu đề và được gửi dưới dạng 1 gói duy nhất. Ghép kênh cho phép sử dụng đồng thời các quy trình khác nhau trên mạng đang chạy trên máy chủ. Các tiến trình được phân biệt bằng số cổng của chúng
+    - Phân kênh (Demultiplexing): yêu cầu ở phía người nhận khi tin nhắn được phân phối thành các quy trình khác nhau. Transport nhận các phân đoạn dữ liệu từ lớp mạng phân phối và phân phối nó đến quy trình thích hợp chạy trên máy tính của người nhận
+    ![image](https://github.com/user-attachments/assets/5fbf6b9a-df0b-46b8-8c86-95296385878f)
+  - Kiểm soát tắc nghẽn:
+    - Tắc nghẽn (Congestion): là tình huống trong đó có quá nhiều nguồn trên mạng cố gắng gửi dữ liệu và bộ đệm của bộ định tuyến bắt đầu tràn do mất gói. Kết quả là việc truyền lại các gói tin từ các nguồn sẽ làm tăng thêm tình trạng tắc nghẽn.
+    - Lớp vận chuyển sử dụng điều khiển tắc nghẽn vòng hở để ngăn ngừa tắc nghẽn và điều khiển tắc nghẽn vòng kín để loại bỏ tắc nghẽn trong mạng khi nó xảy ra
+    ![image](https://github.com/user-attachments/assets/b291c66d-1cf3-47d9-88d0-f15430b2bcf8)
+  - Tính toán tính toàn vẹn dữ liệu và sửa lỗi: Kiểm tra lỗi trong các tin nhắn đến từ lớp ứng dụng bằng cách sử dụng mã phát hiện lỗi và tính toán tổng kiểm tra. Nó kiếm tra xem dữ liệu nhận được có bị hỏng hay không và sử dụng các dịch ACK và NACK để thông báo cho người gửi nếu dữ liệu đã đến hoặc không và kiểm tra tính toàn vẹn của dữ liệu.
+  ![image](https://github.com/user-attachments/assets/d942e34f-738d-47ae-8452-2c9fed494ec9)
+  - Kiểm soát dòng chảy
+- Các giao thức của tầng vận chuyển:
+  - `Transmission Control Protocol (TCP)`: giao thức điều khiển truyền dẫn là giao thức hướng kết nối để liên lạc giúp trao đổi tin nhắn giữa các thiết bị khác nhau qua mạng. Giao thức Internet (IP) thiết lập kỹ thuật gửi gói dữ liệu giữa các máy tính, hoạt động với TCP
+    - Internet Protocol (IP): là phương thức hữu ích để gửi dữ liệu từ thiết bị này qua thiết bị khác từ khắp nơi trên internet. Nó là 1 bộ quy tắc quản lý cách gửi và nhận dữ liệu qua internet. Nó chịu trách nhiệm đánh địa chỉ và định tuyến các gói dữ liệu để chúng có thể di chuyển từ người gửi đến đích chính xác trên nhiều mạng. Mỗi thiết bị chỉ có duy nhất 1 địa chỉ IP giúp thiết bị liên lạc vào trao đổi dữ liệu giữa các thiết bị khác có trên Internet
+- Cách hoạt động: Chia dữ liệu thành các gói nhỏ và tập hợp các gói đó thành thông báo gốc để đảm bảo rằng mỗi thông báo đều đến được vị trí đích 1 cách nguyên vẹn. Điều này giúp việc duy trì hiệu quả trở lên đơn giản hơn so với việc gửi mọi thứ cùng 1 lúc
+  ![image](https://github.com/user-attachments/assets/6e171771-f26f-4180-ae74-8aa5f9e539fc)
+
+  - Ưu điểm:
+    - Là giao thức đáng tin cậy
+    - Cung cấp cơ chế kiểm tra lỗi cũng như cơ chế phục hồi
+    - Cho phép kiểm soát dòng chảy
+    - Đảm bảo rằng dữ liệu đến đúng đích theo đúng thứ tự được gửi
+    - Được ghi chép đầy đủ và được triển khai rộng rãi, được duy trì bởi các tổ chức tiêu chuẩn
+    - Hoạt động cùng IP để thiết lập kết nối giữa các thiết bị trên mạng
+  - Nhược điểm:
+    - Kích thước lớn có thể trở thành vấn đề đối với các mạng nhỏ có tài nguyên thấp
+    - Chạy nhiều lớp nên có thể làm chậm tốc độ mạng
+    - Không có tính chất chung, tức là không thể biểu diễn bất kỳ ngăn xếp giao thức nào ngoài TCP/IP
+    - Không có cập nhật nào kể từ 30 năm trước
+  - User Datagram Protocol (UDP): Giao thức gói dữ liệu người dùng là một trong những giao thức cốt lõi của bộ IP. Nó là một giao thức truyền thông được sử dụng trên Internet như phát video hay tìm kiếm DNS. UDP không kết nối và không đảm bảo phân phối, ưu tiên và kiểm tra lỗi, làm cho nó trở nên nhẹ và hiệu quả cho 1 số loại truyền dữ liệu nhất định.
+  ![image](https://github.com/user-attachments/assets/94cd2417-bd23-49f4-976a-17c668dba663)
+
