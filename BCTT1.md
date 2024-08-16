@@ -1,4 +1,4 @@
-# BaoCaoThucTap1
+# Báo Cáo Thực Tập 1
 ## 1. Nội quy, văn hoá doanh nghiệp
 ### a. Giới thiệu về doanh nghiệp Nhân Hoà: 
 - Nhân Hoà là nhà cung cấp dịch vụ Domain Hosting VPS Server.
