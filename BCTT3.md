@@ -41,3 +41,18 @@ truyền độc lập trên các tuyến khác nhau
     ![image](https://github.com/user-attachments/assets/f4d8970e-89f9-481e-bb7c-f6759423c623)
     - `Ring Topology`: Mỗi thiết bị được kết nối với các bộ lặp trong 1 vòng giống vòng tròn. Mỗi thiết bị chỉ có thể gửi dữ liệu khi nó có mã thông báo, nếu không có mã thông báo thì không có thiết bị nào có thể gửi dữ liệu và mã thông báo được đặt bởi Màn hình
     ![image](https://github.com/user-attachments/assets/3c084f08-c545-4c0d-8a65-e2be47624f17)
+  - Line Configuration:
+    - `Point-to-Point`: có một đường dẫn (liên kết) hoàn toàn dành riêng để mang dữ liệu giữa 2 thiết bị
+    - `Multi-Point`: có 1 đường dẫn (liên kết) thông qua đó nhiều thiết bị được kết nối
+  - Modes of Transmission Medium (Phương thức truyền dẫn):
+    - Simplex mode: trong số 2 thiết bị, chỉ có 1 thiết bị có thể truyền dữ liệu và thiết bị còn lại chỉ có thển nhận dữ liệu. VD: đầu vào từ bàn phím, màn hình, phát thanh, ...
+    - Half Duplex Mode: trong số 2 thiết bị, cả 2 đều có thể gửi và nhận dữ liệu nhưng chỉ có 1 thiết bị tại một thời điểm không đồng thời
+    - Full-Duplex mode: cả 2 thiết bị đều có thể gửi và nhận dữ liệu 1 cách đồng thời.
+- Lớp liên kết dữ liệu: Chịu trách nhiệm phân phối dữ liệu từ nút này đến nút khác, vai trò chính của nó là đảm bảo việc truyền thông thông tin không có lỗi. Nó cũng chịu trách nhiệm mã hoá, giải mã và tổ chức dữ liệu đi và đến
+  - Các lớp con của DLL:
+    - Kiếm soát liên kết logic (Logical Link Control): Lớp con xử lý việc ghép kênh, luồng dữ liệu giữa các ứng dụng và các dịch vụ khác, và LLC cũng chịu trách nhiệm cung cấp giữa các thông báo lỗi và xác nhận
+    - Kiểm soát truy cập phương tiện (Media Access Control): Lớp con quản lý sự tương tác của thiết bị, chịu trách nhiêm đánh địa chỉ các khung và kiểm soát việc truy cập phương tiện vật lý. Lớp liên kết dữ liệu nhận thông tin dưới dạng các gói từ lớp Mạng, nó chia các gói thành các khung và gửi các khung bit-by-bit đến lớp vật lý bên dưới
+  - Chức năng:
+    - Đóng khung (Framing): Gói nhận được từ lớp Mạng được gọi là khung trong DLL. Ở phía người gửi, DLL nhận các gói tin từ lớp Mạng và chia chúng thành các khung nhỏ, sau đó gửi từng khung hình bit-by-bit đến lớp vật lý. Nó cũng gắn 1 số bit đặc biệt (để kiểm soát lỗi và đánh địa chỉ) ở đầu và cuối khung.
+    - Addressing: đóng gói địa chỉ MAC/vật lý của nguồn và đích trong tiêu đề của mỗi khung để đảm bảo phân phối từ nút này đến nút khác.
+    - `MAC address`: số phần cứng 48 bit duy nhất của máy tính được nhúng vào card mạng. Địa chỉ MAC còn được gọi là *Địa chỉ vật lý* của thiết bị mạng.
