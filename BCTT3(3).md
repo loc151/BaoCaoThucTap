@@ -50,4 +50,53 @@
   - Được sử dụng để tăng cường an ninh mạng
 - Mạng có thể được chia thành 2 phần: Để chia mạng thành 2 phần, cần chọn 1 bit cho mỗi Mạng con từ phần ID server
 - Cách hoạt động: Chia các mạng con thành các mạng con nhỏ hơn. Để giao tiếp giữa các mạng con cần sử dụng bộ định tuyến. Mỗi mạng con cho phép các thiết bị được liên kết giao tiếp với nhau. Mạng con cho 1 mạng nên được thực hiện theo cách mà nó không ảnh hưởng đến các bit mạng
-- Ưu điểm: Cung cấp bảo mật cho 1 mạng từ 1 mạng khác
+- Ưu điểm:
+  - Cung cấp bảo mật cho 1 mạng từ 1 mạng khác
+  - Tuỳ chỉnh độ ưu tiên cho các mạng con
+  - Bảo trì khá dễ dàng
+- Nhược điểm:
+  - Một mạng duy nhất: chỉ cần 3 bước để tiếp cận, máy chủ nguồn -> mạng đích, mạng đích -> máy chủ đích và sau đó máy chủ đích sẽ xử lý
+  - Một mạng: có 2 địa chỉ IP bị lãng phí để đại diện cho Network ID và địa chỉ Boardcast, 2 địa chỉ IP bị lãng phí cho mỗi Subnet
+  - Mạng con yêu cầu bộ định tuyến nội bộ, Thiết bị chuyển mạch, Trung tâm, Cầu nối, ... Do đó, chi phí mạng tổng thể cũng tăng lên
+ 
+### Private IP: địa chỉ hoạt động trong mạng cục bộ. Các địa chỉ này không thể định tuyến được trên Internet. Địa chỉ IP riêng duy nhất được bộ định tuyến mạng gán cho thiết bị cụ thể và cung cấp cho mọi thiết bị trên cùng 1 mạng. Các thiết bị giao tiếp với nhau trên cùng 1 mạng mà không cần kết nối với Internet
+- Dải địa chỉ IP riêng:
+  - **Lớp A**: 10.0.0.0 - 10.255.255.255
+  - **Lớp B**: 172.16.0.0 - 172.31.255.255
+  - **Lớp C**: 192.168.2.2 - 192.168.255.255
+- Sử dụng Địa chỉ IP riêng:
+  - Mạng gia đình: Cho phép nhiều thiết bị cùng với máy tính, điện thoại thông minh, TV và thiết bị IoT giao tiếp với mọi thiết bị 1 cách an toàn
+  - Mạng doanh nghiệp: Được sử dụng để tạo các mạng bên trong kết nối máy tính, máy chủ, máy in và các thiết bị khác. Điều này cho phép nhân viên chia sẻ tài sản và cộng tác trong khi vẫn duy trì sự bảo vệ và quyền riêng tư
+  - VPN: tạo ra các kết nối được mã hoá qua các mạng công cộng, cho phép khách hàng truy cập vào mạng riêng từ xa
+  - Điện toán đám mây: Nhiều nhà cung cấp đám mây cung cấp VPC, nơi khách hàng có thể triển khai tài nguyên bao gồm máy ảo, csdl và vùng chứa. Địa chỉ IP riêng được sử dụng trong VPC để tạo điều kiện giao tiếp giữa các tài nguyên này đồng thời tách chúng khỏi các môi trường của các máy khách khác nhau
+- Lợi ích:
+  - Bảo mật: Địa chỉ IP riêng không thể truy cập trực tiếp từ Internet, do đó chúng làm giảm nguy cơ truy cập trái phép và tấn công mạng, do đó an toàn hơn.
+  - Khả năng mở rộng: phù hợp với sự phát triển của các thiết bị và dịch vụ trong 1 tổ chức
+  - Tính linh hoạt: Quản trị viên mạng có toàn quyền kiểm soát việc quản lý địa chỉ IP riêng, cho phép phân bổ hiệu quả tài nguyên và tuỳ chỉnh cấu hình mạng
+  - Hiệu quả chi phí: Sử dụng IP riêng trong nội bộ có thể tránh được nhu cầu lấy và quản lý các khối địa chỉ IP công cộng lớn, giảm chi phí liên quan đến kết nối internet
+- Hạn chế:
+  - Khả năng truy cập: Địa chỉ IP riêng không có sẵn từ internet công cộng nói chung. Trong khi điều này mang lại lợi thế an toàn bằng cách che giấu các nguồn cộng đồng nội bộ
+  - Chi phí dịch địa chỉ mạng (NAT): Để cho phép trao đổi thông tin giữa các địa chỉ IP riêng và công cộng, Network Address Translation thường được sử dụng. NAT giới thiệu chi phí chung về năng lượng xử lý, độ trễ và độ phức tạp, đặc biệt là trong triển khai quy mô lớn
+  - Quản lý phức tạp: Quản lý IP riêng xử lý các cấu hình phân bổ, mạng con và định tuyến có thể phát triển phức tạp, đặc biệt là trong các mạng lớn và được phân bổ
+  - Các vấn đề về khả năng tương tác: Có thể gặp phải khi tích hợp với các dịch vụ bên ngoài dựa trên địa chỉ IP công cộng
+
+ **Chức năng**
+ 
+ |Thông số|Địa chỉ IP riêng|
+ |:---|:---|
+ |Phạm vi|Được gán cục bộ trong 1 mạng cụ thể|
+ |Truyền thông|Được sử dụng bởi các thiết bị để giao tiếp với nhau trên cùng 1 mạng|
+ |Được chỉ định bởi|Quản trị viên mạng LAN hoặc nhà điều hành mạng|
+ |Chi phí|Miễn phí|
+ |Tái sử dụng|Có thể|
+
+ **IP công cộng và IP riêng**
+
+ |Public|Private|
+ |:---|:---|
+ |Có kết nối internet trực tiếp|Trên mạng cục bộ|
+ |Có sẵn trực tuyến và có thể truy cập từ mọi nơi|Bị giới hạn trong mạng cục bộ|
+ |ISP là cơ quan chuyển nhượng|Được chỉ định bởi NAT hoặc bộ định tuyến|
+ |Khác biệt trên toàn bộ web|Có thể tái sử dụng trên 1 số mạng cục bộ|
+ |Nhận dạng thiết bị được kết nối với Internet và tạo điều kiện giao tiếp giữa chúng|Nhận dạng thiết bị trên mạng cục bộ và cho phép giao tiếp nội bộ giữa các thiết bị|
+ 
