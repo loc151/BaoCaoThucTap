@@ -195,5 +195,101 @@ truyền độc lập trên các tuyến khác nhau
     - `Tốc độ`: nhanh hơn TCP do không có thiết lập kết nối và đảm bảo phân phối dữ liệu đáng tin cậy
     - `Độ trễ thấp hơn`: Độ trễ thấp hơn và thời gian phản hồi nhanh hơn
     - `Đơn giản`: thiết kế giao thức đơn giản hơn TCP, giúp thực hiện và quản lý dễ dàng hơn
+      
+5. Lớp phiên: Cho phép người dùng trên các máy khác nhau thiết lập các phiên liên lạc tích cực giữa chúng. Nó chịu trách nhiệm thiết lập, duy trì, đồng bộ hoá, chấm dứt các phiên giữa các ứng dụng của người dùng cuối.
+- Thiết lập kết nối giữa các thực thể phiên
+- Xử lý và thao tác dữ liệu mà nó nhận được
+- Hoạt động: Để thiết lập kết nối phiên, ta cần:
+  - Ánh xạ địa chỉa phiên tới địa chỉ giao vận
+  - Lựa chọn các thông số chất lượng dịch vụ truyền tải (Quality of Service) được yêu cầu
+  - Quan tâm đến các cuộc đàm phán sẽ xảy ra giữa các tham số phiên
+  - Truyền thêm dữ liệu người dùng minh bạch có giới hạn
+  - Theo dõi giai đoạn Truyền dữ liệu đúng cách
+- Chức năng:
+  - Cho phép các hệ thống giao tiếp ở chế độ bán song công hoặc song công hoàn toàn
+  - Quản lý mã thông báo, ngăn cản 2 người dùng truy cập đồng thời hoặc thực hiện cùng 1 hoạt động quan trọng
+  - Đồng bộ hoá bằng cách cho phép quá trình thêm các điểm kiểm tra, được coi là điểm đồng bộ hoá cho các luồng dữ liệu
+  - Kiểm tra và phục hồi phiên
+  - Cung cấp cơ chế mở, đóng và quản lý phiên giữa các quy trình ứng dụng của người dùng cuối
+  - Các dịch vụ thường được triển khai trong môi trường ứng dụng bằng cách sử dụng cách lệnh gọi thủ tục từ xa (Remote Procedure Calls)
+  - Chịu trách nhiệm đồng bộ hoá thông tin từ các nguồn khác nhau
+  - Kiểm soát các kết nối đơn hoặc nhiều cho từng ứng dụng của người dùng cuối và giao tiếp trực tiếp với cả 2 lớp Trình bày và Vận chuyển
+  - Tạo ra các thủ tục để checkpoint, sau đó là hoãn lại, khởi động hoặc chấm dứt
+  - Sử dụng các điểm kiểm tra để kích hoạt các phiên giao tiếp sẽ được nối lại từ điểm kiểm tra, tại nơi xảy ra lỗi giao tiếp
+  - Tìm nạp hoặc nhận thông tin dữ liệu từ lớp trước đó và gửi thêm dữ liệu từ lớp đến sau nó
+- Các giao thức:
+  - AppleTalk Data Stream Protocol (ADSP): được phát triển bởi Apple, nó cho phép kết nối mạng cục bộ mà không cần thiết lập trước
+  - Real-time Transport Control Protocol (RTCP): cung cấp thông tin điều khiển và thống kê ngoài băng tần cho phiên RTP. RTCP cung cấp phản hồi về QoS trong phân phối phương tiện bằng cách gửi định kỳ thông tin thống kê như octet được truyển và số lượng gói hoặc mất gói cho những người tham gia phiên truyền phát đa phương tiện
+  - Point-to-Point Tunneling Protocol (PPTP): là giao thức cung cấp phương thức triển khai mạng riêng ảo. PPTP sử dụng kênh điều khiển TCP và đường hầm Đóng gói định tuyến chung để đóng gói các gói PPP, cung cấp các cấp độ bảo mật và cấp độ truy cập từ xa tương đương với các sản phẩm VPN thông thường
+  - Password Authentication Protocol (PAP): giao thức xác thực dựa trên mật khẩu được sử dụng bởi PPP để xác thực người dùng. Xác thực PAP được thực hiện tại thời điểm thiết lập liên kết ban đầu và xác minh danh tính của khách hàng bằng cách bắt tay 2 chiều
+  - Remote Procedure Call Protocol (RPCP): là giao thức được sử dụng khi 1 chương trình máy tính khiến 1 thủ tục (hoặc 1 quy trình con) thực thi trong 1 không gian địa chỉ khác mà không cần lập trình viên mã hoá rõ ràng các chi tiết cho sự tương tác từ xa
+  - Sockets Direct Protocol (SDP): giao thức hỗ trợ các luồng ổ cắm qua kết cấu mạng Truy cập bộ nhớ trực tiếp từ xa (Remote Direct Memory Access)
+ 
+6. Lớp trình bày: đóng vai trò là trình dịch dữ liệu cho mạng. Trách nhiệm chính là cung cấp hoặc xác định định dạng dữ liệu và mã hoá, duy trì cú pháp thích hợp của dữ liệu mà nhận hoặc truyền đến các lớp khác
+- Chức năng:
+  - Định dạng lớp trình bày và mã hoá dữ liệu được gửi qua mạng
+  - Đảm bảo dữ liệu được gửi theo cách mà người nhận sẽ hiểu thông tin và có thể sử dụng dữ liệu 1 cách hiệu quả
+  - Quản lý các cấu trúc dữ liệu trừu tượng và cho phép các cấu trúc dữ liệu cấp cao được xác định và trao đổi
+  - Thực hiện mã hoá tại máy phát và giải mã tại máy thu
+  - Thực hiện nén dữ liệu để giảm băng thông của dữ liệu được truyền
+  - Chịu trách nhiệm về khả năng tương tác giữa các phương pháp mã hoá
+  - Xử lý phần trình bày của dữ liệu
+  - Tích hợp tất cả các định dạng thành 1 định dạng chuẩn hoá để giao tiếp hiệu quả
+  - Mã hoá thông điệp từ định dạng phụ thuộc vào người dùng sang định dạng chung và ngược lại để giao tiếp giữa các hệ thống khác
+  - Xử lý cú pháp và ngữ nghĩa của thông điệp
+  - Dịch, định dạng và phân phối thông tin để xử lý hoặc hiển thị
+  - Tuần tự hoá
+- Tính năng:
+  - Áp dụng 1 số kỹ thuật nén phức tạp nhất định, do đó cần ít byte dữ liệu hơn để biểu diễn thông tin khi nó được gửi qua mạng
+  - Chịu trách nhiệm thêm mã hoá ở đầu người gửi và giải mã hoá ở đầu người nhận
+  - Định dạng và mã hoá dữ liệu được gửi qua mạng, cung cấp sự tự do khỏi các vấn đề tương thích
+  - Chịu trách nhiệm nén dữ liệu mà nó nhận được từ lớp ứng dụng trước khi phân phối nó đến lớp phiên
+- Các giao thức:
+  - Apple Filing Protocol (AFP)
+  - Lightweight Presentation Protocol (LPP)
+  - NetWare Core Protocol (NCP)
+  - Network Data Representation (NDR)
+  - External Data Representation (XDR): tiêu chuẩn để mô tả và mã hoá dữ liệu. Nó truyền dữ liệu giữa các kiến trúc máy tính và được sử dụng để giao tiêp giữa các máy rất đa dạng
+  - Secure Socker Layer (SSL): Cung cấp bảo mật cho dữ liệu được chuyển giữa trình duyệt web và máy chủ. SSL mã hoá liên kết giữa máy chủ web và trình duyệt, đảm bảo rằng tất cả dữ liệu được truyền giữa chúng vẫn riêng tư và không bị tấn công
 
-
+  7. Lớp ứng dụng: Cho phép truy cập mạng 1 cách dễ dàng bằng cách cung cấp 1 số cách để thao tác dữ liệu
+- Chức năng:
+  - Cung cấp phương tiện để người dùng có thể chuyển tiếp 1 số email và nó cũng cung cấp phương tiện lưu trữ
+  - Cho phép người dùng truy cập, truy xuất và quản lý các tệp trong máy tính từ xa
+  - Cho phép người dùng đăng nhập như 1 máy chủ từ xa
+  - Cung cấp quyền truy cập vào thông tin toàn cầu về các dịch vụ khác nhau
+  - Cung cấp các dịch vụ: e-mail, truyền tệp, phân phối kết quả cho người dùng, dịch vụ thư mục, tài nguyên mạng
+  - Cung cấp các giao thức cho phép phần mềm gửi và nhận thông tin cũng như trình bày dữ liệu có ý nghĩa
+  - Xử lý các vấn đề như tính minh bạch của mạng, phân bổ tài nguyên
+  - Đóng vai trò như 1 cửa sổ để người dùng và quy trình ứng dụng truy cập các dịch vụ mạng
+  - Thực hiện các chức năng
+  - Giúp xác định các đối tác liên lạc và đồng bộ hoá liên lạc
+  - Cho phép người dùng tương tác với các ứng dụng phần mềm khác
+  - Dữ liệu ở dạng trực quan, giúp người dùng hiểu và ghi nhớ
+  - Thực hiện khởi tạo máy chủ, sau đó đăng nhập từ xa vào máy chủ
+- Hoạt động:
+  - Máy client gửi lệnh đến máy chủ và khi máy chủ nhận được lệnh đó, nó sẽ cấp phát số cổng cho máy khách
+  - Máy client gửi yêu cầu khởi tạo kết nối đến máy chủ và khi máy chủ nhận được yêu cầu, nó sẽ đưa ra xác nhận cho máy client thông qua máy client đã thiết lập thành công kết nối với server
+  - Máy client có quyền truy cập vào máy chủ, qua đó nó có thể yêu cầu máy chủ gửi bất kỳ loại tệp hoặc tài liệu nào khác hoặc nó có thể tải lên 1 số tệp hoặc tài liệu chính trên server
+- Tính năng:
+  - Xác định quy trình cho cả 2 bên tham gia giao tiếp
+  - Xác định loại tin nhắn được gửi hoặc nhận từ bất kỳ phía nào (nguồn hoặc đích)
+  - Xác định cú pháp cơ bản của tin nhắn được chuyển tiếp hoặc lấy về
+  - Xác định cách gửi tin nhắn và phản hồi mong đợi
+  - Xác định sự tương tác với cấp độ tiếp theo
+- Dịch vụ:
+  - Cung cấp giao diện giữa người dùng và ứng dụng
+  - Sử dụng để đăng nhập từ xa
+  - Sử dụng để chuyển tập tin
+  - Sử dụng cho các dịch vụ thư và chuyển khoản
+  - Sử dụng để chuyển các tập tin đa phương tiện
+  - Chia sẻ tài nguyên
+  - Đồng bộ hoá dữ liệu
+  - Dịch vụ xác thực
+- Các giao thức:
+  - Telnet (Telecommunications Network): sử dụng để quản lý các tập tin qua Internet. Cho phép các máy client truy cập vào tài nguyên của Telnet server. Telnet sử dụng cổng 23
+  - DNS: Dịch vụ DNS dịch tên miền thành địa chỉ IP tương ứng. Giao thức DNS sử dụng cổng số 53
+  - DHCP (Dynamic Host Configuration Protocol): Cung cấp địa chỉ IP cho máy chủ. Bất cứ khi nào 1 máy chủ cố gắng đăng ký địa chỉ IP với máy chủ DHCP, máy chủ DHCP sẽ cung cấp nhiều thông tin cho máy chủ tương ứng. DHCP sử dụng cổng 67 và 68
+  - FTP: Chuyển các tệp tin khác nhau từ thiết bị này sang thiết bị khác. FTP thúc đẩy việc chia sẻ tập tin qua các thiết bị máy tính từ xa với khả năng truyền dữ liệu hiệu quả. FTP sử dụng cổng số 20 để truy cập dữ liệu và cổng số 21 để kiểm soát dữ liệu
+  - SMTP: Chuyển thư điện tử từ người dùng này sang người dùng khác. SMTP sử dụng cổng 25 và 587
+  - HTTP: là nền tảng của WWW. HTTP hoạt động trên mô hình client-server. HTTP sử dụng để truyền các tài liệu hypermedia như HTML. Giao thức được thiết kế đặc biệt để liên lạc giữa trình duyệt web và máy chủ web. HTTP là 1 giao thức không trạng thái, sử dụng cổng 80
