@@ -3,7 +3,7 @@
 ### HTTPS: Giao thức được sử dụng để giao tiếp giữa trình duyệt người dùng và trang web. Nó cũng giúp trong việc chuyển dữ liệu. Nó là biến thể an toàn của HTTP. Để làm cho việc truyền dữ liệu an toàn hơn, nó được mã hoá. Mã hoá là cần thiết để đảm bảo an ninh trong khi truyền thông tin nhạy cảm như mật khẩu, thông tin liên lạc
 - Cách hoạt động:
   - Thiết lập giao tiếp giữa trình duyệt và máy chủ web. Nó sử dụng giao thức SSL và TLS. Kết nối SSL chịu trách nhiệm mã hoá và giải mã dữ liệu đang được trao đổi để đảm bảo an toàn dữ liệu
-  ![image](https://github.com/user-attachments/assets/2f480fe4-a078-478f-962e-1d0fec5844a4)
+    ![image](https://github.com/user-attachments/assets/2f480fe4-a078-478f-962e-1d0fec5844a4)
 - Mã hoá:
   - HTTPS truyền dữ liệu ở định dạng được mã hoá. Do đó, HTTPS bảo vệ các trang web khỏi việc phát thông tin của họ theo cách mà bất kỳ ai nghe lén trên mạng để có thể dễ dàng nhìn thấy. Có 2 loại khoá khác nhau được sử dụng để mã hoá
     - Khoá riêng: Được sử dụng để giải mã dữ liệu đã được mã hoá bằng khoá công khai. Nó nằm ở phía máy chủ và được kiểm soát bởi chủ sở hữu của trang web.
@@ -216,8 +216,8 @@
     - Email được gửi đến máy chủ Outlook SMTP bởi máy chủ SMTP của Gmail
     - Địa chỉ Email của người nhận được xác thực bỏi máy chủ Outlook SMTP
     - IMAP hoặc POP3 được sử dụng bởi máy chủ Outlook SMTP để gửi qua email đến ứng dụng email client Outlook
-- Kiến trúc: là mô hình client-server cho phép người dùng truy cập và xem thư email được lưu trữ trên các máy chủ từ xa.
-![image](https://github.com/user-attachments/assets/fa5eb8e6-4449-47c0-83a4-45d2a9ec9cd5)
+- Kiến trúc: là mô hình client-server cho phép người dùng truy cập và xem thư email được lưu trữ trên các máy chủ từ xa. <p>
+  ![image](https://github.com/user-attachments/assets/fa5eb8e6-4449-47c0-83a4-45d2a9ec9cd5)
   - Ứng dụng IMAP Client: là ứng dụng email hoặc phần mềm mà người dùng sử dụng để liên lạc với tài khoản email. Client liên lạc với máy chủ IMAP để nhận, quản lý và gửi email
   - Máy chủ IMAP: quản lý thư email và quản lý hộp thư người dùng. Nó đáp ứng các yêu cầu từ IMAP Client và cung cấp quyền truy cập vào các thư mục email và tin nhắn. Máy chủ lưu trữ email ở định dạng có cấu trúc, thường được sắp xếp trong các thư mục hoặc hộp thư do người dùng xác định.
   - Giao thức mạng: IMAP hoạt động trên mạng TCP/IP và cho phép máy khách IMAP kết nối với máy chủ IMAP qua Internet hoặc mạng cục bộ. IMAP thường sử dụng cổng TCP 143 cho các kết nối không được mã hoá và cổng TCP 993 cho các kết nối được mã hoá bằng SSL/TLS (IMAPS)
