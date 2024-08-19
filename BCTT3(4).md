@@ -216,3 +216,37 @@
     - Email được gửi đến máy chủ Outlook SMTP bởi máy chủ SMTP của Gmail
     - Địa chỉ Email của người nhận được xác thực bỏi máy chủ Outlook SMTP
     - IMAP hoặc POP3 được sử dụng bởi máy chủ Outlook SMTP để gửi qua email đến ứng dụng email client Outlook
+- Kiến trúc: là mô hình client-server cho phép người dùng truy cập và xem thư email được lưu trữ trên các máy chủ từ xa.
+![image](https://github.com/user-attachments/assets/fa5eb8e6-4449-47c0-83a4-45d2a9ec9cd5)
+  - Ứng dụng IMAP Client: là ứng dụng email hoặc phần mềm mà người dùng sử dụng để liên lạc với tài khoản email. Client liên lạc với máy chủ IMAP để nhận, quản lý và gửi email
+  - Máy chủ IMAP: quản lý thư email và quản lý hộp thư người dùng. Nó đáp ứng các yêu cầu từ IMAP Client và cung cấp quyền truy cập vào các thư mục email và tin nhắn. Máy chủ lưu trữ email ở định dạng có cấu trúc, thường được sắp xếp trong các thư mục hoặc hộp thư do người dùng xác định.
+  - Giao thức mạng: IMAP hoạt động trên mạng TCP/IP và cho phép máy khách IMAP kết nối với máy chủ IMAP qua Internet hoặc mạng cục bộ. IMAP thường sử dụng cổng TCP 143 cho các kết nối không được mã hoá và cổng TCP 993 cho các kết nối được mã hoá bằng SSL/TLS (IMAPS)
+- Các bước liên quan đến thực thi IMAP:
+  - Ứng dụng email kết nối với máy chủ qua IMAP khi người dùng đăng ký
+  - Một số cổng nhất định được sử dụng cho các kết nối
+  - Ứng dụng email hiển thị tiêu đề của mọi email
+  - IMAP không tự động tải xuống tệp đính kèm, tin nhắn chỉ được tải xuống ứng dụng khác khi người dùng nhấn vào chúng
+  - So với các giao thức truy xuất email thay thế như POP3, người dùng có thể kiểm tra thư của họ nhanh hơn với IMAP (POP3)
+  - Cho đến khi chúng bị xoá cụ thể bởi người dùng, email sẽ ở lại trên máy chủ
+  - IMAP qua SSL/TLS gán số cổng 993, IMAP server lắng nghe trên cổng 143
+- Lợi thế:
+  - Cung cấp đồng bộ hoá trên tất cả các phiên duy trì bởi người dùng
+  - Cung cấp bảo mật qua giao thức POP3 vì email chỉ tồn tại trên máy chủ IMAP
+  - Có quyền truy cập từ xa vào tất cả các nội dung
+  - Cung cấp khả năng di chuyển dễ dàng giữa tất cả các thiết bị vì nó được đồng bộ hoá bởi 1 máy chủ tập trung
+  - Không cần phân bổ vật lý bất kỳ bộ nhớ nào để lưu nội dung
+- Khó khăn:
+  - Rất phức tạp để duy trì
+  - Email của người dùng chỉ khả dụng khi có kết nối Internet
+  - Tải tin nhắn chậm hơn
+  - Một số email không hỗ trợ IMAP gây khó khăn cho việc quản lý
+
+ - So sánh IMAP và POP3:
+
+|IMAP|POP3|
+|:---|:---|
+|Tiên tiến hơn và cho phép người dùng xem tất cả các thư mục trên mail server|Giao thức đơn giản chỉ cho phép tải tin nhắn từ Hộp thư đến xuống máy tính cục bộ|
+|IMAP server lắng nghen trên cổng 143 và IMAPDS lắng nghe trên cổng 993|POP Server lắng nghe trên cổng 110 và POP3DS lắng nghe trên cổng 995|
+|Tin nhắn có thể được truy cập trên nhiều thiết bị|Thư chỉ có thể được truy cập từ 1 thiết bị duy nhất tại 1 thời điểm|
+|Nội dung thư có thể được đọc 1 phần trước khi tải xuống|Để đọc thư, nó phải được tải xuống trên hệ thống cục bộ|
+|Có thể tạo, xoá hoặc đổi tên email trên máy chủ thư|Không thể|
