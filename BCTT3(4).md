@@ -158,3 +158,61 @@
 |Có kết nối TCP bền bỉ|Bền bỉ|Bền bỉ|
 |Giao thức không trạng thái|Giao thức trạng thái|Giao thức trạng thái|
 |Không được sử dụng ở phía người nhận|Được|Được|
+
+### Post Office Protocol (POP): Là 1 điểm mà nhiều thiết bị chia sẻ kết nối và có thể giao tiếp với nhau. Có thể nói rằng đó là 1 điểm phân định nhân tạo giữa các thực thể giao tiếp. Nó bao gồm các thiết bị và công nghệ viễn thông tốc độ cao giúp tập hợp mọi người từ khắp nơi trên internet. SMTP được sử dụng như một đại lý chuyển tin nhắn. Khi 1 tin nhắn được gửi, SMTP được sử dụng để chuyển nó từ client đến server và cuối cùng đến máy chủ của người nhận. Tuy nhiên, tác nhân truy cập tin nhắn tạo điều kiện cho việc truyền tin nhắn từ máy chủ nhận đến máy chủ lưu trữ.
+- Đặc điểm:
+  - Là 1 giao thức mở, được định nghĩa bởi Internet RFC
+  - Nó cho phép truy cập vào thư mới từ 1 loạt các loại nền tảng khách hàng
+  - Chỉ có thể xử lý quyền truy cập email trong khi email được gửi bằng SMTP
+- Hoạt động:
+  - Cho đến khi người dùng đăng nhập bằng ứng dụng email và tải thư xuống máy tính của họ, tất cả các thư đến sẽ được lưu trữ trên máy chủ POP. Tin nhắn sẽ bị xoá khỏi máy chủ sau khi người dùng tải xuống
+  - POP cơ bản phục vụ như 1 cách để truy xuất email từ máy chủ bằng ứng dụng email, nó không cung cấp cách để gửi tin nhắn
+  - Kết nối POP3 sẽ được thực hiện ở phía máy chủ bất cứ khi nào người dùng cố gắng kiểm tra tất cả các email gần đây của họ. Để có được xác thực chính xác, người dùng truyền tên người dùng và mật khẩu đến máy tính máy chủ. Người dùng có thể nhận và giữ tất cả các email dựa trên văn bản trên thiết bị đầu cuối cục bộ sau khi thiết lập kết nối. Sau đó, họ có thể xoá bất kỳ bản sao nào khỏi máy chủ và ngắt kết nối máy chủ. Hoạt động của POP dựa trên 5 thiết bị:
+    - Trạm gốc: Điểm tham chiếu trung tâm đến điểm truy cập và quản lý băng thông để đảm bảo phân phối đồng đều tốc độ kết nối của khách hàng
+    - Thiết bị khách hàng: Khách sử dụng thiết bị để kết nối với các trạm gốc
+    - Thiết bị chuyển mạch mạng: Được sử dụng để phân phối thích hợp
+    - Bộ định tuyến: Cung cấp nhiều đường dẫn để dữ liệu được chia sẻ trong mạng
+    - Tường lửa: Được sử dụng để bảo vệ mạng khỏi các mối đe doạ (nội bộ và bên ngoài)
+- Lợi thế:
+  - Là giao thức được sử dụng rộng rãi nhất và đang được hầu hết các ứng dụng email hỗ trọ.
+  - Cung cấp 1 cách thuận tiện và tiêu chuẩn để người dùng truy cập hộp thư và tải xuống tin nhắn.
+  - POP3 có 2 chế độ:
+    - Chế độ Xoá: Thư sẽ bị xoá khỏi hộp thư sau mỗi lần truy xuất. Chế độ Xoá thường được sử dụng khi người dùng đang làm việc trên máy tính vĩnh viễn, có thể lưu và sắp xếp thư đã nhận sau khi đọc hoặc trả lời.
+    - Chế độ Giữ: Thư vẫn còn trong hộp thư sau khi truy xuất. Nó thường được sử dụng khi người dùng thư từ máy tính chính. Thư được đọc nhưng được lưu giữ trong hệ thống để truy xuất và tổ chức sau này
+  - Việc tạo các tin nhắn mới nhất là không thể nếu không đăng nhập vào web
+  - Tất cả các tin nhắn được lưu trữ trên ổ đĩa máy tính
+  - Dễ sử dụng và cấu hình
+  - Không có bất kỳ kích thước tối đa nào trên hộp thư, ngoại trừ được xác định bởi tỷ lệ ổ đĩa
+- Khó khăn:
+  - Tiêu thụ bộ nhớ lớn vì tất cả các tin nhắn được lưu trữ trên ổ đĩa
+  - Mở tệp đính kèm có thể là 1 quá trình nhanh chóng trừ khi tệp đó chứa virus
+  - Có nguy cơ bị virus tấn công nếu không được quét phần mềm chống virus
+  - Những lần quét chỉ hiệu quả ~60%
+  - Các máy khác không thể mở email trừ khi chúng được cấu hình
+  - Không dễ để xuất 1 thư mục thư cục bộ sang 1 máy vật lý khác hoặc 1 ứng dụng thư khác
+- Các lệnh được sử dụng trong POP:
+  - LOGIN: Thiết lập kết nối
+  - STAT: Hiển thị tất cả các email đến và đi trong hộp thư đến
+  - DELE: Xoá tin nhắn khỏi hệ thống
+  - RSET: Chủ yếu được sử dụng để đặt phiên trở lại cấu hình ban đầu
+  - QUIT: Kết thúc phiên hiện tại của người dùng
+  - LIST: Chủ yếu được sử dụng để truy xuất tóm tắt của thư, được hiển thị trên màn hình
+  - RETR: Mục đích chính là chọn 2 hộp thư để xem thư
+
+### Internet Message Access Protocol (IMAP): là 1 giao thức lớp ứng dụng hoạt động như 1 hợp đồng nhận email từ máy chủ thư. Nó là giao thức được sử dụng phổ biến nhất để truy xuất email. IMAP truy xuất thư từ nhà cung cấp email vào ứng dụng email client. Điều quan trọng, nó không xoá thư khỏi dịch vụ email sau khi tải chúng xuống cho đến khi người dùng xoá chúng 1 cách rõ ràng. IMAP cho phép xem và quản lý email trên nhiều thiết bị vì nó đồng bộ hoá email, đảm bảo rằng các trạng thái thay đổi như đọc, xoá và tổ chức thư mục được phản ánh nhất quán trên các thiết bị được kết nối với cùng 1 tài khoản email
+- Tính năng:
+  - Có khả năng quản lý nhiều hộp thư và sắp xếp chúng thành nhiều loại khác nhau
+  - Cung cấp thêm cờ tin nhắn để theo dõi tin nhắn nào đang được xem
+  - Có khả năng quyết định có nên truy xuất email từ mail server trước khi tải xuống hay không
+  - Giúp dễ dàng tải xuống phương tiện khi nhiều tệp được đính kèm
+- Cách hoạt động:
+  - IMAP tuân theo kiến trúc client-server và là giao thức email được sử dụng phổ biến nhất
+  - Nó là sự kết hợp của quá trình máy khách và máy chủ chạy trên các máy tính khác được kết nối thông qua mạng
+  - Giao thức này nằm trên giao thức TCP/IP để liên lạc
+  - Khi giao tiếp được thiết lập, máy chủ sẽ nghe trên cổng 143 theo mặc định không được mã hoá
+  - Đối với cổng giao tiếp được mã hoá an toàn, ta dùng cổng 993
+    - Ứng dụng email Gmail thiết lập kết nối với máy chủ SMTP của Gmail
+    - Bằng cách phê duyệt địa chỉ gmail của người gửi và người nhận, máy chủ SMTP xác minh (xác thực) rằng email có thể được gửi
+    - Email được gửi đến máy chủ Outlook SMTP bởi máy chủ SMTP của Gmail
+    - Địa chỉ Email của người nhận được xác thực bỏi máy chủ Outlook SMTP
+    - IMAP hoặc POP3 được sử dụng bởi máy chủ Outlook SMTP để gửi qua email đến ứng dụng email client Outlook
