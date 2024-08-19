@@ -74,3 +74,87 @@
 |Chạy trên cổng 21|22|
 |Không mã hoá dữ liệu trước khi gửi|Có|
 |Làm cho việc tải lên và tải xuống các tập tin mà không có bất kỳ sự bảo mật nào|Duy trì bảo mật đầy đủ của dữ liệu bằng cách sử dụng khoá SSH|
+
+### Simple Mail Transfer Protocol (SMTP): là 1 giao thức lớp ứng dụng. Client muốn gửi thư mở 1 kết nối TCP đến SMTP server và sau đó gửi thư qua kết nối. SMTP server là chế độ nghe luôn bật. Ngay sau khi nó lắng nghe kết nối TCP từ bất kì client nào, quá trình SMTP sẽ bắt đầu kết nối thông qua cổng 25. Sau khi thiết lập thành công kết nối TCP, quá trình client sẽ gửi thư ngay lập tức.
+- Giao thức SMTP: Mô hình SMTP có 2 loại:
+  - End-to-end: được sử dụng để giao tiếp giữa các tổ chức khác nhau trong khi phương pháp lưu trữ và chuyển tiếp được sử dụng trong 1 tổ chức. Một SMTP client muốn gửi thư sẽ liên hệ trực tiếp với SMTP server của đích để gửi thư đến đích. SMTP server sẽ giữ thư cho chính nó cho đến khi nó được sao chép thành công vào SMTP của người nhận
+  - SMTP client là client khởi tạo phiên, hay client-SMTP và SMTP server là máy chủ phản hồi yêu cầu phiên, hay receiver-SMTP. Client-SMTP sẽ bắt đầu phiên và receiver-SMTP sẽ phản hồi yêu cầu.
+  - Phương pháp lưu trữ và chuyển tiếp
+- Mô hình hệ thống: Người dùng giao dịch với tác nhân người dùng (UA). Để trao đổi thư bằng TCP, tác nhân chuyển đổi thư (MTA) được sử dụng. Người dùng gửi thư không phải đối phó với MTA vì quản trị viên hệ thống có trách nhiệm thiết lập MTA cục bộ. MTA duy trì 1 hàng đợi thư nhỏ để có thể lên lịch gửi thư lặp lại trong trường hợp người nhận không có sẵn. MTA gửi thư đến hộp thư và thông tin sau đó có thể tải xuống bởi các tác nhân người dùng.
+![image](https://github.com/user-attachments/assets/f16fe938-c108-4a0e-952b-0be7c8247e81)
+- Các thành phần:
+  - Mail User Agent (MUA): 1 ứng dụng máy tính giúp gửi và truy xuất thư. Nó chịu trách nhiệm tạo thư email để chuyển đến Mail Transfer Agent (MTA)
+  - Mail Submission Agent (MSA): 1 chương trình máy tính nhận thư MUA và tương tác với Mail Transfer Agent (MTA) để chuyển thư
+  - Mail Transfer Agent (MTA): Phần mềm có công việc chuyển thư từ hệ thống này sang hệ thống khác với sự trợ giúp của SMTP
+  - Mail Delivery Agent (MDA): Hệ thống giúp chuyển thư đến hệ thống địa phương
+- Cách hoạt động:
+  - Giao tiếp giữa người gửi và nhận: Tác nhân người dùng của người gửi chuẩn bị tin nhắn và gửi nó đến MTA. Trách nhiệm của MTA là chuyển thư qua mạng đến MTA của người nhận. Để gửi thư, 1 hệ thống phải có MTA client và để nhận thư, hệ thống phải có MTA server
+  - Gửi email: Thư được gửi bởi 1 loạt các tin nhắn yêu cầu và phản hồi giữa client và server. Thông điệp được gửi qua bao gồm 1 tiêu đề và 1 nội dung. 1 dòng *null* được sử dụng để chấm dứt tiêu đề thư và mọi thứ sau dòng *null* được coi là nội dung của thư, là 1 chuỗi kí tự ASCII. Nội dung thư chứa thông tin thực tế được đọc bởi biên lai
+  - Nhận email: Tác nhân người dùng ở phía máy chủ kiểm tra hộp thư tại 1 khoảng thời gian cụ thể. Nếu nhận được bất kỳ thông tin nào, nó sẽ thông báo cho người dùng về thư. Khi người dùng cố gắng đọc thư, nó sẽ hiển thị 1 danh sách các email với mô tả ngắn về từng thư trong hộp thư. Bằng cách chọn bất kỳ thư nào, người dùng có thể xem nội dung của nó trên thiết bị đầu cuối.
+  ![image](https://github.com/user-attachments/assets/b6587008-2a99-4855-9941-1d84477e039a)
+- SMTP Envelope:
+  - Mục đích:
+    - Chứa thông tin hướng dẫn gửi email giữa các máy chủ
+    - Khác với tiêu đề và nội dung email và không hiển thị người nhận email
+  - Nội dung:
+    - **Địa chỉ người gửi:** Chỉ định nơi email bắt nguồn
+    - **Địa chỉ người nhận:** Cho biết nơi gửi email
+    - **Thông tin định tuyến:** Giúp máy chủ xác định đường dẫn gửi email
+  - So sánh với thư thông thường:
+    - SMTP Envelope như địa chỉ trên phong bì vật lý cho thư thông thường
+    - SMTP Envelope hướng các máy chủ email về nơi gửi email
+  - SMTP Command:
+    
+|Keyword|Command form|Description|Usage|
+|:---|:---|:---|:---|
+|HELO|HELO<SP><domain><CRLF>|Cung cấp nhận dạng của người gửi, tức tên server|Bắt buộc|
+|MAIL|MAIL<SP>FORM:<reverse-path><CRLF>|Chỉ định người khởi tạo thư|Bắt buộc|
+|RCPT|RCPT<SP>TO:<forward-path><CRLF>|Chỉ định người nhận thư|Bắt buộc|
+|DATA|DATA<CRLF>|Chỉ định phần đầu của thư|Bắt buộc|
+|QUIT|QUIT<CRLF>|Đóng kết nối TCP|Bắt buộc|
+|RSET|RSET<CRLF>|Huỷ bỏ giao dịch thư hiện tại nhưng kết nối TCP vẫn mở|Rất khuyến khích|
+|VRFY|VRFY<SP><string><CRLF>|Xác nhận hoặc xác minh tên người dùng|Rất khuyến khích|
+|NOOP|NOOP<CRLF>|Không thi hành|Rất khuyến khích|
+|TURN|TURN<CRLF>|Đảo ngược vai trò của người gửi và người nhận|Hiếm sử dụng|
+|EXPN|EXPN<SP><string><CRLF>|Chỉ định danh sách gửi thư sẽ được mở rộng|Hiếm sử dụng|
+|HELP|HELP<SP><string><CRLF>|Gửi 1 số tài liệu cụ thể đến hệ thống|Hiếm sử dụng|
+|SEND|SEND<SP>FROM:<reverse-path><CRLF>|Gửi thư đến thiết bị đầu cuối|Hiếm sử dụng|
+|SOML|SOML<SP>FROM:<reverse-path><CRLF>|Gửi thư đến thiết bị đầu cuối nếu có thể, nếu không vào hộp thư|Hiếm sử dụng|
+|SAML|SAML<SP>FROM:<reverse-path><CRLF>|Gửi thư đến thiết bị đầu cuối và hộp thư|Hiếm sử dụng|
+
+- SMTP Port: Sử dụng cổng 587 để truyền an toàn qua TLS. Ngoài ra, cổng 25 chủ yếu được sử dụng để chuyển tiếp SMTP, không phải để gửi SMTP. Cổng 2525 có thể phục vụ như 1 giải pháp thay thế tốt, mặc dủ nó không phải là cổng SMTP chính thức
+- So sánh SMTP và SMTP Expanded
+
+|SMTP|SMTP Expanded|
+|:---|:---|
+|Không được xác minh trong SMTP do các email lừa đảo quy mô lớn được gửi|Xác thực người gửi được thực hiện|
+|Không thể đính kèm tệp Đa phương tiện trong SMTP trực tiếp mà không có sự trợ giúp của MMIE |Có thể|
+|Không thể giảm kích thước của email SMTP|Có thể|
+|SMTP Client mở truyền bằng lệnh HELO|Tính năng nhận dạng chính cho các ESMTP client là mở 1 đường truyền bằng lệnh EHLO|
+
+- Ưu điểm:
+  - Nếu cần thiết, người dùng có thể có 1 máy chủ chuyên dụng
+  - Cho phép gửi thư hàng loạt
+  - Chi phí thấp và vùng phủ sóng rộng
+  - Cung cấp các lựa chọn để theo dõi email
+  - Gửi email đáng tin cậy và nhanh chóng
+- Nhược điểmL
+  - Cổng chung có thể bị chặn bởi 1 số tường lửa
+  - Bảo mật SMTP là 1 vấn đề lớn
+  - Sự đơn giản của nó hạn chế mức độ hữu ích của nó
+  - Chỉ có thể sử dụng các ký tự ASCII 7 bit
+  - Nếu thư dài hơn 1 độ dài nhất định, SMTP server có thể từ chối toàn bộ thư
+  - Gửi tin nhắn thường sẽ liên quan đến việc xử lý qua lại bổ sung giữa các máy chủ, điều này sẽ trì hoãn việc gửi và tăng khả năng nó sẽ không được gửi
+- So sánh SMTP, POP và IMAP
+  
+|SMTP|POP|IMAP|
+|:---|:---|:---|
+|Gửi thư|Truy xuất thư|Truy xuất thư|
+|Giao thức đẩy|Giao thức kéo|Giao thức kéo|
+|Hoạt động giữa mail server của người gửi đến máy chủ thư của người gửi và người gửi|Hoạt động giữa mail server của người nhận và người nhận|Hoạt động giữa mail server của người nhận và người nhận|
+|Không lưu trữ thư trên máy chủ, chỉ gửi thư|Tải xuống tất cả thư khi kết nối với Internet|Lưu trữ tất cả thư trên máy chủ và tải xuống khi nhận được yêu cầu|
+|Hoạt động trên cổng TCP 25|TCP 110|TCP 143|
+|Giao thức định hướng kết nối|Kết nối|Kết nối|
+|Có kết nối TCP bền bỉ|Bền bỉ|Bền bỉ|
+|Giao thức không trạng thái|Giao thức trạng thái|Giao thức trạng thái|
+|Không được sử dụng ở phía người nhận|Được|Được|
