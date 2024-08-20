@@ -15,9 +15,10 @@ truyền độc lập trên các tuyến khác nhau
 4. Lớp vận chuyển (Transport): Dữ liệu được chia thành các phân đoạn để phân phối đáng tin cậy
 5. Lớp phiên (Session): Các kết nối được thiết lập và quản lý
 6. Lớp trình bày (Presentation): Dữ liệu được định dạng và mã hoá
-7. Lớp ứng dụng (Application): Ứng dụng tạo dữ liệu
-   
-1. Lớp vật lý: là lớp thấp nhất của mô hình tham chiếu OSI. Nó chịu trách nhiệm về kết nối vật lý thực tế giữa các thiết bị. Lớp vật lý chưa thông tin dưới dạng bit. Nó chịu trách nhiệm truyền các bit riêng lẻ từ nút này sang nút tiếp theo. Khi nhận dữ liệu, lớp này sẽ nhận được tín hiệu và chuyển đổi nó thành 0s & 1s và gửi chúng đến lớp Data Link, lớp này sẽ đặt khung trở lại với nhau.
+7. Lớp ứng dụng (Application): Ứng dụng tạo dữ liệu 
+
+`Tổng quan về các lớp`
+1. Lớp vật lý: là lớp thấp nhất của mô hình tham chiếu OSI. Nó chịu trách nhiệm về kết nối vật lý thực tế giữa các thiết bị. Lớp vật lý chứa thông tin dưới dạng bit. Nó chịu trách nhiệm truyền các bit riêng lẻ từ nút này sang nút tiếp theo. Khi nhận dữ liệu, lớp này sẽ nhận được tín hiệu và chuyển đổi nó thành 0s & 1s và gửi chúng đến lớp Data Link, lớp này sẽ đặt khung trở lại với nhau.
 - Các chức năng:
   - Duy trì tốc độ dữ liệu (số bit mà người gửi có thể gửi mỗi giây)
   - Đồng bộ hoá các bit
@@ -44,7 +45,7 @@ truyền độc lập trên các tuyến khác nhau
   - `Point-to-Point`: có một đường dẫn (liên kết) hoàn toàn dành riêng để mang dữ liệu giữa 2 thiết bị
   - `Multi-Point`: có 1 đường dẫn (liên kết) thông qua đó nhiều thiết bị được kết nối
 - Modes of Transmission Medium (Phương thức truyền dẫn):
-  - `Simplex mode`: trong số 2 thiết bị, chỉ có 1 thiết bị có thể truyền dữ liệu và thiết bị còn lại chỉ có thển nhận dữ liệu. VD: đầu vào từ bàn phím, màn hình, phát thanh, ...
+  - `Simplex mode`: trong số 2 thiết bị, chỉ có 1 thiết bị có thể truyền dữ liệu và thiết bị còn lại chỉ có thể nhận dữ liệu. VD: đầu vào từ bàn phím, màn hình, phát thanh, ...
   - `Half Duplex Mode`: trong số 2 thiết bị, cả 2 đều có thể gửi và nhận dữ liệu nhưng chỉ có 1 thiết bị tại một thời điểm không đồng thời
   - `Full-Duplex mode`: cả 2 thiết bị đều có thể gửi và nhận dữ liệu 1 cách đồng thời.
     
