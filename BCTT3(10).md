@@ -35,6 +35,7 @@
   - `802.1W - Rapid Spanning Tree Protocol (RSTP)`: Cung cấp sự hội tụ nhanh hơn CST nhưng giữ cùng ý tưởng tìm 1 cây cầu gốc duy nhất trong cấu trúc liên kết. Tài nguyên cầu nối cần thiết trong RSTP cao hơn CST nhưng ít hơn PVST+
     - Lợi thế: Ngăn chặn các vòng lặp mạng và ngăn ngừa dư thừa. Hội tụ nhanh hơn. Tương thích ngược với STP
   - `Rapid Per VLAN Spanning Tree+ (RPVST+)`: cung cấp khả năng hội tụ nhanh hơn PVST+  và tìm thấy phiên bản riêng biệt trên mỗi VLAN. Nó đòi hỏi nhiều CPU và bộ nhớ hơn các tiêu chuẩn STP khác
+  - 
   - `802.1S (Multiple Spanning Tree)`: Nhóm các VLAN được thực hiện và đối với mỗi nhóm, RSTP được chạy. Về cơ bản, đây là một STP chạy trên 1 STP khác
     - Ưu điểm: Dự phòng cao và đạt được cân bằng tải. Mức sử dụng CPU và bộ nhớ thấp
     - Nhược điểm: Cần cấu hình nhiều hơn và không dễ thực hiện
