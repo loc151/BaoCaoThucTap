@@ -1,6 +1,6 @@
 # Báo cáo thực tập 3
 ## Networking
-### Virtual Private Network (VPN): là 1 công nghệ tạo ra kết nối an toàn và được mã hoá qua 1 mạng kém an toàn hơn, chẳng hạn như Internet. VPN là 1 cách để mở rộng mạng riêng bằng cách sử dụng mạng công cộng như Internet. Người dùng có thể là 1 phần của mạng cục bộ ngồi ở 1 vị trí từ xa. Nó sử dụng giao thức điều chỉnh để thiết lập kết nối an toàn
+### 1. Virtual Private Network (VPN): là 1 công nghệ tạo ra kết nối an toàn và được mã hoá qua 1 mạng kém an toàn hơn, chẳng hạn như Internet. VPN là 1 cách để mở rộng mạng riêng bằng cách sử dụng mạng công cộng như Internet. Người dùng có thể là 1 phần của mạng cục bộ ngồi ở 1 vị trí từ xa. Nó sử dụng giao thức điều chỉnh để thiết lập kết nối an toàn
 - Hoạt động: Thiết lập quyền truy cập an toàn vào mạng công ty cho người dùng từ xa. Sau đó, bảo mật dữ liệu trong quá trình truyền và cuối cùng, họ giúp người dùng tránh chặn địa lý và kiểm duyệt. VPN rất hữu ích để bảo vệ dữ liệu trên Wi-Fi mở, cho quyền riêng tư vào ngăn ISP của một người điều chỉnh kết nối internet của một người
   - VPN cũng đảm bảo an ninh bằng cách cung cấp một đường hầm được mã hoá giữa client và server VPN
   - VPN được sử dụng để vượt qua nhiều trang web bị chặn
@@ -54,7 +54,7 @@
   - VPN cao cấp có chi phí không rẻ
   - VPN có thể bị cấm ở 1 số quốc gia
 
-### IP security (IPSec): là 1 bộ giao thức tiêu chuẩn của Internet Engineering Task Force (IETF) giữa 2 điểm giao tiếp trên mạng IP cung cấp tính xác thực, toàn vẹn và bảo mật dữ liệu. Nó cũng xác định gói được mã hoá, giải mã và xác thực. Các giao thức cần thiết để trao đổi khoá an toàn và quản lý khoá được xác định trong đó
+### 2. IP security (IPSec): là 1 bộ giao thức tiêu chuẩn của Internet Engineering Task Force (IETF) giữa 2 điểm giao tiếp trên mạng IP cung cấp tính xác thực, toàn vẹn và bảo mật dữ liệu. Nó cũng xác định gói được mã hoá, giải mã và xác thực. Các giao thức cần thiết để trao đổi khoá an toàn và quản lý khoá được xác định trong đó
 - Công dụng:
   - Mã hoá dữ liệu lớp ứng dụng
   - Cung cấp bảo mật cho các bộ định tuyến gửi dữ liệu định tuyến qua internet công cộng
