@@ -1,7 +1,7 @@
 # Báo cáo thực tập 3
 ## Networking
 ### 1. Virtual Private Network (VPN): là 1 công nghệ tạo ra kết nối an toàn và được mã hoá qua 1 mạng kém an toàn hơn, chẳng hạn như Internet. VPN là 1 cách để mở rộng mạng riêng bằng cách sử dụng mạng công cộng như Internet. Người dùng có thể là 1 phần của mạng cục bộ ngồi ở 1 vị trí từ xa. Nó sử dụng giao thức điều chỉnh để thiết lập kết nối an toàn
-- Hoạt động: Thiết lập quyền truy cập an toàn vào mạng công ty cho người dùng từ xa. Sau đó, bảo mật dữ liệu trong quá trình truyền và cuối cùng, họ giúp người dùng tránh chặn địa lý và kiểm duyệt. VPN rất hữu ích để bảo vệ dữ liệu trên Wi-Fi mở, cho quyền riêng tư vào ngăn ISP của một người điều chỉnh kết nối internet của một người
+- Hoạt động: Thiết lập quyền truy cập an toàn vào mạng công ty cho người dùng từ xa. Sau đó, bảo mật dữ liệu trong quá trình truyền và cuối cùng, họ giúp người dùng tránh chặn địa lý và kiểm duyệt. VPN rất hữu ích để bảo vệ dữ liệu trên Wi-Fi mở, cho quyền riêng tư và ngăn ISP của một người điều chỉnh kết nối internet của một người
   - VPN cũng đảm bảo an ninh bằng cách cung cấp một đường hầm được mã hoá giữa client và server VPN
   - VPN được sử dụng để vượt qua nhiều trang web bị chặn
   - VPN tạo điều kiện duyệt web ẩn danh bằng cách ẩn địa chỉ IP
