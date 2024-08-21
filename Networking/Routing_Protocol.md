@@ -103,6 +103,7 @@
   - Mô hình TCP/IP: dựa trên mô hình này và nó được sử dung để điều khiển lớp mạng bằng cách sử dụng giao thức lớp truyền tải
 - Phân loại:
   - External BGP: Được sử dụng để trao đổi thông tin định tuyến giữa các bộ định tuyến trong hệ thống tự trị khác nhau, còn được gọi là eBGP
+
   ![image](https://github.com/user-attachments/assets/5b48d91a-7648-4d7e-aae4-8210af2b58ec)
   - Internal BGP: Được sử dụng để trao đổi thông tin định tuyến giữa các bộ định tuyến trong cùng 1 hệ thống tự trị, nó còn được gọi là iBGP. Bộ định tuyến nội bộ cũng đảm bảo tính nhất quán giữa các bộ định tuyến để chia sẻ thông tin định tuyến
   ![image](https://github.com/user-attachments/assets/e94d45cc-0372-47b6-b512-5de91ff2c5ab)
