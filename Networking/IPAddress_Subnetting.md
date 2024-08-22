@@ -63,7 +63,7 @@
 - Dải địa chỉ IP riêng:
   - **Lớp A**: 10.0.0.0 - 10.255.255.255
   - **Lớp B**: 172.16.0.0 - 172.31.255.255
-  - **Lớp C**: 192.168.2.2 - 192.168.255.255
+  - **Lớp C**: 192.168.0.0 - 192.168.255.255
 - Sử dụng Địa chỉ IP riêng:
   - Mạng gia đình: Cho phép nhiều thiết bị cùng với máy tính, điện thoại thông minh, TV và thiết bị IoT giao tiếp với mọi thiết bị 1 cách an toàn
   - Mạng doanh nghiệp: Được sử dụng để tạo các mạng bên trong kết nối máy tính, máy chủ, máy in và các thiết bị khác. Điều này cho phép nhân viên chia sẻ tài sản và cộng tác trong khi vẫn duy trì sự bảo vệ và quyền riêng tư
