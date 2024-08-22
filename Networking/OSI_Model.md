@@ -17,7 +17,7 @@ truyền độc lập trên các tuyến khác nhau
 6. Lớp trình bày (Presentation): Dữ liệu được định dạng và mã hoá
 7. Lớp ứng dụng (Application): Ứng dụng tạo dữ liệu 
 
-`Tổng quan về các lớp`
+`TỔNG QUAN VỀ CÁC LỚP`
 1. Lớp vật lý: là lớp thấp nhất của mô hình tham chiếu OSI. Nó chịu trách nhiệm về kết nối vật lý thực tế giữa các thiết bị. Lớp vật lý chứa thông tin dưới dạng bit. Nó chịu trách nhiệm truyền các bit riêng lẻ từ nút này sang nút tiếp theo. Khi nhận dữ liệu, lớp này sẽ nhận được tín hiệu và chuyển đổi nó thành 0s & 1s và gửi chúng đến lớp Data Link, lớp này sẽ đặt khung trở lại với nhau.
 - Các chức năng:
   - Duy trì tốc độ dữ liệu (số bit mà người gửi có thể gửi mỗi giây)
