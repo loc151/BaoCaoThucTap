@@ -71,3 +71,5 @@
     ```
     `sntp`: chỉ định máy chủ SNTP là nguồn đồng hồ bên ngoài
     `browser`: chỉ định rằng nếu đồng hồ hệ thống chưa được đặt thì nó sẽ đặt theo thông tin thời gian của trình duyệt web khi người dùng đăng nhập vào switch, thông qua HTTP hoặc HTTPS
+
+### NTP (Network Time Protocol): dịch vụ quan trọng không chỉ cho các thiết bị của Cisco mà hầu hết mọi thiết bị mạng. Bất kỳ thiết bị nào cũng cần được đồng bộ hoá chính xác với nguồn thời gian đáng tin cậy như NTP server. NTP đảm bảo rằng tất cả các thiết bị trong mạng có cùng 1 thời gian chính xác, giúp hệ thống hoạt động ổn định và hiệu quả hơn.
