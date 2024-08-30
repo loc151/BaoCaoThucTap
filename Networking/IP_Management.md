@@ -17,3 +17,51 @@
 
 ### IP Management: Quản lý địa chỉ IP được thực hiện để dễ dàng cấu hình và sửa chữa thiết bị từ xa. Để quản lý thiết bị qua giao diện web như Telnet hoặc SSH, cần định nghĩa 1 địa chỉ IP cho thiết bị. Nếu không có địa chỉ IP quản lý, ta sẽ phải truy cập console để quản lý switch.
 - Để cấu hình địa chỉ IP quản lý cho Switch, thực hiện các bước sau:
+  - Vào chế độ cấu hình VLAN 1:
+    ```
+    Switch(config)#interface vlan 1
+    ```
+  - Gán địa chỉ IP cho giao diện VLAN 1 (ở đây dùng IP là 172.16.4.247/20):
+    ```
+    Switch(config-if)#ip address 172.16.4.247 255.255.240.0
+    ```
+  - Kích hoạt giao diện VLAN 1:
+    ```
+    Switch(config-if)#no shutdown
+    ```
+  - Đặt mật khẩu để tăng cường bảo mật:
+    ```
+    Switch(config-if)#enable password new_password
+    ```
+  - Đặt cổng mặc định: (Cổng mặc định phải cùng lớp mạng với địa chỉ IP)
+    ```
+    Switch(config)#ip default-gateway 172.16.10.1
+    ```
+  - Sau khi cấu hình xong, kiểm tra lại cấu hình bằng lệnh:
+    ```
+    Switch#show ip interface brief
+    ```
+  - Nếu giao diện hiển thị như này tức là đã cấu hình thành công:
+  ![image](https://github.com/user-attachments/assets/d346fa63-0159-4315-bde8-89f021f8891d)
+
+### Clock time: Cấu hình thời gian hệ thống là rất quan trọng. Đồng bộ hoá hệ thống giữa tất cả các thiết bị trong mạng cung cấp 1 khung tham chiếu giữa chúng. Điều này là cần thiết để quản lý, bảo mật, lập kế hoạch và gỡ lỗi mạng, vì mọi sự kiện đều phụ thuộc vào thời gian xảy ra.
+- Nếu không có việc đồng bộ, việc so khớp log giữa các thiết bị khi theo dõi việc xâm nhập bảo mật hoặc sử dụng mạng là không thể.
+- Thời gian đồng bộ cũng giảm thiểu sự nhầm lẫn trong hệ thống tệp chia sẻ, vì thời gian sửa đổi cần phải nhất quán
+- Các thiết bị Cisco Switch hỗ trợ giao thức Simple Network Time Protocol (SNTP). Khi được kích hoạt, switch tự động đồng bộ thời gian từ 1 máy chủ SNTP
+- Để xem cài đặt thời gian hệ thống trên Switch, sử dụng lệnh:
+  ```
+  Switch#show clock [detail]
+  ```
+- Quản lý cài đặt thời gian hệ thống trên switch bằng cách sử dụng cấu hình tự động hoặc cấu hình thủ công
+  - Cài đặt thủ công:
+    ```
+    Switch#clock set [hh:mm:ss] [month] [day] [year]
+    ```
+  - Sau khi cấu hình xong, kiểm tra lại và thấy thời gian của Switch đã thay đổi, nguồn từ user cấu hình
+  - Cài đặt tự động:
+    ```
+    Switch#configure terminal
+    Switch(config)#clock source [sntp|browser]
+    ```
+    `sntp`: chỉ định máy chủ SNTP là nguồn đồng hồ bên ngoài
+    `browser`: chỉ định rằng nếu đồng hồ hệ thống chưa được đặt thì nó sẽ đặt theo thông tin thời gian của trình duyệt web khi người dùng đăng nhập vào switch, thông qua HTTP hoặc HTTPS
