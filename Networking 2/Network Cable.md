@@ -7,6 +7,7 @@
 - `Cat 5`: là loại cáp cơ bản nhất với 2 dạng chính là lõi đặc và lõi bện. Nó được chia thành 2 loại là không bọc giáp (UTP) và bọc giáp (FTP), có băng thông đạt mức 100 MHz và tốc độ truyền tải 10/100 Mbps. Lõi đặc thường được sử dụng khi truyền dữ liệu ở khoảng cách xa, trong khi lõi bện thường được dùng làm cáp đầu nối
 - `Cat 5E`: nâng cấp của **Cat 5**, được sản xuất với 3 loại tiêu chuẩn: UDP, FTP và SFTP. Cat 5E có phần lõi được làm từ kim loại (đồng) hoặc hợp kim lõi đặc, được bao bọc bởi lớp nhựa và vỏ bọc thường làm bằng nhựa PVC. Nó có khả năng hỗ trợ Ethernet Gigabit tốc độ cao lên đến 1Gb/s
 - `Cat 6`: Tốc độ hoạt động của cáp mạng Cat 6 lên tới 10 Gbps ở băng thông 250 MHz với khoảng cách truyền dẫn từ 70-100m
+  
 |Tiêu chí|Cat5E|Cat6|Cat7|Cat8|
 |:---|:---|:---|:---|:---|
 |Tần số hoạt động|100 MHz|250 MHz|600 MHz|2000 MHz|
@@ -14,6 +15,10 @@
 |Tốc độ truyền tải|10/100/1000 Mbps|10/100/1000 Mbps|10 GBps|25-40 GBps|
 |Chất lượng đường truyền|Ít bị nhiễu chéo|Chống nhiễu chéo|Chống nhiễu chéo|Chống nhiễu chéo|
 |Khoảng cách hoạt động|100m, 150m|70-90m, 150m|100m|30m|
+## Các chuẩn cáp mạng:
+- Cáp UDP (Unshielded Twisted-Pair): là cáp chuẩn xoắn đôi không có vỏ bọc chống nhiễu, với độ dài tối đa khoảng 100m và sử dụng chuẩn 10BaseT hoặc 100BaseT. Dù có giá thành rẻ và dễ triển khai, nhưng UTP chịu ảnh hưởng từ các thiết bị điện khác trong cùng khu vực do không có vỏ bọc chống nhiễu
+- Chuẩn SFTP: gồm 4 cặp dây xoắn được bọc trong lớp lá kim loại cùng với lớp 72 sợi kim loại đan thành lưới. Với việc sử dụng tới 2 lớp chống nhiễu, chuẩn dây cáp mạng SFTP có thể chống điện từ cực tốt
+- Chuẩn FTP: chuẩn cáp mạng gồm 4 dây xoắn được bao bọc trong 1 lớp lá kim loại với khả năng chống nhiễu điện tử (EMI). FTP và SFTP là 2 chuẩn dây mạng được sử dụng nhiều nhất tại các môi trường có mức độ nhiễm từ cao
 ## Các loại chuẩn trong dây mạng
 - `Chuẩn A (T568A)`: được thiết kế để tương thích với các dây cũ hơn
   - Cách đấu dây: Trắng xanh lá - Xanh lá - Trắng cam - Xanh dương - Trắng xanh dương - Cam - Trắng nâu - Nâu
