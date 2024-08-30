@@ -52,6 +52,12 @@
   ```
   Switch#show clock [detail]
   ```
+  Trong đó:
+  - Actual Time: Thời gian hệ thống trên thiết bị. Điều này hiển thị múi giờ Giao thức cấu hình máy chủ động (DHCP) và từ viết tắt của múi giờ
+  - Time source: Nguồn thời gian bên ngoài cho hệ thống
+  - Time from Browser: Chỉ định xem ngày và giờ của công tắc có được đặt từ máy tính định cấu hình bằng cách sử dụng trình duyệt web
+  - Time zone (Static): Múi giờ cho mục đích hiển thị
+  - DHCP timezone: Chỉ định múi giờ và cài đặt Summer Time hoặc Daylight Saving Time (DST) của hệ thống có thể được lấy từ tuỳ chọn DHCP timezone 
 - Quản lý cài đặt thời gian hệ thống trên switch bằng cách sử dụng cấu hình tự động hoặc cấu hình thủ công
   - Cài đặt thủ công:
     ```
