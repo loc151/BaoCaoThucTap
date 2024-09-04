@@ -73,3 +73,33 @@
     `browser`: chỉ định rằng nếu đồng hồ hệ thống chưa được đặt thì nó sẽ đặt theo thông tin thời gian của trình duyệt web khi người dùng đăng nhập vào switch, thông qua HTTP hoặc HTTPS
 
 ### NTP (Network Time Protocol): dịch vụ quan trọng không chỉ cho các thiết bị của Cisco mà hầu hết mọi thiết bị mạng. Bất kỳ thiết bị nào cũng cần được đồng bộ hoá chính xác với nguồn thời gian đáng tin cậy như NTP server. NTP đảm bảo rằng tất cả các thiết bị trong mạng có cùng 1 thời gian chính xác, giúp hệ thống hoạt động ổn định và hiệu quả hơn.
+- Cấu hình NTP:
+  - Cần tạo 1 ACL cho phép tất cả lưu lượng trên Switch:
+    ```
+    access-list 101 permit ip any any
+    ```
+  - Áp dụng ACL cho 1 interface cụ thể (trường hợp này dùng GigabitEthernet 2/0/1)
+    ```
+    interface GigabitEthernet 2/0/1
+    ip access-group 101 in
+    ```
+  - Xác định NTP Server để đồng bộ thời gian:
+    ```
+    ntp server 0.asia.pool.ntp.org (Domain name)
+    ntp server 203.113.174.44 (IP VN NTP Server)
+    ```
+  - Sau khi cấu hình, kiểm tra trạng thái NTP bằng các lệnh:
+    ```
+    show ntp status
+    show ntp associations
+    ```
+    ![image](https://github.com/user-attachments/assets/654b95e3-6155-41fd-909d-26864e3b6ea0)
+    ![image](https://github.com/user-attachments/assets/681e6d05-e77c-4e77-83c7-3e11e53adda3)
+
+  - Lúc này mới hoàn thành cấu hình nên NTP chưa được đồng bộ, cần 1 khoảng thời gian để tải lại cấu hình.
+    ![image](https://github.com/user-attachments/assets/159f8fe0-1465-45f6-b18a-a6a92f036acc)
+    ![image](https://github.com/user-attachments/assets/720033ec-189c-43e0-bac1-a70351c89b16)
+
+
+
+    
