@@ -70,6 +70,7 @@ ta chỉ cần chọn TFTP Server <p>
 2. Phương thức bảo mật(ở đây ta chọn None)
 3. Liên kết TFTP với địa chỉ( ở đây là địa chỉ IP của card WIFI)
 4. Nhấn OK để lưu lại cấu hình
+
 ![image](https://github.com/user-attachments/assets/a617fa01-7fd5-4b23-9c22-35f1ca37fcd7)
 
 **Sau khi cấu hình được TFTP64 làm TFTP server ta bắt cầu cài đặt cấu hình trên SWITCH để backup hoặc restore**
@@ -84,9 +85,9 @@ Destination filename [running-config.cfg]?
   - `172.16.2.164` là địa chỉ IP của máy tính cài đặt TFTP server.
   - `running-config.cfg` là tên file sao lưu trên TFTP server.
   - Tại dòng 2 ta nhấn `Enter` để bỏ qua vì câu lệnh trên dòng 1 đã đầy đủ thông số.
-  - Tại dòng 3 ta cũng nhấn `Enter` để tiếp tục 
+  - Tại dòng 3 ta cũng nhấn `Enter` để tiếp tục
+    
   ![image](https://github.com/user-attachments/assets/944c6c14-2d46-4b72-a3ac-bb2ea1f4ba41)
-
   
     -  Kết quả sau khi ta thực hiện câu lệnh:
     -  Đã lưu file `running-config.cfg` tại `D:\TFTP\`
@@ -104,5 +105,6 @@ Destination filename [startup-config]?
 ```
 
 - **Giải thích:** Khôi phục cấu hình từ file `running-config.cfg` trên TFTP server vào cấu hình khởi động trên switch.
+  
 ![image](https://github.com/user-attachments/assets/cbb0563e-b081-4231-bb1a-f73ea4b8b0e6)
 
