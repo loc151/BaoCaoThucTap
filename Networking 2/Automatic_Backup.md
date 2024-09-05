@@ -68,3 +68,18 @@ Switch#show kron schedule
 **Ảnh dưới đây là folder lưu trữ các  file cấu hình tự động**
 
 ![](https://img001.prntscr.com/file/img001/VOsWvizGR-WyK4K5lrGIUg.png)
+
+## **3. Sao Lưu Định Kỳ Cấu Hình Sử Dụng Archive**
+
+## **4. So sánh KRON và Archive**
+
+|Tiêu chí|KRON|Archive|
+|:---|:---|:---|
+|Mục đích|Lập lịch và thực thi các lệnh CLI tự động|Sao lưu cấu hình tự động khi có thay đổi|
+|Linh hoạt|Cao, có thể thực hiện nhiều tác vụ khác nhau|Chuyên biệt cho sao lưu cấu hình|
+|Cấu hình|Phức tạp hơn, cần tạo **Policy List** và **Occurance**|Đơn giản, chỉ cần thiết lập đường dẫn và tần suất|
+|Tần suất sao lưu|Theo lịch định trước|Mỗi khi có thay đổi cấu hình|
+
+- Kết luận:
+  - `KRON`: khi cần thực hiện nhiều tác vụ tự động khác nhau, không chỉ sao lưu cấu hình
+  - `Archive`: Khi cần 1 giải pháp đơn giản và tự động để sao lưu cấu hình mỗi khi có thay đổi
