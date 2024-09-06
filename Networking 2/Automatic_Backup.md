@@ -67,9 +67,41 @@ Switch#show kron schedule
  
 **Ảnh dưới đây là folder lưu trữ các  file cấu hình tự động**
 
-![](https://img001.prntscr.com/file/img001/VOsWvizGR-WyK4K5lrGIUg.png)
+![image](https://github.com/user-attachments/assets/1557c5f9-e37a-4662-99b0-475a0398d951)
 
 ## **3. Sao Lưu Định Kỳ Cấu Hình Sử Dụng Archive**
+### **3.1. Archive trong Cisco Switch: 
+- `Archive` là một tính năng trên Cisco được sử dụng để sao lưu định kỳ các tệp cấu hình của thiết bị mạng. Đây là 1 tính năng quan trọng giúp quản trị viên mạng lưu trữ và quản lý các cấu hình 1 cách tự động và có hệ thống
+### **3.2. Hoạt động của Archive: 
+- Cấu hình `archive`: thiết lập đường lưu trữ (TFTP, FTP,...) để lưu các tệp cấu hình
+  ```shell
+  anhldl#conf t
+  andldl(config)#archive
+  andldl(config-archive)#path flash: switch-backup
+  ```
+- **Giải thích**:
+  - ` path flash: switch-backup`: lưu trữ các tệp cấu hình vào bộ nhớ flash của switch với tên tệp là *switch-backup*
+- Tiếp theo, cấu hình số lượng các bản backup có thể được lưu trữ
+  ```shell
+  andldl(config-archive)#maximum 14 
+  ```
+  - Trong đó: `maximum` là số bản backup tối đa có thể lưu trữ. Có thể lưu trữ tối đa 14 bản backup mới. Nếu xuất hiện bản backup thứ 15 thì bản backup thứ nhất sẽ bị xoá.
+- Sử dụng lệnh `show archive` để kiểm tra các bản backup:
+
+![image](https://github.com/user-attachments/assets/c3f737ad-22bf-4dc9-a61a-0c4680861037)
+
+- Mỗi khi lưu cấu hình, hệ thống sẽ cập nhật và được ra 1 bản backup với cú pháp: `flash: switch-backup-<time-stamp>-<number>`
+- Sử dụng **differences** để so sánh sự khác biệt giữa 2 bản backup:
+  ```shell
+  andldl#show archive config differences <name-backup1> <name-backup2>
+  ```
+![image](https://github.com/user-attachments/assets/ea0f023a-220e-4055-8d80-41641fbea4fb)
+
+- Sử dụng **replace** để thay đổi bản backup:
+  ```
+  anhldl#configure replace flash:<name-backup>
+  ```
+![image](https://github.com/user-attachments/assets/61e1be46-8f77-4a95-814e-d552de73ffe8)
 
 ## **4. So sánh KRON và Archive**
 
