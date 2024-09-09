@@ -87,10 +87,12 @@ Switch#show kron schedule
   ```
   - Trong đó: `maximum` là số bản backup tối đa có thể lưu trữ. Có thể lưu trữ tối đa 14 bản backup mới. Nếu xuất hiện bản backup thứ 15 thì bản backup thứ nhất sẽ bị xoá.
 - Sử dụng lệnh `write-memory` để mỗi khi lưu cấu hình thì switch sẽ tạo ra 1 bản backup:
+  
   ```shell
   anhldl(config-archive)#write-memory
   ```
 - Sử dụng lệnh `time-period` để cài đặt tự động backup:
+  
   ```shell
   anhldl(config-archive)#time-period <1-525600>
   ```
