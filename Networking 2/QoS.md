@@ -66,3 +66,8 @@
     ```
 - Trong trường hợp này, Switch không hỗ trợ Policy Map cho trafic đi ra
   ![image](https://github.com/user-attachments/assets/98f931b6-2f7b-4564-ae0c-81e73d3dc1ff)
+
+![image](https://github.com/user-attachments/assets/c34706b3-eba0-4bc2-9f4e-eaf12f4f1839)
+
+![image](https://github.com/user-attachments/assets/df5b1a07-cb6b-4640-9c62-a6c55c2121e4)
+
