@@ -49,25 +49,30 @@
   ```
   anhldl(config)#policy-map Policy_Example
   anhldl(config-pmap)#class Class_Example
-  anhldl(config-pmap-c)#police 30000 8000 exceed-action drop
+  anhldl(config-pmap-c)#police 20000000 100000 exceed-action drop
   anhldl(config-pmap-c)#exit
   ```
-
+  - Trong đó:
+    - `20000000`: Tốc độ tối đa mà lưu lượng được phép truyền mà không bị giới hạn (Committed Information Rate). Tốc độ được cấu hình trong khoảng 0.008-10000 Mbps. Trong trường hợp này là 20 Mbps
+    - `100000`: Lượng dữ liệu tối đa có thể được truyền trong 1 khoảng thời gian ngắn mà không bị giới hạn (Committed Burst Size). Lượng dữ liệu được cấu hình trong khoảng 8-1000 KB. Trường hợp này là 100 KB
+    - `exceed-action drop`: khi lưu lượng vượt quá CIR và CBS, các gói tin sẽ bị loại bỏ để đảm bảo rằng lưu lượng không vượt quá giới hạn đã đặt 
 - Gán **Policy Map** cho cổng mạng muốn hạn chế tốc độ
   - Áp dụng cho traffic đi vào (Input):
     ```
-    anhldl(config)#interface GigabitEthernet 2/0/1
+    anhldl(config)#interface GigabitEthernet 2/0/2
     anhldl(config-if)#service-policy input Policy_Example
     ```
   - Áp dụng cho traffic đi ra (Output)
     ```
-    anhldl(config)#interface GigabitEthernet 2/0/1
+    anhldl(config)#interface GigabitEthernet 2/0/2
     anhldl(config-if)#service-policy output Policy_Example
     ```
 - Trong trường hợp này, Switch không hỗ trợ Policy Map cho trafic đi ra
   ![image](https://github.com/user-attachments/assets/98f931b6-2f7b-4564-ae0c-81e73d3dc1ff)
 
+- Lưu lượng mạng khi chưa áp dụng QoS:
 ![image](https://github.com/user-attachments/assets/c34706b3-eba0-4bc2-9f4e-eaf12f4f1839)
 
+- Lưu lượng mạng sau khi áp dụng QoS:
 ![image](https://github.com/user-attachments/assets/df5b1a07-cb6b-4640-9c62-a6c55c2121e4)
 
