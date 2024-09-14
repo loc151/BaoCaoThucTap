@@ -42,6 +42,7 @@ anhldl(config)#
 Sau khi đã tạo policy-list, bạn cần lên lịch để Kron thực thi policy này theo thời gian định sẵn.
 
 ```shell
+kron occurrence occurrence-name [user username] {in[[numdays:]numhours:]nummin| at hours:min[[month] day-of-month] [day-of-week]} {oneshot| recurring| system-startup}
 anhldl(config)#kron occurrence backup-minute in 1 recurring
 anhldl(config-kron-occurrence)#policy-list BackupConfig
 anhldl(config-kron-occurrence)#exit
