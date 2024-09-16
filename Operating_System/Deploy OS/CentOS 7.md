@@ -1,3 +1,6 @@
+## AlmaLinux 8
+
+### 1. V
 ![image](https://github.com/user-attachments/assets/06d92e43-28cf-476c-9e93-b3e0c6020552)
 
 ![image](https://github.com/user-attachments/assets/6a63adf4-97ef-4911-bf32-973549e53b1b)
