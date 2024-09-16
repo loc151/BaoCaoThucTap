@@ -54,3 +54,11 @@ reboot
 ```
 
 ![image](https://github.com/user-attachments/assets/ca259788-7d26-4654-8756-dd6b080ca05e)
+
+## 9. Sau khi hệ thống được khởi động lại, ta cần phải đăng nhập root với mật khẩu mới 
+![image](https://github.com/user-attachments/assets/fe20bbe7-cad0-459f-ab9a-1b83d2dfd2c0)
+
+## 10. Dùng MobaXstrem để truy cập từ xa SSH:
+![image](https://github.com/user-attachments/assets/a00dc83e-0a97-4073-8e3e-ec3d18c3cba7)
+
+
