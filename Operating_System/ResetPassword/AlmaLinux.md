@@ -12,4 +12,45 @@
 
 ![image](https://github.com/user-attachments/assets/880f3edd-5ea2-4eca-81a1-73ad19f7264d)
 
-## 4. Vào
+## 4. Khởi động vào Emergency Mode:
+- Nhấn `Ctrl + X` hoặc `F10` để khởi động với các thông số đã sửa đổi.
+- Hệ thống sẽ khởi động vào chế độ khẩn cấp và ta sẽ nhận được dấu nhắc shell.
+
+![image](https://github.com/user-attachments/assets/bd25143a-6d9f-49a4-9039-687481dfd08a)
+
+## 5. Chuyển đổi môi trường root:
+```
+chroot /sysroot
+```
+
+- Nếu ở bước 3 không sửa `ro` thành `rw` thì cần remount hệ thống với quyền ghi trước khi thực hiện bước 5:
+```
+mount -o remount, rw /sysroot
+```
+
+## 6. Đặt lại mật khẩu root: 
+- Sử dụng lệnh `passwd` để đặt lại mặt khẩu root
+```
+passwd
+```
+- Nhập mật khẩu mới và xác nhận:
+
+![image](https://github.com/user-attachments/assets/80b301e1-7615-4bb7-909f-e39c531e8b54)
+
+## 7. Cập nhật SELinux: 
+- Tạo file để SELinux cập nhật các thông số:
+```
+touch /.autorelabel
+```
+## 8. Thoát và khởi động lại hệ thống:
+- Thoát khỏi chroot
+```
+exit
+```
+
+- Khởi động lại hệ thống:
+```
+reboot
+```
+
+![image](https://github.com/user-attachments/assets/ca259788-7d26-4654-8756-dd6b080ca05e)
