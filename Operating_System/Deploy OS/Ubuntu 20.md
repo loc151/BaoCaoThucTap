@@ -62,5 +62,13 @@
 ![image](https://github.com/user-attachments/assets/89351d54-24bb-4161-8080-22654587d509)
 
 ## 22.
+![image](https://github.com/user-attachments/assets/779883ef-9a8a-4829-954a-8c0f4686ea52)
 
 ## 23. 
+![image](https://github.com/user-attachments/assets/6f0c4e51-684c-4d77-a0c2-afa65b8b894e)
+
+## 24. 
+![image](https://github.com/user-attachments/assets/138cd91c-b1f9-425c-85a5-e895ad118b49)
+
+## 25. 
+
