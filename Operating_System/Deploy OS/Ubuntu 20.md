@@ -29,3 +29,10 @@
 ![image](https://github.com/user-attachments/assets/973ed4f9-f64e-442e-a309-6aaf6c52026d)
 
 ## 11. 
+![image](https://github.com/user-attachments/assets/cc5a78ff-e1a8-4393-b800-28bc303365c6)
+
+## 12. 
+![image](https://github.com/user-attachments/assets/c90efdd2-0424-4862-97ba-2bf82d1d765a)
+
+## 13.
+
