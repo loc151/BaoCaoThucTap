@@ -22,13 +22,16 @@
 
 ![image](https://github.com/user-attachments/assets/0717e163-76d7-4bac-9c59-9e14564b2ed2)
 
+### 3.2. Chọn Network & Host Name ở phần System:
 - Tiếp theo, ở phần `System`, chọn `Network & Host Name` để cấu hình địa chỉ IP, cấu hình **Ethernet (eno1)** như trong ảnh (lưu ý nhớ bật lên sau khi cấu hình xong)
 
 ![image](https://github.com/user-attachments/assets/1cc27e5a-21d0-4891-a13d-2217583ede1a)
 
+### 3.3. Chọn Root Password ở phần User Settings:
 - Cài đặt mật khẩu ở **User Settings**, chọn **Root Password**
 ![image](https://github.com/user-attachments/assets/77c54fa0-0a0a-479c-97a7-6c4fa0c450de)
 
+### 3.4. Tiến hành cài đặt:
 - Sau khi đã cấu hình cơ bản các yêu cầu trên, chọn **Begin Installation** để tiến hành cài đặt
 ![image](https://github.com/user-attachments/assets/a05ae43e-ec92-4b27-88ee-05584d21e196)
 
