@@ -25,6 +25,12 @@
 
 ![image](https://github.com/user-attachments/assets/eae4da11-1d6e-46d0-b2ee-22f40de3531f)
 
+- Cấu hình địa chỉ IP cho **Ethernet (em1)**
+![image](https://github.com/user-attachments/assets/45a6dc2c-556b-461a-bf34-5f15c8d65654)
+
+- Sau khi đã cấu hình cơ bản, chọn **Begin installation** để tiến hành cài đặt
+![image](https://github.com/user-attachments/assets/57beff61-041f-4d7e-8e8d-0b7739b8a7fa)
+
 ## 2.2. Cài đặt mật khẩu và tiến hành cài đặt:
 - Cài đặt mật khẩu ở phần **User Settings**, sau đó đợi 1 khoảng thời gian để hoàn tất cài đặt. Chọn **Reboot** để khởi động lại sau khi đã hoàn thành cài đặt.
 ![image](https://github.com/user-attachments/assets/eae4da11-1d6e-46d0-b2ee-22f40de3531f)
@@ -34,12 +40,6 @@
 
 - Khi xuất hiện dòng lệnh, tức là việc cài đặt đã thành công, đăng nhập và kiểm tra các cấu hình
 ![image](https://github.com/user-attachments/assets/d6ce97cb-be12-4cad-b31e-40610d783831)
-
-- Sau khi đã cấu hình cơ bản, chọn **Begin installation** để tiến hành cài đặt
-![image](https://github.com/user-attachments/assets/57beff61-041f-4d7e-8e8d-0b7739b8a7fa)
-
-- Cấu hình địa chỉ IP cho **Ethernet (em1)**
-![image](https://github.com/user-attachments/assets/45a6dc2c-556b-461a-bf34-5f15c8d65654)
 
 - Dùng SSH để kiểm tra kết nối từ xa:
 ![image](https://github.com/user-attachments/assets/1b6e1f19-29fc-4c8d-b49e-64c65d8a2fd6)
