@@ -1,6 +1,5 @@
 ## 1. Sau khi Boot từ USB, giao diện GRUB xuất hiện.
 - Chọn `Install AlmaLinux` hoặc autoboot sau 1 phút
-
 ![image](https://github.com/user-attachments/assets/5c6d7c51-303b-45b3-a94c-385afe8554a9)
 
 ## 2. Chọn ngôn ngữ 
@@ -10,21 +9,17 @@
 ![image](https://github.com/user-attachments/assets/66d33571-e6b2-4740-97dd-0112fc487136)
 
 ### 3.1. Chọn Install Destination ở phần System:
-- Chọn ổ đĩa để cài đặt và lưu dữ liệu:
-  
+- Chọn ổ đĩa để cài đặt và lưu dữ liệu: 
 ![image](https://github.com/user-attachments/assets/d60c8afa-4ab1-4af2-8ab7-e41ce9128552)
 
 - Ở phần **Storage Configuration**, chọn `Custom` để phân vùng ổ đĩa
-
 ![image](https://github.com/user-attachments/assets/3ebb9251-ed55-4cf8-aebc-9ca253924d0a)
 
 - Phân vùng ổ đĩa `root`, `/boot` và `swap`, chọn `Done` để lưu cấu hình
-
 ![image](https://github.com/user-attachments/assets/0717e163-76d7-4bac-9c59-9e14564b2ed2)
 
 ### 3.2. Chọn Network & Host Name ở phần System:
 - Tiếp theo, ở phần `System`, chọn `Network & Host Name` để cấu hình địa chỉ IP, cấu hình **Ethernet (eno1)** như trong ảnh (lưu ý nhớ bật lên sau khi cấu hình xong)
-
 ![image](https://github.com/user-attachments/assets/1cc27e5a-21d0-4891-a13d-2217583ede1a)
 
 ### 3.3. Chọn Root Password ở phần User Settings:
