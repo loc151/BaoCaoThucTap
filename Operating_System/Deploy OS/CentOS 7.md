@@ -33,19 +33,14 @@
 ![image](https://github.com/user-attachments/assets/a07b8198-8ba9-4237-87a4-bd9f91c163c8)
 
 - Khi xuất hiện dòng lệnh, tức là việc cài đặt đã thành công, đăng nhập và kiểm tra các cấu hình
-![image](https://github.com/user-attachments/assets/635689dd-2ddc-4da0-8499-c535c3537e5a)
-
-- Khi xuất hiện dòng lệnh, tức là việc cài đặt đã thành công, đăng nhập và kiểm tra các cấu hình
-![image](https://github.com/user-attachments/assets/57beff61-041f-4d7e-8e8d-0b7739b8a7fa)
-
-![image](https://github.com/user-attachments/assets/ffd929bd-e8d4-465f-8f6f-307e3fc68dcc)
-
-![image](https://github.com/user-attachments/assets/45a6dc2c-556b-461a-bf34-5f15c8d65654)
-
-![image](https://github.com/user-attachments/assets/c6b2f707-9205-4011-80b8-84408d5a118d)
-
 ![image](https://github.com/user-attachments/assets/d6ce97cb-be12-4cad-b31e-40610d783831)
 
-![image](https://github.com/user-attachments/assets/1b6e1f19-29fc-4c8d-b49e-64c65d8a2fd6)
+- Sau khi đã cấu hình cơ bản, chọn **Begin installation** để tiến hành cài đặt
+![image](https://github.com/user-attachments/assets/57beff61-041f-4d7e-8e8d-0b7739b8a7fa)
 
+- Cấu hình địa chỉ IP cho **Ethernet (em1)**
+![image](https://github.com/user-attachments/assets/45a6dc2c-556b-461a-bf34-5f15c8d65654)
+
+- Dùng SSH để kiểm tra kết nối từ xa:
+![image](https://github.com/user-attachments/assets/1b6e1f19-29fc-4c8d-b49e-64c65d8a2fd6)
 
