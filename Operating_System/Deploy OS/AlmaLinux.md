@@ -1,3 +1,5 @@
+# AlmaLinux 8.10
+
 ## 1. Sau khi Boot từ USB, giao diện GRUB xuất hiện.
 - Chọn `Install AlmaLinux` hoặc autoboot sau 1 phút
 ![image](https://github.com/user-attachments/assets/5c6d7c51-303b-45b3-a94c-385afe8554a9)
