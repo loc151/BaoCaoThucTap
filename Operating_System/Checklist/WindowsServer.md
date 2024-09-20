@@ -109,3 +109,12 @@ gpupdate/force
 - Trong tab Computer Name, chọn Change
 ![image](https://github.com/user-attachments/assets/eb8e1f3c-b1c1-40e5-8659-5f4b2c61bbe1)
 
+- Khởi động lại máy tính và áp dụng thay đổi
+
+### 6.3. Sử dụng Command Prompt hoặc PowerShell:
+- Nhấn tổ hợp Windows + X và chọn Command Prompt (Admin) hoặc Windows PowerShell (Admin)
+- Kiểm tra hostname hiện tại: nhập lệnh `hostname`
+- Nhập lệnh sau để đổi tên máy tính và khởi động lại:
+```shell
+Rename-Computer -NewName "<tên_mới>" -Restart
+```
