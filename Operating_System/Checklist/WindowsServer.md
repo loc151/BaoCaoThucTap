@@ -33,6 +33,9 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\
 
 ### 2.2. Chỉnh sửa giá trị PortNumber:
 - Nhấp chuột phải `PortNumber` và chọn `Modify`
+- Cổng mặc định lúc này là 3389:
+![image](https://github.com/user-attachments/assets/0858a191-0491-48e7-be0d-1028d54deb38)
+
 - Chọn `Demical` dưới mục Base
 - Nhập số cổng muốn sử dụng (ví dụ cổng 151), nhấn `OK` để xác nhận
 ![image](https://github.com/user-attachments/assets/855d1999-543f-4a5d-87f9-d191322f8012)
