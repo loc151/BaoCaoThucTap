@@ -96,15 +96,18 @@ Destination filename [running-config.cfg]?
 
 
 ### **3.3. Khôi Phục Cấu Hình từ TFTP**
-
-- **Bước 1:** Trên switch, sử dụng lệnh `copy` để sao chép file cấu hình từ TFTP server vào cấu hình đang chạy.
-
+- Bước 1: Kiểm tra cấu hình của cổng GigabitEthernet 2/0/1:
+```shell
+anhldl#show running-config interface gigabitEthernet 2/0/1
+``` 
+- **Bước 2:** Trên switch, sử dụng lệnh `copy` để sao chép file cấu hình từ TFTP server vào cấu hình đang chạy.
 ```shell
 anhldl#copy tftp://172.16.2.164/running-config.cfg startup-config
 Destination filename [startup-config]?
 ```
+- Bước 3: Chỉnh sửa cấu hình của cổng GigabitEthernet 2/0/1:
+![image](https://github.com/user-attachments/assets/4c0a8182-3811-4adc-96c5-6df19a846536)
 
 - **Giải thích:** Khôi phục cấu hình từ file `running-config.cfg` trên TFTP server vào cấu hình khởi động trên switch.
   
 ![image](https://github.com/user-attachments/assets/cbb0563e-b081-4231-bb1a-f73ea4b8b0e6)
-
