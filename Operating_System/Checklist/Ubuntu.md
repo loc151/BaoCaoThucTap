@@ -102,4 +102,6 @@ sudo iptables-save
 - Ta sẽ cấu hình cho phép IP .165 kết nối SSH từ xa với Ubuntu:
 ![image](https://github.com/user-attachments/assets/a79a8a9b-5f57-4ee2-abb7-1f0d83d8faae)
 
-- Cấu hình lại địa chỉ IP mà kết nối lại với Ubuntu:
+- Cấu hình lại địa chỉ IP kết nối từ xa với Ubuntu và kiểm tra kết nối:
+![image](https://github.com/user-attachments/assets/b448617e-739a-4e77-934f-369c6d05a915)
+
