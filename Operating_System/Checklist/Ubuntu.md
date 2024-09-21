@@ -68,3 +68,38 @@ PermitRootLogin no
 ![image](https://github.com/user-attachments/assets/8d787ad8-f8cd-498d-828e-024a65527f53)
 
 ### 3.4. Cho phép hoặc chặn địa chỉ IP truy cập: 
+- Sử dụng iptable:
+- Cho phép địa chỉ IP:
+```
+sudo iptables -A INPUT -s IP_Address -j ACCEPT
+```
+- Chặn địa chỉ IP:
+```
+sudo iptables -A INPUT -s IP_Address -j DROP
+```
+- Lưu cấu hình iptables:
+```
+sudo iptables-save > /etc/iptables/rules.v4
+```
+- Ví dụ, cho phép địa chỉ IP `172.16.2.164` truy cập từ xa vào Ubuntu server và chặn các địa chỉ IP khác:
+![image](https://github.com/user-attachments/assets/e856755d-cecf-4069-83b4-4e284a72922f)
+
+- Lưu cấu hình iptables và kiểm tra xem cấu hình đã được lưu hay chưa:
+```
+sudo iptables-save
+```
+![image](https://github.com/user-attachments/assets/65210126-f981-48ef-a19f-b9c761bfda17)
+
+- Giờ ta sẽ kiểm tra xem có thể truy cập Ubuntu Server với địa chỉ IP là `172.16.2.164` vừa được cấu hình ở trên hay không:
+![image](https://github.com/user-attachments/assets/27850bc3-454b-4da6-bc8b-a0744bd6b066)
+
+- Thay đổi địa chỉ IP và truy cập lại xem có kết nối với Ubuntu Server được hay không:
+![image](https://github.com/user-attachments/assets/0ec3e50c-d75d-474d-b1a1-7d6f82e4c461)
+
+- Kết quả là không kết nối được do địa chỉ IP đã bị chặn, giờ ta cấu hình lại địa chỉ IP là 172.16.2.164 để xem có kết nối lại được hay không:
+![image](https://github.com/user-attachments/assets/525266c2-692a-46a5-abc3-21f00defa60e)
+
+- Ta sẽ cấu hình cho phép IP .165 kết nối SSH từ xa với Ubuntu:
+![image](https://github.com/user-attachments/assets/a79a8a9b-5f57-4ee2-abb7-1f0d83d8faae)
+
+- Cấu hình lại địa chỉ IP mà kết nối lại với Ubuntu:
