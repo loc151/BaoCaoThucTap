@@ -1,8 +1,7 @@
 |STT|Guidance|Compliance|Demo|
 |:---|:---|:---|:---|
 |01|Check if the latest firmware is used|||
-|02|Check the switch's user guide's for security features and see if the
-required ones have been implemented properly|||
+|02|Check the switch's user guide's for security features and see if the required ones have been implemented properly|||
 |03|Create an Enable Secret Password Encrypt Passwords on the device|||
 |04|Use an external AAA server for User Authentication|||
 |05|Create separate local accounts for User Authentication Configure
