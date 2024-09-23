@@ -37,3 +37,9 @@
 - Tổng hợp: Có thể chia sẻ tài nguyên vật lý giữa nhiều khách, nhưng ảo hoá cũng cho phép tổng hợp, đây là quá trình ngược lại
 
 ## 2. Các loại ảo hoá:
+- Ảo hoá mạng (Network Virtualization): Chia nhỏ băng thông mạng thành các kênh độc lập, giúp quản lý và tối ưu hoá tài nguyên mạng
+- Ảo hoá lưu trữ (Storage Virtualization): Kết hợp các thiết bị lưu trữ vật lý thành 1 hệ thống lưu trữ ảo, giúp quản lý dữ liệu hiệu quả hơn
+- Ảo hoá máy chủ (Server Virtualization): Tạo ra nhiều máy chủ ảo trên 1 máy chủ vật lý, giúp tối ưu hoá việc sử dụng tài nguyên phần cứng
+- Ảo hoá dữ liệu (Data Virtualization): Tạo ra 1 lớp ảo hoá để truy cập và quản lý dữ liệu từ nhiều nguồn khác nhau mà không cần biết chi tiết về nơi lưu thực tế
+- Ảo hoá ứng dụng (Application Virtualization): Chạy các ứng dụng trong 1 môi trường ảo, giúp dễ dàng triển khai và quản lý ứng dụng
+- Ảo hoá máy tính để bàn (Desktop Virtualization): Tạo ra các máy tính để bàn ảo mà người dùng có thể truy cập từ bất kỳ thiết bị nào, giúp quản lý và bảo mật dễ dàng hơn
