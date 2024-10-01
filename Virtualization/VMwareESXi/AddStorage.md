@@ -1,24 +1,35 @@
 ## 1. Thêm kho dữ liệu mới:
+- Tại giao diện web của ESXi, vào **Storage -> Datastore -> New datastore**:
+
+![image](https://github.com/user-attachments/assets/646cecef-3de3-4a80-807f-e93672c65b0c)
+
+- Chọn loại Datastore: Một cửa sổ mới sẽ xuất hiện, chọn **VMFS** để sử dụng với ổ cứng hoặc **NFS** nếu đang sử dụng lưu trữ mạng.
+
 ![image](https://github.com/user-attachments/assets/1f9acbcd-6340-483b-89a8-6783ab391ce6)
+
+- Chọn ổ đĩa hoặc thiết bị lưu trữ muốn thêm vào ESXi host, đặt tên cho kho dữ liệu đó:
 
 ![image](https://github.com/user-attachments/assets/baf544f8-acf3-4d4e-bfdf-250c89690cb8)
 
+- Chọn dung lượng cần thêm vào datastore: trường hợp này sẽ chọn tất cả dung lượng trong ổ đĩa:
+
 ![image](https://github.com/user-attachments/assets/2f76e91f-aefc-4613-860a-f6a6ce1232e5)
+
+- Sau khi đã hoàn tất các phần trên, xác nhận các thiết lập và nhấn **Finish** để hoàn thành quá trình thêm storage:
 
 ![image](https://github.com/user-attachments/assets/a6dd308e-ed4a-4846-9e94-def4c8f58238)
 
-
-
-
-
+- Khi hoàn tất, datastore mới sẽ xuất hiện trong danh sách **Datastores** và có thể được sử dụng để lưu trữ các máy ảo (VMs) hoặc dữ liệu khác. 
 
 ## 2. Cách sửa lỗi: Failed to create VMFS datastore - Cannot change the host configuration file:
 - Lỗi "Không thể thay đổi cấu hình máy chủ" khi cố gắng tạo kho dữ liệu VMFS. Sự cố này có thể phát sinh do một số lý do, chẳng hạn như phân vùng hiện có trên đĩa, kích thước khối không chính xác hoặc đĩa được sử dụng cho các mục đích khác như tệp scratch hoặc swap. Sau đây là các cách sửa lỗi:
 ## 2.1. Bật truy cập từ xa cho ESXi host:
 - Tại giao diện web của ESXi, vào phần **Manage** -> **Service**, tìm dịch vụ có tên **TSM-SSH** và nhấn **Start** để khởi động dịch vụ này.
+  
 ![image](https://github.com/user-attachments/assets/73dde756-4c29-43fb-878c-81cf7d45b0f6)
 
 - Kết nối với ESXi host sử dụng SSH, trong trường hợp này sẽ sử dụng MobaXstrem:
+  
 ![image](https://github.com/user-attachments/assets/02ac02e9-34b6-4f52-9967-5c9cc084c8c6)
 
 ## 2.2. Nhận diện các ổ đĩa gây ra vấn đề: 
@@ -27,6 +38,7 @@
 ls -lha /vmfs/devices/disks/
 ```
 - Ở đây, ổ đĩa gây ra sự cố là `naa.6b083fe0ea52fb002e8e701f065993f6`
+  
 ![image](https://github.com/user-attachments/assets/90d2ce8c-482f-4ac0-9bcd-d6cb4d6f195a)
 
 ## 2.3. Kiểm tra bảng phân vùng:
@@ -35,6 +47,7 @@ ls -lha /vmfs/devices/disks/
 partedUtil getptbl /vmfs/devices/disks/<disk_ID>
 ```
 - Trong đó: `<disk_ID>` là tên ổ đĩa cần kiểm tra lỗi:
+  
 ![image](https://github.com/user-attachments/assets/b674baf1-2ba0-424e-83c6-e354a89a5589)
 
 ## 2.4. Thiết lập lại bảng phân vùng:
@@ -43,9 +56,11 @@ partedUtil getptbl /vmfs/devices/disks/<disk_ID>
 partedUtil setptbl /vmfs/devices/disks/<disk_ID> msdos
 ```
 - Trong đó: `<disk_ID>` là tên ổ đĩa cần được thiết lập lại:
+  
 ![image](https://github.com/user-attachments/assets/2c2dc459-748a-4794-bb31-97d3c4d4553e)
 
 ## 2.5. Thêm lại kho dữ liệu:
 - Quay lại vSphere client và thử thêm đĩa làm kho dữ liệu VMFS:
 - Làm lại các bước ở mục 1 và thêm datastore mới thành công:
+  
 ![image](https://github.com/user-attachments/assets/c8690536-1fa0-411b-9f95-927d5dbe8f2c)
