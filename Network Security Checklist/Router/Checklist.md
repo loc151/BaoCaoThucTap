@@ -1,11 +1,11 @@
 |STT|Guidance|Explain|Making|Demo|
 |:---|:---|:---|:---|:---|
-|01|Do not use Default password for your router|Không sử dụng mật khẩu mặc định cho bộ định tuyến|||
-|02|Check if the router block access to a modem by IP address|Kiểm tra xem bộ định tuyến có chặn quyền truy cập vào modem theo địa chỉ IP không|||
-|03|Ensure that router admin gets an alert when a new device joins the network|Đảm bảo rằng người quản trị router nhận được cảnh báo khi có thiết bị mới tham gia mạng|||
+|01|Do not use Default password for your router|Không sử dụng mật khẩu mặc định cho bộ định tuyến|Tạo `user` và `password` mới > Cấu hình VTY > Lưu cấu hình||
+|02|Check if the router block access to a modem by IP address|Kiểm tra xem bộ định tuyến có chặn quyền truy cập vào modem theo địa chỉ IP không|Kiểm tra ACL xem có luật nào chặn quyền truy cập modem không||
+|03|Ensure that router admin gets an alert when a new device joins the network|Đảm bảo rằng người quản trị router nhận được cảnh báo khi có thiết bị mới tham gia mạng|Kích hoạt và cấu hình SNMP > Cài đặt và cấu hình công cụ giám sát mạng||
 |04|Most routers let you disable UPnP on the LAN side|Hầu hết các bộ định tuyến cho phép bạn vô hiệu hóa UPnP ở phía LAN|||
-|05|Enable port forwarding and IP filtering for your router|Bật chuyển tiếp cổng và lọc IP cho bộ định tuyến|||
-|06|Check if the router supports HTTPs, in some routers it is disabled by default|Kiểm tra xem bộ định tuyến có hỗ trợ HTTPs không, ở một số bộ định tuyến, HTTPs bị vô hiệu hóa theo mặc định|||
+|05|Enable port forwarding and IP filtering for your router|Bật chuyển tiếp cổng và lọc IP cho bộ định tuyến|Bật chuyển tiếp cổng với NAT > Lọc IP dùng ACL||
+|06|Check if the router supports HTTPs, in some routers it is disabled by default|Kiểm tra xem bộ định tuyến có hỗ trợ HTTPs không, ở một số bộ định tuyến, HTTPs bị vô hiệu hóa theo mặc định|Kiểm tra cài đặt ||
 |07|If HTTPS is supported, can admin access be limited exclusively to HTTPS?|Nếu HTTPS được hỗ trợ, quyền truy cập của quản trị viên có thể bị giới hạn độc quyền đối với HTTPS không?|||
 |08|Check if the TCP/IP port used for the web interface can be changed|Kiểm tra xem cổng TCP/IP được sử dụng cho giao diện web có thể thay đổi được không|||
 |09|To really prevent local admin access, limit the LAN IP address to a single IP address that is both outside the DHCP range and not normally assigned|Để thực sự ngăn chặn quyền truy cập quản trị cục bộ, hãy giới hạn địa chỉ IP LAN thành một địa chỉ IP duy nhất nằm ngoài phạm vi DHCP và không được chỉ định bình thường|||
