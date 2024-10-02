@@ -1,6 +1,6 @@
 |STT|Guidance|Explain|Making|Demo|
 |:---|:---|:---|:---|:---|
-|01|Do not use Default password for your router|Không sử dụng mật khẩu mặc định cho bộ định tuyến|Tạo `user` và `password` mới > Cấu hình VTY > Lưu cấu hình||
+|01|Do not use Default password for your router|Không sử dụng mật khẩu mặc định cho bộ định tuyến|Tạo `user` và `password` mới > Cấu hình VTY > Lưu cấu hình|[Checklist 1](https://github.com/loc151/BaoCaoThucTap/blob/main/Network%20Security%20Checklist/Router/01-05.md#1-do-not-use-default-password-for-your-router)|
 |02|Check if the router block access to a modem by IP address|Kiểm tra xem bộ định tuyến có chặn quyền truy cập vào modem theo địa chỉ IP không|Kiểm tra ACL xem có luật nào chặn quyền truy cập modem không||
 |03|Ensure that router admin gets an alert when a new device joins the network|Đảm bảo rằng người quản trị router nhận được cảnh báo khi có thiết bị mới tham gia mạng|Kích hoạt và cấu hình SNMP > Cài đặt và cấu hình công cụ giám sát mạng||
 |04|Most routers let you disable UPnP on the LAN side|Hầu hết các bộ định tuyến cho phép bạn vô hiệu hóa UPnP ở phía LAN|||
