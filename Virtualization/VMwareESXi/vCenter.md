@@ -80,4 +80,19 @@ Trước khi cài đặt, đảm bảo máy chủ đáp ứng các yêu cầu sa
 ![image](https://github.com/user-attachments/assets/59ef5f92-f0f1-4fcc-ad54-e9377ff0b7a9)
 ![image](https://github.com/user-attachments/assets/df247d75-ecac-4b1d-98de-4d19c7580563)
 
+## 6. Kiểm tra kết quả:
+## 6.1. Truy Cập vCenter Web Client:
+- Sau khi quá trình cấu hình hoàn thành, truy cập vCenter qua giao diện web bằng cách nhập địa chỉ IP hoặc FQDN của vCenter vào trình duyệt:
+https://<vcenter-ip-or-fqdn>/ui
+- Đăng nhập bằng tài khoản administrator@vsphere.local và mật khẩu đã thiết lập.
 
+![image](https://github.com/user-attachments/assets/44f435b5-9df9-45bb-a398-13c5d09417fb)
+
+- Giao diện web của vCenter Web Client:
+
+![image](https://github.com/user-attachments/assets/e4106624-6e01-4af8-903d-c20a0414252a)
+ 
+- **Lưu Ý**
+- Cấu Hình Backup: Sau khi cài đặt, hãy thiết lập backup thường xuyên cho vCenter Server.
+- Khuyến Nghị Sử Dụng NTP: Luôn cấu hình NTP cho ESXi host và vCenter để tránh các vấn đề liên quan đến thời gian không chính xác.
+- Giám Sát Hiệu Suất: Theo dõi và quản lý tài nguyên để đảm bảo vCenter Server hoạt động ổn định.
