@@ -65,4 +65,19 @@ Trước khi cài đặt, đảm bảo máy chủ đáp ứng các yêu cầu sa
 ![image](https://github.com/user-attachments/assets/ec1e212d-2db9-4698-a918-4187b0f7d2dd)
 
 - Xác nhận lại các thông số và tiến hành cài đặt bước 1:
+  
 ![image](https://github.com/user-attachments/assets/5f799075-d2f8-4517-829b-656cf2fbcc55)
+
+- Sau khi cài đặt thành công, chương trình sẽ hiển thị tiến hành **Stage 2**:
+![image](https://github.com/user-attachments/assets/6d987d7c-3bdd-422e-9f80-f88caeb5c0e3)
+
+## 5. Cấu hình vCenter Server - Stage 2: 
+- Chọn **Continue** để tiếp tục
+- Thiết lập và xác nhận các cấu hình:
+
+![image](https://github.com/user-attachments/assets/15e57ea5-b46b-4a47-b63d-de6689071194)
+![image](https://github.com/user-attachments/assets/e82f62eb-efbe-4845-96a5-e220c1d9e78a)
+![image](https://github.com/user-attachments/assets/59ef5f92-f0f1-4fcc-ad54-e9377ff0b7a9)
+![image](https://github.com/user-attachments/assets/df247d75-ecac-4b1d-98de-4d19c7580563)
+
+
