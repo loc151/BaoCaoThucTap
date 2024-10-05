@@ -119,3 +119,6 @@ Sau khi hoàn thành, Veeam Backup & Replication sẽ tự động sao lưu các
 
   - Sao lưu thành công:
 ![image](https://github.com/user-attachments/assets/385616a8-2df4-4c6d-aa26-6f6cc5542073)
+
+   - Vị trí lưu file backup:
+![image](https://github.com/user-attachments/assets/83de89a1-5cfc-4e1a-8503-c9df9977d3f4)
