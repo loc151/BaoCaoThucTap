@@ -12,17 +12,18 @@
 - **Instant VM Recovery:** Khởi chạy máy ảo trực tiếp từ bản sao lưu mà không cần khôi phục đầy đủ.
 
 ## 3. Khôi Phục Máy Ảo (Full VM Recovery)
-
 3.1. **Mở Veeam Backup & Replication:**
    - Khởi chạy **Veeam Backup & Replication Console** trên máy chủ quản lý.
 
 3.2. **Chọn Máy Ảo Cần Khôi Phục:**
    - Vào **Home** > **Backups** > **Disk** để xem danh sách các bản sao lưu.
    - Nhấp chuột phải vào bản sao lưu của máy ảo mà bạn muốn khôi phục và chọn **Restore entire VM**.
+
 ![image](https://github.com/user-attachments/assets/cc5a073f-0722-42ec-9780-57bc748171f4)
 
 3.3. **Chọn Loại Khôi Phục:**
    - Chọn phương thức khôi phục phù hợp, ví dụ: **Restore to the original location** (Khôi phục đến vị trí ban đầu) hoặc **Restore to a new location** (Khôi phục đến vị trí mới).
+     
 ![image](https://github.com/user-attachments/assets/01b3eac9-04de-41c9-b776-784cbbb17662)
 ![image](https://github.com/user-attachments/assets/69f43d67-d785-4006-a20f-8f1503bf1fcb)
 
@@ -31,6 +32,7 @@
 
 3.5. **Chạy Quá Trình Khôi Phục:**
    - Xác nhận các lựa chọn và nhấn **Finish** để bắt đầu quá trình khôi phục máy ảo.
+     
 ![image](https://github.com/user-attachments/assets/f2c0e323-cc65-433a-8f36-7db1e1837bfe)
 ![image](https://github.com/user-attachments/assets/fe8a614a-d3ce-4062-9e02-7366049197c0)
 ![image](https://github.com/user-attachments/assets/2a94c2de-6c33-4bad-929b-1b131618dc43)
