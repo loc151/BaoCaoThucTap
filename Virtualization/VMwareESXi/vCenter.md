@@ -79,6 +79,7 @@ Trước khi cài đặt, đảm bảo máy chủ đáp ứng các yêu cầu sa
 ![image](https://github.com/user-attachments/assets/e82f62eb-efbe-4845-96a5-e220c1d9e78a)
 ![image](https://github.com/user-attachments/assets/59ef5f92-f0f1-4fcc-ad54-e9377ff0b7a9)
 ![image](https://github.com/user-attachments/assets/df247d75-ecac-4b1d-98de-4d19c7580563)
+![image](https://github.com/user-attachments/assets/51dab87e-f4b8-4b95-9f9e-99aa5bfc3f3e)
 
 ## 6. Kiểm tra kết quả:
 ## 6.1. Truy Cập vCenter Web Client:
