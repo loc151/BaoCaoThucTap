@@ -1,31 +1,30 @@
-
 # Tìm hiểu file xml trong KVM
 
-XML (eXtensible Markup Language) là một loại file có khả năng lưu trữ nhiều loại dữ liệu khác nhau. Mục đích của XML là đơn giản hóa việc chia sẻ dữ liệu giữa các hệ thống khác nhau, đặc biệt là các hệ thống được kết nối với internet.
-
-Một VM trong KVM có hai thành phần chính đó là VM's definition được lưu dưới dạng file XML và nằm trong thư mục `/etc/libvirt/qemu` và VM's storage lưu dưới dạng file image.
+## File XML: 
+- XML (eXtensible Markup Language) là một loại file có khả năng lưu trữ nhiều loại dữ liệu khác nhau. Mục đích của XML là đơn giản hóa việc chia sẻ dữ liệu giữa các hệ thống khác nhau, đặc biệt là các hệ thống được kết nối với internet.
+- Một VM trong KVM có hai thành phần chính đó là VM's definition được lưu dưới dạng file XML và nằm trong thư mục `/etc/libvirt/qemu` và VM's storage lưu dưới dạng file image.
 File domain XML chứa các thông tin về máy ảo như (số CPU, RAM, các thiết lập của I/O, card mạng,...)
+- Ngoài file domain XML còn có các file XML khác để lưu thông tin network, storage...
+Ta có thể thấy mỗi máy ảo được tạo ra có một file xml chứa các thông tin của nó.
 
-Ngoài file domain XML còn có các file XML khác để lưu thông tin network, storage...
-Ta có thể thấy mỗi máy ỏa được tạo ra có một file xml chứa các thông tin của nó.
+![image](https://github.com/user-attachments/assets/5ab6a5fa-6238-4216-9eff-8f598704bac8)
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/xml1.png)
+- Sử dụng những lệnh sau để chỉnh sửa cấu hình VM trong file `.xml`:
+```
+virsh edit ubuntu22.04
+hoặc
+sudo nano /etc/libvirt/qemu/ubuntu22.04.xml
+```
 
-Ta có thể dùng lệnh `virsh edit tên_file` đẻ chỉnh sửa (chú ý tên file bỏ phần đuôi `.xml`) hoặc ta cũng có thể sử dụng `vi` hoặc `vim` để chỉnh sủa nó.
+![image](https://github.com/user-attachments/assets/0d9178ac-f008-4f38-8ac8-b5ac8a2642a8)
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/xml2.png)
 
 Trong file xml này chứa rất nhiều thông số nhưng ở đây tôi chỉ đề cập đến một số thông số đáng chú ý
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/xml3.png)
+![image](https://github.com/user-attachments/assets/39fcdd05-092f-4a9c-ab25-bb0371d9403a)
 
-Trong đó:
-* `1` là tên của VM
-* `2` là đơn vị, mặc định là KiB. Ta có thể chuyển về các đơn vị khác.
-* `3` là lượng RAM thực tế đang được sử dụng
-* `4` là số CPU của VM
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/xml4.png)
+
 
 Ta thấy địa chỉ file image của VM
 
