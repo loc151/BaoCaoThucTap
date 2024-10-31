@@ -27,3 +27,5 @@ Kiến trúc của Linux bridge như hình sau
 ![image](https://github.com/user-attachments/assets/cef8ca53-3a35-4bf0-8061-2886fc10af97)
 
 ![image](https://github.com/user-attachments/assets/9550569a-9b46-41a3-ba26-cc97e08d2c9d)
+
+![image](https://github.com/user-attachments/assets/694c0436-c89c-4b05-9df7-b9b295e95b26)
