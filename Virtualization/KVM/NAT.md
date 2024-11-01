@@ -45,3 +45,14 @@
 
 ![image](https://github.com/user-attachments/assets/2b244f1a-082e-433c-873e-dc1289fe7e88)
 
+6. Để cấu hình mạng NAT, tại host KVM, nhập lệnh sau:
+```
+sudo virsh net-edit NAT
+```
+
+![image](https://github.com/user-attachments/assets/8a94e6c9-1a48-44dc-85ea-25cc4c99fa61)
+
+## Kết luận:
+### Với chế độ mạng NAT, máy ảo vẫn có thể truy cập ra ngoài mạng được dù không tạo dải bridge. Khi sử dụng NAT, các gói tin từ máy ảo sẽ được chuyển đổi địa chỉ IP trước khi ra ngoài mạng, giúp máy ảo có thể giao tiếp với mạng ngoài mà không cần địa chỉ IP công khai
+
+### Thành phần cấp DHCP cho VM: Trong chế độ NAT, KVM sử dụng một bridge ảo (thường là virbr0) để kết nối các máy ảo với mạng ngoài. Bridge ảo này cũng cung cấp dịch vụ DHCP để cấp phát địa chỉ IP cho các máy ảo
