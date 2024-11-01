@@ -81,7 +81,8 @@ sudo nano /etc/netplan/50-cloud-init.yaml  #ubuntu 22.04
 ![image](https://github.com/user-attachments/assets/cd00fc61-fe66-46f8-b229-1d7bab8c6248)
 
 - Sử dụng lệnh `sudo netplan apply` để lưu cấu hình
-- Kết quả: 2 VM khác VLAN có thể liên lạc được với nhau.
+
+## Kết quả: 2 VM khác VLAN có thể liên lạc được với nhau.
 
 ![image](https://github.com/user-attachments/assets/fb10f193-d6e8-4b38-8fc2-bb89a978cded)
 
