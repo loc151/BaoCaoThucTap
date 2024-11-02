@@ -9,7 +9,7 @@ Webvirtmgr là một trong những công cụ quản lý máy ảo KVM. Nó có 
 
 ## Cài đặt Webvirtmgr tại Server: 
 
-![image](https://github.com/user-attachments/assets/e8fa5ffe-969d-4732-9272-4d4ef33f088e)
+![image](https://github.com/user-attachments/assets/0b54ff09-e151-48b8-a840-01270b4842fa)
 
 ![image](https://github.com/user-attachments/assets/29b57002-baf4-44c2-953d-c30715adc56f)
 
@@ -22,3 +22,9 @@ Webvirtmgr là một trong những công cụ quản lý máy ảo KVM. Nó có 
 ![image](https://github.com/user-attachments/assets/d0652dfb-fbc3-4b11-9748-96372e47561d)
 
 ![image](https://github.com/user-attachments/assets/a55559f2-6ee1-4886-ba3a-f03c238c6e1e)
+
+![image](https://github.com/user-attachments/assets/c84f3ead-9dcd-4d2c-9a95-89eb0add123e)
+
+![image](https://github.com/user-attachments/assets/f0a3e5b0-28b8-4782-ad2d-c96888c3cbd4)
+
+![image](https://github.com/user-attachments/assets/7c001c06-fb05-4ea5-8f18-7c3d8a44772c)
