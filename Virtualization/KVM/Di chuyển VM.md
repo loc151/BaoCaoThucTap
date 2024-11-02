@@ -1,0 +1,49 @@
+# Hướng Dẫn Di Chuyển Ổ Đĩa Trên KVM
+
+## Yêu Cầu
+
+- KVM được cài đặt và cấu hình trên máy chủ.
+- Máy ảo đang chạy trên KVM.
+- Quyền truy cập `root` hoặc `sudo` trên máy chủ.
+
+## Các Bước Di Chuyển Ổ Đĩa
+# 1. Xác Định Ổ Đĩa Hiện Tại Của Máy Ảo:
+- Sử dụng lệnh sau để liệt kê thông tin về máy ảo:
+```
+virsh domblklist <tên_máy_ảo>
+```
+
+# 2. Ngừng Máy Ảo (Nếu Cần)
+```
+virsh shutdown <tên_máy_ảo>
+```
+
+# 3. Di Chuyển Ổ Đĩa
+- Sử dụng lệnh **mv** để di chuyển ổ đĩa đến vị trí mới:
+```
+      mv /path/to/old/disk.img /path/to/new/disk.img
+```
+
+![image](https://github.com/user-attachments/assets/24594fbf-a454-4ef4-ba9d-9e77ce26bbf2)
+
+# 4. Cập Nhật Cấu Hình Máy Ảo
+- Mở tệp XML của máy ảo bằng lệnh:
+```
+virsh edit <tên_máy_ảo>
+```
+
+- Tìm dòng chứa thông tin về ổ đĩa và cập nhật đường dẫn đến ổ đĩa mới:
+      <disk type='file' device='disk'>
+        <driver name='qemu' type='qcow2'/>
+        <source file='/path/to/new/disk.img'/>
+        <target dev='vda' bus='virtio'/>
+      </disk>
+      
+![image](https://github.com/user-attachments/assets/64c73f92-94e1-4571-a9f2-4f949f152270)
+
+# 5. Khởi Động Lại Máy Ảo
+- Sau khi cập nhật cấu hình, bạn có thể khởi động lại máy ảo:
+
+```
+virsh start <tên_máy_ảo>
+```
