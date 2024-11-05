@@ -1,13 +1,13 @@
-# Cài đặt Webvirtmgr trên Ubuntu 22.04
+# Cài đặt Webvirtcloud trên Ubuntu 22.04
 
 ## Tổng quan
-Webvirtmgr là một trong những công cụ quản lý máy ảo KVM. Nó có chức năng gần giống với virt-manager khi có thể kết nối đến nhiều host KVM để có thể quản lý tập trung các VM trên các máy đó. Nhưng nó có một ưu điểm đặc biệt hơn so với virt-manager đó là với virt-manager đó là ta chỉ có thể làm việc tại máy cài virt-manager. Còn với Webvirtmgr ta có thể làm việc với các VM ở bất kỳ đâu có internet.
+Webvirtcloud là một trong những công cụ quản lý máy ảo KVM. Nó có chức năng gần giống với virt-manager khi có thể kết nối đến nhiều host KVM để có thể quản lý tập trung các VM trên các máy đó. Nhưng nó có một ưu điểm đặc biệt hơn so với virt-manager đó là với virt-manager đó là ta chỉ có thể làm việc tại máy cài virt-manager. Còn với Webvirtcloud ta có thể làm việc với các VM ở bất kỳ đâu có internet.
 
 ## Yêu cầu: 
-- Một máy cài đặt hệ điều hành Ubuntu server 22 có cấu hình tối thiểu 1 CPU, 1 GB RAM và có 1 card mạng.
-- Ít nhất một máy Ubuntu đã cài đặt KVM để kiểm tra lại webvirtmgr đã hoạt động.
+- Một máy cài đặt hệ điều hành Ubuntu server 20 có cấu hình tối thiểu 1 CPU, 1 GB RAM và có 1 card mạng.
+- Ít nhất một máy Ubuntu đã cài đặt KVM để kiểm tra lại webvirtcloud đã hoạt động.
 
-## Cài đặt Webvirtmgr tại Server: 
+## Cài đặt Webvirtcloud tại Server: 
 
 ![image](https://github.com/user-attachments/assets/0b54ff09-e151-48b8-a840-01270b4842fa)
 
