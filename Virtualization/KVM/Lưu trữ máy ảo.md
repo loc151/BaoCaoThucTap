@@ -20,6 +20,14 @@ virsh domblklist <tên_máy_ảo>
 
 ![image](https://github.com/user-attachments/assets/1aab543f-aa05-4310-8723-40daae4b312c)
 
+- Trong đó:
+|So sánh|vda|sda|
+|:---|:---|:---|
+|Khái niệm|Thiết bị lưu trữ ảo (virtual disk) được sử dụng trong các môi trường ảo hóa|Thiết bị lưu trữ vật lý (physical disk) hoặc thiết bị lưu trữ ảo sử dụng giao diện SCSI|
+|Giao diện|Sử dụng giao diện Virtio, một giao diện ảo hóa hiệu suất cao được thiết kế để giảm thiểu chi phí ảo hóa và tăng hiệu suất I/O.|Sử dụng giao diện SCSI, một giao diện phổ biến cho các thiết bị lưu trữ như ổ cứng và SSD|
+|Hiệu suất|Cao hơn|Thấp hơn|
+|Tính tương thích|Thấp hơn|Cao hơn|
+
 ## Nội dung của thư mục máy ảo: 
 - **Tệp hình ảnh đĩa (Disk Image Files)**: Đây là các tệp `.qcow2` hoặc `.img` chứa hệ điều hành và dữ liệu của máy ảo. Chúng đóng vai trò như ổ cứng ảo của máy ảo.
 
