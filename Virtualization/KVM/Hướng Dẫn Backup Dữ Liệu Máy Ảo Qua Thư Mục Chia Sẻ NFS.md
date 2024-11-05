@@ -1,12 +1,4 @@
 # Hướng Dẫn Backup Dữ Liệu Máy Ảo Qua Thư Mục Chia Sẻ NFS
-
-## Mục Lục
-1. [Giới Thiệu](#giới-thiệu)
-2. [Cấu Hình NFS Chia Sẻ Thư Mục](#cấu-hình-nfs-chia-sẻ-thư-mục)
-3. [Mount Thư Mục Chia Sẻ NFS Trên Máy Chủ KVM](#mount-thư-mục-chia-sẻ-nfs-trên-máy-chủ-kvm)
-4. [Cấu Hình Backup Với Veeam](#cấu-hình-backup-với-veeam)
-5. [Kết Luận](#kết-luận)
-
 ## Giới Thiệu
 **NFS (Network File System)** là một giao thức mạng cho phép chia sẻ thư mục và tệp tin giữa các máy tính trong cùng mạng nội bộ. Trong hướng dẫn này, chúng ta sẽ thiết lập NFS để chia sẻ thư mục `backup-veeam`, nhằm mục đích sao lưu máy ảo và dữ liệu quan trọng từ KVM.
 
@@ -88,3 +80,16 @@ Với hướng dẫn trên, bạn đã thiết lập thành công chia sẻ thư
 ### Lưu Ý
 - Đảm bảo thư mục `/backup-veeam` có quyền truy cập đầy đủ để tránh lỗi ghi dữ liệu khi backup.
 - Cần kiểm tra định kỳ việc mount và cấu hình backup để đảm bảo tính liên tục và không bị gián đoạn trong quá trình sao lưu.
+
+![image](https://github.com/user-attachments/assets/9fa96ac7-82c9-413e-88ef-a7f03c52f9e9)
+
+![image](https://github.com/user-attachments/assets/68c97d86-7b9c-4c9b-8d34-683b04d9cb0f)
+
+![image](https://github.com/user-attachments/assets/fa3e824e-e110-4729-9dea-4e9eb4318246)
+
+![image](https://github.com/user-attachments/assets/db9450d9-7bad-4100-bc49-bafc1f518e47)
+
+![image](https://github.com/user-attachments/assets/b6b10e70-d457-4966-b624-986a1fd157ba)
+
+![image](https://github.com/user-attachments/assets/07cdb99b-bd73-4f55-9a5d-3975663e4a36)
+
