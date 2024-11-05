@@ -9,16 +9,16 @@ Trước tiên, cần cài đặt dịch vụ NFS trên máy chủ để chia s�
 
 - **Trên Ubuntu/Debian**: Cài đặt dịch vụ NFS bằng lệnh `apt`.
 
-    ```bash
-    sudo apt update
-    sudo apt install nfs-kernel-server -y
-    ```
+```bash
+sudo apt update
+sudo apt install nfs-kernel-server -y
+```
 
 - **Trên CentOS/RHEL**: Cài đặt dịch vụ NFS bằng lệnh `yum`.
 
-    ```bash
-    sudo yum install nfs-utils -y
-    ```
+  ```bash
+  sudo yum install nfs-utils -y
+  ```
 
 ### Bước 2: Cấp quyền truy cập cho thư mục
 - Tạo thư mục chia sẻ:
