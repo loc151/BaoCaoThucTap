@@ -21,6 +21,7 @@ virsh domblklist <tên_máy_ảo>
 ![image](https://github.com/user-attachments/assets/1aab543f-aa05-4310-8723-40daae4b312c)
 
 - Trong đó:
+
 |So sánh|vda|sda|
 |:---|:---|:---|
 |Khái niệm|Thiết bị lưu trữ ảo (virtual disk) được sử dụng trong các môi trường ảo hóa|Thiết bị lưu trữ vật lý (physical disk) hoặc thiết bị lưu trữ ảo sử dụng giao diện SCSI|
