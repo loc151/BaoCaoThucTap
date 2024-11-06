@@ -75,6 +75,10 @@ pvresize /dev/vda2
 
 ![image](https://github.com/user-attachments/assets/28993c42-ae19-455e-9025-8ec8948eae5c)
 
+- Trong đó:
+  - `lvs`: Liệt kê các **Logical Volumes (LVs)** hiện có trong hệ thống
+  - `vgs`: Liệt kê các **Volume Groups (VGs)** hiện có trong hệ thống
+  - Kết quả của 2 lệnh trên sẽ hiển thị thông tin chi tiết bao gồm tên, kích thước và trạng thái của chúng.
 ## Bước 4: Mở Rộng Logical Volume (`lvextend`)
 
 Tiếp theo, mở rộng `Logical Volume` để sử dụng không gian vừa mở rộng:
