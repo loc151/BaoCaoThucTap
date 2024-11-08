@@ -73,14 +73,14 @@ swapon /swapfile
 sudo echo '/Swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
 ```
 
-## 4. Kiểm tra lại vùng Swap
+## 5. Kiểm tra lại vùng Swap
 ```sh
 swapon
 ```
 
 ![image](https://github.com/user-attachments/assets/ebfebc64-215e-483b-bcde-533c45b7f35e)
 
-## 5. Giá trị Swappiness
+## 6. Giá trị Swappiness
 - Tham số **Swappiness** cho biết thời điểm hệ thống sẽ chuyển từ bộ nhớ vật lý (RAM) sang bộ nhớ tạm **Swap**
 - Giá trị từ Swappiness từ 0 - 100. Chỉ số này càng thấp thì máy linux sẽ tránh sử dụng swap file này, càng cao thì càng ưu tiên sử dụng.
 - Ta có thê thay đổi giá trị này tại:
@@ -90,7 +90,7 @@ sudo nano /proc/sys/vm/swappiness
 
 ![image](https://github.com/user-attachments/assets/e50376e6-1507-47a5-9d3e-bd4d9c147619)
 
-## 6. Xóa Swap file
+## 7. Xóa Swap file
 - Để xóa File Swap, có thể deactive swap file:
 ```sh
 swapoff -v /swapfile
@@ -101,7 +101,7 @@ swapoff -v /swapfile
 rm -rf /swapfile
 ```
 
-## 7. Dung lượng cần thiết của bộ nhớ SWAP
+## 8. Dung lượng cần thiết của bộ nhớ SWAP
 - Nếu RAM ít hơn hoặc bằng 1Gb, thì nên sử dụng Swap có kích thước tối thiểu là bằng với lượng RAM
 - Đối với RAM trên 1Gb, thì kích thước tối đa thường là gấp đôi lượng RAM. Nếu thiết lập kích thước của Swap quá lớn chính là đang lãng phí dung lượng ổ đĩa mặc dù Swap không được sử dụng
 - Thời gian truy cập trên Swap sẽ chậm hơn so với trên RAM
