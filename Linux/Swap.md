@@ -101,6 +101,8 @@ swapoff -v /swapfile
 rm -rf /swapfile
 ```
 
+![image](https://github.com/user-attachments/assets/9b51f50e-1417-47a8-881c-0a417bd27bea)
+
 ## 8. Dung lượng cần thiết của bộ nhớ SWAP
 - Nếu RAM ít hơn hoặc bằng 1Gb, thì nên sử dụng Swap có kích thước tối thiểu là bằng với lượng RAM
 - Đối với RAM trên 1Gb, thì kích thước tối đa thường là gấp đôi lượng RAM. Nếu thiết lập kích thước của Swap quá lớn chính là đang lãng phí dung lượng ổ đĩa mặc dù Swap không được sử dụng
