@@ -226,8 +226,30 @@ id [options] [username]
 - **o (others)** : những người sử dụng khác, không phải là người sở hữu file cũng như không thuộc nhóm chứa file.
 => Mỗi nhóm người sử dụng sẽ có một tập các quyền (r, w, x) xác định.
 
-### Lưu ý: Để có thể thêm các file, cần phải có quyền « w » đối với thư mục
+### Lưu ý: 
+- Để có thể thêm các file, cần phải có quyền « w » đối với thư mục
 - Để có thể xóa, thay đổi nội dung hoặc di chuyển 1 file, người sử dụng cũng cần phải có quyền « w » đối với thư mục
 - Việc xóa một file còn phụ thuộc vào quyền đối với thư mục chứa file đó
 - Để bảo mật các dữ liệu, người sở hữu file thậm chí có thể bỏ cả quyền đọc « r » đối với tất cả mọi người sử dụng khác.
 - Để hạn chế quá trình truy cập vào hệ thống file, người sử dụng có thể bỏ quyền thực thi (x) đối với thư mục gốc của hệ thống file.
+
+## Các quyền ngầm định của 1 file:
+### Các quyền ngầm định của 1 file khi tạo ra có thể được xác định bằng lệnh "umask"
+- `umask`: Sử dụng để thiết lập quyền mặc định cho các tệp và thư mục mới được tạo. Giá trị `umask` xác định các quyền sẽ bị loại bỏ khi tệp hoặc thư mục mới được tạo
+- Ví dụ:
+  - umask = 022
+  - Quyền mặc định cho tệp: 666 (rw-rw-rw-)
+  - Quyền thực tế: 666 - 022 = 644 (rw-r--r--)
+![image](https://github.com/user-attachments/assets/e83b6f07-1892-40c1-97fe-b61a225966e4)
+
+### Thay đổi chủ sở hữu và nhóm sở hữu của tệp hoặc thư mục: chown
+```
+chown [tùy chọn] chủ_sở_hữu[:nhóm_sở_hữu] tệp/thư_mục
+```
+
+- Tuỳ chọn: `-R`: Thay đổi chủ sở hữu và nhóm sở hữu của thư mục và tất cả các tệp bên trong
+
+### Thay đổi nhóm sở hữu của tệp hoặc thư mục: chgrp
+```
+chgrp [tùy chọn] nhóm_sở_hữu tệp/thư_mục
+```
