@@ -172,3 +172,5 @@ Nhấp vào “Profile” > “Edit Profile” > “Change Password”.
 Nhập mật khẩu cũ là “admin“, sau đó nhập và xác nhận mật khẩu mới cho người dùng admin.
 
 Đăng xuất khỏi bảng điều khiển quản trị và đăng nhập lại để kiểm tra mật khẩu mới.
+
+![image](https://github.com/user-attachments/assets/3da5b672-8281-48c0-8fdb-9109a8cac09d)
