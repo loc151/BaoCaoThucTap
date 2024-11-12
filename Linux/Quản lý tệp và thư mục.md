@@ -26,3 +26,39 @@
 - ~/ : Thư mục nhà (home)
 - . : Thư mục hiện tại
 - .. : Thư mục cha
+
+## Quản lý thư mục: 
+- `pwd`: Hiển thị đường dẫn tuyệt đối của thư mục hiện tại
+- `cd`: thay đổi vị trí thư mục hiện tại sang thư mục được chỉ định
+- `ls`: Liệt kê các tệp và thư mục trong thư mục hiện tại. Các tuỳ chọn trong lệnh ls:
+
+|Tuỳ chọn|Ý nghĩa|
+|----|----|
+|-a|Hiển thị tất cả các tệp, bao gồm cả các tệp ẩn|
+|-l|Hiển thị thông tin chi tiết về các tệp và thư mục, bao gồm quyền truy cập, số liên kết, chủ sở hữu, nhóm, kích thước, và thời gian sửa đổi cuối cùng|
+|-lh|Hiển thị kích thước tệp ở định dạng dễ đọc (KB, MB, GB) khi sử dụng cùng với tùy chọn|
+|-r|Hiển thị danh sách theo thứ tự ngược lại|
+|-t|Sắp xếp các tệp theo thời gian sửa đổi, từ mới nhất đến cũ nhất|
+|-S|Sắp xếp các tệp theo kích thước, từ lớn nhất đến nhỏ nhất|
+|-R|Hiển thị đệ quy tất cả các tệp và thư mục con|
+|-d|Hiển thị thông tin về thư mục thay vì nội dung của nó|
+|-i|Hiển thị số inode của mỗi tệp|
+|-F|Thêm ký tự đặc biệt vào cuối mỗi tên tệp để chỉ loại tệp (ví dụ: "/" cho thư mục, "*" cho tệp thực thi|
+|--color|Hiển thị các tệp và thư mục với màu sắc khác nhau để dễ phân biệt|
+  - Lưu ý: Lệnh `ls` có thể kết hợp nhiều tuỳ chọn để hiển thị thông tin theo ý muốn. Ví dụ: ls -alh, ls -lt
+
+- `mkdir`: Tạo thư mục mới
+- `rmdir`: Xoá thư mục rỗng
+
+## Quản lý tệp:
+- `touch`: Tạo tệp mới
+- `cp`: Sao chép tệp
+- `mv`: Di chuyển hoặc đổi tên tệp
+- `rm`: Xoá tệp
+- `cat`: Hiển thị nội dung tệp
+- `less`: Hiển thị nội dung tệp với khả năng phân trang
+- `head`: Hiển thị các dòng đầu tiên của tệp
+- `tail`: Hiển thị các dòng cuối cùng của tệp
+- `chmod`: Thay đổi quyền truy cập tệp
+- `chown`: Thay đổi chủ sở hữu tệp
+- `chgrp`: Thay đổi nhóm sở hữu tệp
