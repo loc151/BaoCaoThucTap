@@ -46,6 +46,22 @@ cp conf/supervisor/webvirtcloud.conf /etc/supervisor/conf.d
 cp conf/nginx/webvirtcloud.conf /etc/nginx/conf.d
 ```
 
+- Mở tệp cấu hình Nginx để chỉnh sửa:
+```
+sudo nano /etc/nginx/conf.d/webvirtcloud.conf
+```
+
+- Đặt giá trị chính xác cho tên máy chủ và cấu hình các tệp log.
+```nginx
+server {
+    listen 80;
+
+    server_name webvirtcloud.example.com;
+    access_log /var/log/nginx/webvirtcloud-access_log;
+    error_log /var/log/nginx/webvirtcloud-error_log;
+}
+```
+
 - Quay lại thư mục chính và di chuyển thư mục **webvirtcloud** sang thư mục **/srv**:
 
 ```
@@ -78,7 +94,7 @@ source venv/bin/activate
 -  Cài đặt các phụ thuộc Python cần thiết:
 
 ```
-pip install -r conf/requirements.txt
+pip3 install -r conf/requirements.txt
 ```
 
 ![image](https://github.com/user-attachments/assets/8e90423f-c873-4587-945e-6289401866bb)
@@ -103,6 +119,21 @@ systemctl restart supervisor
 ```
 systemctl status nginx
 ```
+- Kiểm tra các dịch vụ được quản lý bởi supervisor xem có đang chạy không.
+```bash
+$ sudo supervisorctl status
+novncd                           RUNNING   pid 3786, uptime 0:28:36
+socketiod                        RUNNING   pid 3787, uptime 0:28:36
+webvirtcloud                     RUNNING   pid 3788, uptime 0:28:36
+```
+
+![image](https://github.com/user-attachments/assets/7da718dc-088d-489f-aa68-d9cf595e2be5)
+
+- Xác nhận dịch vụ đang hoạt động.
+```bash
+$ ss -tunelp|grep 8000
+tcp   LISTEN 0      2048             127.0.0.1:8000      0.0.0.0:*    uid:33 ino:30133 sk:1001 cgroup:/system.slice/supervisor.service <-> 
+```
 
 ### 3. Thiết lập KVM và Libvirt:
 - Chạy tập lệnh sau để thiết lập KVM và Libvirt:
@@ -123,12 +154,21 @@ wget -O - https://bit.ly/36baWUu | sh
 adduser www-data kvm
 ```
 
-**Lỗi tại Ubuntu 22**
-![image](https://github.com/user-attachments/assets/7f6a6c8e-ae69-4372-b677-9a6914d3bce8)
+### 4. Truy cập WebVirtCloud Dashboard 
+- Truy cập URL cài đặt WebVirtCloud tại `http://yourserverhostname`.
+- Thông tin đăng nhập mặc định là:
+  - Tên đăng nhập: admin
+  - Mật khẩu: admin
 
-![image](https://github.com/user-attachments/assets/dee15e88-595f-4824-a38c-92220eb7b72c)
+![image](https://github.com/user-attachments/assets/b628e1a3-a911-4b8f-942e-9a049eab30e6)
 
-![image](https://github.com/user-attachments/assets/6d211354-031f-4ad9-8ab9-67378b839c7f)
+Thay đổi mật khẩu của người dùng admin:  
+Sau khi đăng nhập, chuyển đến góc trên bên phải nơi tên người dùng admin được hiển thị. Nhấp vào tên người dùng để thấy menu xổ xuống.
 
-**Lỗi tại Ubuntu 20**
-![image](https://github.com/user-attachments/assets/5f7a6c83-26dd-4d68-9ad1-42eb86275209)
+Nhấp vào “Profile” > “Edit Profile” > “Change Password”.
+
+![image](https://github.com/user-attachments/assets/68f28c97-7503-456c-acca-58ab97e8179f)
+
+Nhập mật khẩu cũ là “admin“, sau đó nhập và xác nhận mật khẩu mới cho người dùng admin.
+
+Đăng xuất khỏi bảng điều khiển quản trị và đăng nhập lại để kiểm tra mật khẩu mới.
