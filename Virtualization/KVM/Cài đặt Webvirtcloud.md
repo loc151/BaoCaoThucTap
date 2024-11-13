@@ -173,4 +173,32 @@ Nhập mật khẩu cũ là “admin“, sau đó nhập và xác nhận mật k
 
 Đăng xuất khỏi bảng điều khiển quản trị và đăng nhập lại để kiểm tra mật khẩu mới.
 
+### Sửa lỗi: Không kết nối được với host kvm:  
 ![image](https://github.com/user-attachments/assets/3da5b672-8281-48c0-8fdb-9109a8cac09d)
+
+1. Thêm user `www-data` vào nhóm `sudo` để user có thể truy cập quản lý và quyền hạn trên hệ thống:
+```
+sudo usermod -aG sudo www-data
+```
+
+2. Truy cập user `www-data` và tạo cặp khoá SSH để thiết lập xác thực SSH cho user:
+```
+sudo -su www-data
+sudo -u www-data ssh-keygen
+```
+
+![image](https://github.com/user-attachments/assets/d5083efa-7ba0-4ce4-8b57-a2e9372814d3)
+
+3. Sao chép khoá công khai SSH vào máy chủ remote:
+```
+ssh-copy-id -i /var/www/.ssh/id_ed25519.pub root@172.16.2.14
+``` 
+
+4. Tại giao diện WebVirtCloud, chọn **Computes -> SSH** và nhập các trường dữ liệu cần thiết để tạo kết nối SSH với KVM Host.
+ssh-copy-id -i /var/www/.ssh/id_ed25519.pub root@172.16.2.14
+
+5. Kiểm tra lại và thấy KVM Host đã được kết nối thành công:
+![image](https://github.com/user-attachments/assets/4a591270-fd50-43ee-87db-fee6bce7233f)
+
+![image](https://github.com/user-attachments/assets/d34ce8dd-9547-476b-a7e1-57867ea8e87c)
+
