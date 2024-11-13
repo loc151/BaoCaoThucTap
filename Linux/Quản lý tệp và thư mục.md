@@ -9,23 +9,44 @@
 3. Các tệp là các nút lá
 
 ## Các thư mục thông dụng trong Linux: 
-- / (root): Thư mục tệp chương trình cơ bản
-- /boot: thư mục chứa hạt nhân (kernel) của hệ điều hành
-- /etc: thư mục chứa các tệp cấu hình
-- /dev: thư mục chứa các tệp thiết bị
-- /home: thư mục chứa dữ liệu của user
-- /lib: thư viện hệ thống
-- /usr: thư mục ứng dụng
-- /var: thư mục dữ liệu cập nhật
-- /proc
+- `/` (root): Thư mục tệp chương trình cơ bản
+- `/boot` (Boot Loader Files): thư mục chứa hạt nhân (kernel) của hệ điều hành
+- `/etc` (Configuration Files): thư mục chứa các tệp cấu hình
+- `/dev` (Files device): thư mục chứa các tệp thiết bị
+- `/home`: thư mục chứa dữ liệu của user
+- `/lib` (System Libraies): Chứa các thư viện dùng chung cho các lệnh nằm trong `/bin` và `sbin`. Thư mục này cũng chứa các module của kernel
+- `/usr` (User Programs): thư mục chứa những file cố định hoặc quan trọng để phục vụ tất cả người dùng. Chứa các ứng dụng, thư viện, tài liệu và mã nguồn các chương trình thứ cấp
+- `/var`: thư mục chứa các tập tin ghi các số liệu biến đổi.
+- `/bin` (User binaries) và `/sbin` (System binaries): Chứa những file cần thiết cho quá trình khởi động và những lệnh thiết yếu để duy trì hệ thống
+- `/tmp` (Temporary Files): Thư mục chứa các file tạm thời
+- `/srv` (Service Data): Chứa các service của máy chủ cụ thể liên quan đến dữ liệu
+
+|Thư mục|Nội dung|
+|---|---|
+|/var/log|Hệ thống tập tin log|
+|/var/lib|Các gói và các file dữ liệu|
+|/var/mail|Email|
+|/var/lock|Lock files|
+|/var/tmp|Các file tạm thời khi cần reboot|
+- `/proc`: chứa các tập tin ảo mà chỉ tồn tại trong bộ nhớ. Một số tập tin quan trọng:
+```
+/proc/cpuinfo
+/proc/interrupts
+/proc/meminfo
+/proc/mounts
+/proc/partitions
+/proc/version
+/proc/<process-id-#>
+/proc/sys
+```
 
 ## Đường dẫn và thư mục đặc biệt:
 1. Truy cập tệp và thư mục cần dùng các đường dẫn
 2. Đường dẫn có thể có mốc từ các thư mục đặc biệt:
-- / : Thư mục gốc (root)
-- ~/ : Thư mục nhà (home)
-- . : Thư mục hiện tại
-- .. : Thư mục cha
+- `/` : Thư mục gốc (root)
+- `~/` : Thư mục nhà (home)
+- `.` : Thư mục hiện tại
+- `..` : Thư mục cha
 
 ## Quản lý thư mục: 
 - `pwd`: Hiển thị đường dẫn tuyệt đối của thư mục hiện tại
