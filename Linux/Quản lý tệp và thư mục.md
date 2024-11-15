@@ -73,14 +73,22 @@
 
 ## Quản lý tệp:
 - `touch`: Tạo tệp mới
+![image](https://github.com/user-attachments/assets/f4e7053a-5afb-4df9-9cd6-70b62f99a429)
+
 - `cp`: Sao chép tệp
 - `mv`: Di chuyển hoặc đổi tên tệp
+![image](https://github.com/user-attachments/assets/bfb578d2-0eaf-409c-8c74-22337d357b0f)
+
 - `rm`: Xoá tệp
+![image](https://github.com/user-attachments/assets/f543458f-0dfa-4b9f-8fbb-fe1562104226)
+
 - `cat`: Hiển thị nội dung tệp
 - `less`: Hiển thị nội dung tệp với khả năng phân trang
 - `head`: Hiển thị các dòng đầu tiên của tệp
 - `tail`: Hiển thị các dòng cuối cùng của tệp
 - `chmod`: Thay đổi quyền truy cập tệp
+![image](https://github.com/user-attachments/assets/3a89a7c5-8068-43cd-ba16-bb80735f1369)
+
 - `chown`: Thay đổi chủ sở hữu tệp
 - `chgrp`: Thay đổi nhóm sở hữu tệp
 
@@ -92,20 +100,21 @@
 |---|---|---|
 |u: |g:|o:|
 - Ví dụ:
-![](./images/phanquyen.png)
+![image](https://github.com/user-attachments/assets/37d02fc4-d680-402d-a307-fc17f49cb75a)
 
--> Tại dòng tubui
-- `d`: Nghĩa là `tubui` là 1 folder
+
+-> Tại dòng locanh1
+- `d`: Nghĩa là `locanh1` là 1 folder
 - `rwx`: Là quyền của User. Ở đây User có đầy đủ 3 quyền là read (đọc), write (ghi) và excute (thực thi) 
-- `r-x`: Là quyền của Group. Ở đây Group có 2 quyền là read (đọc) và excute (thực thi)
+- `rwx`: Là quyền của Group. Ở đây Group có đầy đủ 3 quyền là read (đọc), write (ghi) và excute (thực thi) 
 - `r-x`: Là quyền của các User khác. Ở đây các User khác có 2 quyền là read (đọc) và excute (thực thi)
-- `root root`: Các quyền ở trên là quyền của User root và Group root
--> Tại dòng tubui1
-- `-`: Nghĩa là `tubui1` là 1 file
+- `anhldl anhldl`: Các quyền ở trên là quyền của User anhldl và Group anhldl
+-> Tại dòng locanh
+- `-`: Nghĩa là `locanh` là 1 file
 - `rw-`: Là quyền của User. Ở đây User có 2 quyền là read (đọc) và write (ghi)
-- `r--`: Là quyền của Group. Ở đây Group có 1 quyền là read (đọc)
+- `rw-`: Là quyền của Group. Ở đây Group có 2 quyền là read (đọc) và write (ghi)
 - `r--`: Là quyền của User khác. Ở đây các User khác có 1 quyền là read (đọc)
-- `root root`: Các quyền ở trên là quyền của User root và Group root
+- `anhldl anhldl`: Các quyền ở trên là quyền của User anhldl và Group anhldl
 
 - `ls -lah`: Kiểm tra đầy đủ thông tin của một file (bao gồm quyền)
 - `chmod`: Thay đổi quyền truy cập của người dùng tới file/folder
