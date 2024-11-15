@@ -277,16 +277,16 @@
 			<memballoon model='virtio'>
 			  <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
 			</memballoon>
-[Tham khảo thêm](https://libvirt.org/formatdomain.html#elementsDevices)
+   
 ## **2) Cách tạo máy ảo bằng 1 file `.xml`**
 - **B1 :** Chuẩn bị file `.xml` :
 	```
-	# vi /etc/libvirt/qemu/CentOS7-01.xml
+	# vi /etc/libvirt/qemu/Ubuntu22.04.xml
 	```
 	Thêm nội dung sau :
 	```xml
 	<domain type='kvm'>
-	  <name>CentOS7-01</name>
+	  <name>Ubuntu22.04</name>
 	  <uuid>a96ff9c2-6f0b-11ea-a76b-000c29764151</uuid>
 	  <memory>1048576</memory>
 	  <currentMemory>1048576</currentMemory>
@@ -306,7 +306,7 @@
 		<emulator>/usr/libexec/qemu-kvm</emulator>
 		<disk type="file" device="disk">
 		  <driver name="qemu" type="qcow2"/>
-		  <source file="/var/lib/libvirt/images/centos7-01.qcow2"/>
+		  <source file="/var/lib/libvirt/images/Ubuntu22.04.qcow2"/>
 		  <target dev="vda" bus="virtio"/>
 		  <address type="pci" domain="0x0000" bus="0x00" slot="0x04" function="0x0"/>
 		</disk>
@@ -334,10 +334,10 @@
 	</domain>
 	```
 	- Máy ảo này sẽ có thông số :
-		- Tên máy : CentOS7-01
+		- Tên máy : Ubuntu22.04
 		- RAM : `1GB`
 		- vCPU : `1`
-		- Đường dẫn tới disk : `/var/lib/libvirt/images/centos7-01.qcow2`
+		- Đường dẫn tới disk : `/var/lib/libvirt/images/Ubuntu22.04.qcow2`
 		- Máy ảo được boot từ CDROM : `/var/lib/libvirt/fileiso/CentOS-7-x86_64-Minimal-1908.iso`
 		- Sử dụng card NAT default
 	- Phần `uuid` có thể sử dụng lệnh để generate :
@@ -349,17 +349,17 @@
 	> Có thể tạo file `.xml` bằng cách dump 1 file tương tự từ máy ảo khác bằng lệnh `virsh dumpxml vm01 > vm02.xml`
 - **B2 :** Tạo ổ đĩa vừa khai báo ở trên :
 	```
-	# qemu-img create -f qcow2 /var/lib/libvirt/images/centos7-01.qcow2 10G
+	# qemu-img create -f qcow2 /var/lib/libvirt/images/Ubuntu22.04.qcow2 10G
 	```
 - **B3 :** Khởi tạo máy ảo :
 	```
-	# virsh create CentOS7-01.xml
+	# virsh create Ubuntu22.04.xml
 	```
 - **B4 :** Kiểm tra máy ảo vừa tạo :
 	```
 	# virsh list
 	 Id    Name                           State
 	----------------------------------------------------
-	19    CentOS7-02                     running
-	22    CentOS7-01                     running
+	19    CentOS7-02                      running
+	22    Ubuntu22.04                     running
 	```
