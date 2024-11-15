@@ -10,7 +10,7 @@
 - **VD :**
     ```xml
     <domain type='kvm'>
-      <name>CentOS7-02</name>
+      <name>Ubuntu22.04</name>
       <uuid>d21b72cd-3568-4657-b5da-bc30eebdc6c7</uuid>
       <description>None</description>
       <memory unit='KiB'>524288</memory>
@@ -37,7 +37,7 @@
         <emulator>/usr/libexec/qemu-kvm</emulator>
         <disk type='file' device='disk'>
           <driver name='qemu' type='raw' cache='directsync'/>
-          <source file='/var/lib/libvirt/images/centos7-02.raw'/>
+          <source file='/var/lib/libvirt/images/Ubuntu22.04.raw'/>
           <target dev='vda' bus='virtio'/>
           <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
         </disk>
@@ -104,7 +104,7 @@
 	- ### **Metadata của máy ảo** :
 		- Thẻ `<name>` : tên máy ảo, chỉ bao gồm kí tự chữ và số và không trùng với những máy ảo đang chạy.
 			```xml
-			<name>CentOS7-02</name>
+			<name>Ubuntu22.04</name>
 			```
 		- Thẻ `<uuid>` : mã nhận dạng quốc tế duy nhất cho máy ảo. Format theo `RFC 4122`. Nếu thiếu trường `uuid` khi khởi tạo, mã này sẽ được tự động generate.
 			```xml
@@ -360,6 +360,6 @@
 	# virsh list
 	 Id    Name                           State
 	----------------------------------------------------
-	19    CentOS7-02                      running
+	19    Ubuntu22.04                      running
 	22    Ubuntu22.04                     running
 	```
