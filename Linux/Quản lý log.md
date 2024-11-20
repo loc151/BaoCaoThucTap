@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/9af50f0b-5012-408c-a2a5-c597511b74e5)# Quản lý nhật ký - log
+# Quản lý nhật ký - log
 ## Khái niệm: Log là các tệp chứa thông tin về các sự kiện và hoạt động của hệ thống. Các tệp nhật ký này rất quan trọng để theo dõi, phân tích và khắc phục sự cố hệ thống
 ## Chức năng:
 - **Ghi lại các sự kiện**: Log ghi lại các sự kiện xảy ra trong hệ thống, bao gồm thông tin về khởi động, tắt máy, lỗi hệ thống và các hoạt động của người dùng
