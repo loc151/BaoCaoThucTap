@@ -12,13 +12,13 @@
 hostnamectl set-hostname new-hostname#
 ```
 
-2. Hiển thị phiên bản của Linux
+### 2. Hiển thị phiên bản của Linux
 - Câu lệnh: `# cat /etc/*release`
 - Lệnh này sẽ đọc và hiển thị nội dung của các tập tin trong thư mục /etc/ có tên chứa thông tin về phiên bản hệ điều hành.
 
 ![image](https://github.com/user-attachments/assets/b1f2423a-1cf0-49b2-bc5d-de725cb53efe)
 
-3. Hiển thị thông tin về kernel của hệ thống.
+### 3. Hiển thị thông tin về kernel của hệ thống.
 - Để hiển thị những thông tin về kernel của hệ thống ta sử dụng câu lệnh **uname**
 - Câu lệnh: `# uname -a`
 - Lệnh này sẽ hiển thị tất cả thông tin chi tiết kernel và hệ thống
