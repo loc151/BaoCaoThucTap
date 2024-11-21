@@ -1,8 +1,9 @@
 # Sử dụng LVM:
 
 ## 1. Kiểm tra thông tin về các thiết bị lưu trữ và phân vùng: `lsblk`
-![image](https://github.com/user-attachments/assets/d78c54ec-9696-4947-800d-1421c066a3ab)
+![image](https://github.com/user-attachments/assets/3e10ed18-3706-4e9e-9b8a-f4981a8c8c75)
 
-## 2. Tạo phân vùng mới: `pvcreate`
+## 2. Tạo vùng vật lý mới có thể sử dụng trong Volumes: `pvcreate`
+![image](https://github.com/user-attachments/assets/f9ce5b80-6a15-4da5-9103-065dec183be4)
 
-
+## 3. 
