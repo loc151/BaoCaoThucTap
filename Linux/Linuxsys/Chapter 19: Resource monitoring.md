@@ -19,27 +19,22 @@
 [htop](#htop)
 
 ## Top
+- Lệnh "top" trong Linux là một tiện ích hữu ích để theo dõi tài nguyên hệ thống của máy tính của bạn. Khi bạn chạy lệnh "top" trong terminal, nó sẽ hiển thị một danh sách các quy trình đang chạy trên máy tính của bạn, cùng với thông tin về việc sử dụng CPU, bộ nhớ, và các tài nguyên hệ thống khác. Đây là một công cụ mạnh mẽ để theo dõi hiệu suất của hệ thống và xác định các quy trình tiêu tốn nhiều tài nguyên.
 
-Lệnh "top" trong Linux là một tiện ích hữu ích để theo dõi tài nguyên hệ thống của máy tính của bạn. Khi bạn chạy lệnh "top" trong terminal, nó sẽ hiển thị một danh sách các quy trình đang chạy trên máy tính của bạn, cùng với thông tin về việc sử dụng CPU, bộ nhớ, và các tài nguyên hệ thống khác. Đây là một công cụ mạnh mẽ để theo dõi hiệu suất của hệ thống và xác định các quy trình tiêu tốn nhiều tài nguyên.
+- Dưới đây là một số phím tắt phổ biến có thể sử dụng khi ở trong chế độ "top":
+   - **h**: Hiển thị trợ giúp về các lệnh tắt.
+   - **k**: Tắt một tiến trình bằng cách yêu cầu nhập ID của nó.
+   - **q**: Thoát khỏi "top".
+   - **Space**: Làm mới màn hình.
+   - **s**: Thay đổi khoảng thời gian làm mới (mặc định là 3 giây).
+   - **M**: Sắp xếp các quy trình theo bộ nhớ sử dụng.
+   - **P**: Sắp xếp các quy trình theo CPU sử dụng.
+   - **T**: Sắp xếp các quy trình theo thời gian CPU sử dụng.
 
-Dưới đây là một số phím tắt phổ biến bạn có thể sử dụng khi ở trong chế độ "top":
+- Để thoát khỏi "top", nhấn phím "q".
+![image](https://github.com/user-attachments/assets/0966acfd-9675-4c81-a87c-99d6bb65a512)
 
-- **h**: Hiển thị trợ giúp về các lệnh tắt.
-- **k**: Tắt một tiến trình bằng cách yêu cầu nhập ID của nó.
-- **q**: Thoát khỏi "top".
-- **Space**: Làm mới màn hình.
-- **s**: Thay đổi khoảng thời gian làm mới (mặc định là 3 giây).
-- **M**: Sắp xếp các quy trình theo bộ nhớ sử dụng.
-- **P**: Sắp xếp các quy trình theo CPU sử dụng.
-- **T**: Sắp xếp các quy trình theo thời gian CPU sử dụng.
-
-Để thoát khỏi "top", bạn chỉ cần nhấn phím "q".
-
-
-![](./images/Sreenshot_9.png)
-
-
-Khi bạn chạy lệnh "top" trong Linux, bạn sẽ thấy một bảng các thông số đầu ra, mỗi dòng trong bảng này tương ứng với một quy trình đang chạy trên hệ thống của bạn. Dưới đây là các thông số đầu ra thông thường mà bạn có thể gặp khi chạy lệnh "top":
+- Khi chạy lệnh "top" trong Linux, ta sẽ thấy một bảng các thông số đầu ra, mỗi dòng trong bảng này tương ứng với một quy trình đang chạy trên hệ thống của bạn. Dưới đây là các thông số đầu ra thông thường có thể gặp khi chạy lệnh "top":
 
 1. **PID (Process ID)**: ID của quy trình.
 2. **USER**: Người dùng sở hữu quy trình.
@@ -57,9 +52,7 @@ Thông số này cung cấp cái nhìn tổng quan về các quy trình đang ch
 
 
 ## Free
-
-Lệnh "free" trong Linux được sử dụng để hiển thị thông tin về bộ nhớ hệ thống. Khi bạn chạy lệnh "free" trong terminal, nó sẽ hiển thị thông tin về bộ nhớ RAM và swap trên hệ thống của bạn. Dưới đây là các thông số mà lệnh "free" thường hiển thị:
-
+- Lệnh "free" trong Linux được sử dụng để hiển thị thông tin về bộ nhớ hệ thống. Khi bạn chạy lệnh "free" trong terminal, nó sẽ hiển thị thông tin về bộ nhớ RAM và swap trên hệ thống của bạn. Dưới đây là các thông số mà lệnh "free" thường hiển thị:
 1. **total**: Tổng dung lượng bộ nhớ RAM hoặc swap trên hệ thống (được hiển thị trong đơn vị KiB, Megabyte, hoặc Gigabyte).
 2. **used**: Tổng dung lượng bộ nhớ đã được sử dụng.
 3. **free**: Tổng dung lượng bộ nhớ còn trống.
@@ -67,23 +60,19 @@ Lệnh "free" trong Linux được sử dụng để hiển thị thông tin v�
 5. **buff/cache (buffers/cache)**: Dung lượng bộ nhớ đang được sử dụng cho bộ đệm (buffers) và cache. Các dữ liệu ở đây được sử dụng để tăng tốc độ truy cập vào ổ đĩa và giảm tải cho ổ đĩa.
 6. **available**: Dung lượng bộ nhớ có sẵn để sử dụng cho các quy trình mới mà không cần phải sử dụng swap.
 
-Thông thường, bạn có thể sử dụng các tùy chọn như "-h" để hiển thị kết quả dễ đọc hơn với các đơn vị lớn hơn như Megabyte hoặc Gigabyte. Ví dụ: "free -h".aa
+Thông thường, bạn có thể sử dụng các tùy chọn như "-h" để hiển thị kết quả dễ đọc hơn với các đơn vị lớn hơn như Megabyte hoặc Gigabyte. Ví dụ: "free -h"
 
-
-
-![](./images/Sreenshot_10.png)
+![image](https://github.com/user-attachments/assets/ce69532d-8a29-43b2-99e7-34385193b2cd)
 
 
 ## watch
 
 Lệnh "watch" trong Linux được sử dụng để thực hiện một lệnh hoặc một chuỗi các lệnh theo định kỳ, và hiển thị kết quả trên màn hình terminal. Khi bạn chạy lệnh "watch", nó sẽ thực hiện lệnh được chỉ định và hiển thị kết quả của lệnh đó trên màn hình terminal. Sau đó, nó sẽ làm mới và hiển thị kết quả mới sau mỗi khoảng thời gian được xác định.
 
-Ví dụ, nếu bạn muốn theo dõi mức sử dụng bộ nhớ của hệ thống mỗi 2 giây, bạn có thể sử dụng lệnh:
-
+Ví dụ, nếu muốn theo dõi mức sử dụng bộ nhớ của hệ thống mỗi 2 giây, sử dụng lệnh:
 ```
 watch -n 2 free -m
 ```
-
 Trong đó:
 
 - **-n 2**: Định kỳ làm mới kết quả sau mỗi 2 giây.
@@ -91,11 +80,7 @@ Trong đó:
 
 Lệnh trên sẽ liên tục hiển thị thông tin về bộ nhớ của hệ thống, được cập nhật sau mỗi 2 giây trên màn hình terminal.
 
-
-
-![](./images/Sreenshot_11.png)
-
-
+![image](https://github.com/user-attachments/assets/b605284e-d7b8-4f84-a6b0-9ebe8eacdcf0)
 
 ## vmstat
 
@@ -111,11 +96,9 @@ Khi bạn chạy lệnh "vmstat" mà không có bất kỳ tùy chọn nào, nó
 
 Bạn cũng có thể sử dụng các tùy chọn với lệnh "vmstat" để điều chỉnh cách hiển thị thông tin, chẳng hạn như tùy chọn "-t" để hiển thị thời gian, hoặc "-n" để xác định số lượng lần hiển thị. Ví dụ: "vmstat -t 5" sẽ hiển thị thông tin vmstat mỗi 5 giây cùng với thời gian.
 
+![image](https://github.com/user-attachments/assets/e407e988-2816-4810-bd81-5130a345f32e)
 
-![](./images/Sreenshot_12.png)
-
-
-Các cột trong kết quả của lệnh `vmstat` thường được phân chia thành các phần tương ứng với thông tin về các khía cạnh của hệ thống. Dưới đây là giải thích chi tiết cho từng cột:
+- Các cột trong kết quả của lệnh `vmstat` thường được phân chia thành các phần tương ứng với thông tin về các khía cạnh của hệ thống. Dưới đây là giải thích chi tiết cho từng cột:
 
 1. **procs**: Thống kê về quá trình (processes).
    - **r**: Số lượng quy trình đang chạy hoặc đang đợi để được xử lý (run queue).
@@ -146,8 +129,6 @@ Các cột trong kết quả của lệnh `vmstat` thường được phân chia
    - **wa**: Phần trăm thời gian CPU đang chờ đợi I/O hoàn thành (waiting).
    - **st**: Phần trăm thời gian CPU bị gián đoạn (stolen) bởi các máy ảo khác nếu hệ thống sử dụng công nghệ ảo hóa.
 
-
-
 Dưới đây là một số tùy chọn phổ biến của lệnh `vmstat`:
 
 1. **-a, --active**: Hiển thị thông tin về các phần của bộ nhớ mà đang được sử dụng và không được sử dụng.
@@ -167,11 +148,7 @@ Dưới đây là một số tùy chọn phổ biến của lệnh `vmstat`:
 Ví dụ, để hiển thị thống kê về sử dụng bộ nhớ mỗi 5 giây, bạn có thể sử dụng tùy chọn `-n` như sau: `vmstat -n 5`. Điều này sẽ làm 
 mới kết quả mỗi 5 giây.
 
-
-
-![](./images/Sreenshot_13.png)
-
-
+![image](https://github.com/user-attachments/assets/d53d2e3b-1dde-44bd-8b7b-deec2f7b3efc)
 
 ## iostat
 
@@ -200,11 +177,6 @@ iostat -d 1
 ```
 
 Điều này sẽ hiển thị thống kê về các thiết bị lưu trữ mỗi giây.
-
-
-![](./images/Sreenshot_14.png)
-
-
 
 ## mbstat
 
@@ -271,11 +243,6 @@ iftop -i eth0
 
 Điều này sẽ hiển thị thông tin về lưu lượng mạng trên giao diện "eth0".
 
-
-![](./images/Sreenshot_15.png)
-
-
-
 # nmon
 
 Lệnh "nmon" là một tiện ích dòng lệnh mạnh mẽ được sử dụng để thu thập và hiển thị các thông tin chi tiết về hiệu suất hệ thống Linux trong thời gian thực. Nó cung cấp một giao diện dễ đọc và đồ họa, giúp người quản trị hệ thống hiểu rõ hơn về tình trạng của hệ thống và tìm ra các vấn đề về hiệu suất.
@@ -290,16 +257,6 @@ Dưới đây là một số thao tác phổ biến mà bạn có thể thực h
 - Sử dụng phím "s" để lưu thông tin nmon vào một file để xem sau.
 
 Nmon cung cấp một cách mạnh mẽ để theo dõi và phân tích hiệu suất hệ thống Linux, đặc biệt là khi bạn cần theo dõi hệ thống trong thời gian thực và làm nhanh chóng các quyết định về tinh chỉnh hoặc tìm kiếm và giải quyết các vấn đề.
-
-
-
-![](./images/Sreenshot_16.png)
-
-
-
-
-![](./images/Sreenshot_17.png)
-
 
 # htop
 
