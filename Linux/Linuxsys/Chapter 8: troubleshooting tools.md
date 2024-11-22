@@ -64,10 +64,9 @@ Câu lệnh (`sudo lsof | head -10`) sẽ hiển thị 10 dòng đầu tiên c�
 Trong trường hợp này, các dòng đầu tiên liệt kê thông tin về các tệp và thư mục được mở bởi tiến trình systemd, bao gồm cả thư mục làm việc hiện tại (`cwd`), tệp thực thi (`txt`), và các thư viện được sử dụng (`mem`).
 
 ## 2. fuser
+- Lệnh `fuser` trong hệ điều hành Unix/Linux được sử dụng để xác định các tiến trình đang sử dụng hoặc có tệp được mở. Cụ thể, nó sẽ hiển thị ID của các tiến trình đang sử dụng tệp, thư mục hoặc thiết bị được chỉ định.
 
-Lệnh `fuser` trong hệ điều hành Unix/Linux được sử dụng để xác định các tiến trình đang sử dụng hoặc có tệp được mở. Cụ thể, nó sẽ hiển thị ID của các tiến trình đang sử dụng tệp, thư mục hoặc thiết bị được chỉ định.
-
-Cú pháp cơ bản của lệnh `fuser` là:
+- Cú pháp cơ bản của lệnh `fuser` là:
 
 ```
 fuser [options] [file|directory]
@@ -105,6 +104,49 @@ anhldl@anhldl:~$ fuser -m -u hello.txt
 /home/anhldl/A.txt:  3593rce(anhldl)  4506rce(anhldl)  4589rce(anhldl)  4590rce(anhldl)  4596rce(anhldl)  4601rce(anhldl)  4618rce(anhldl)
 ```
 
-
-
 Lệnh `fuser` rất hữu ích trong việc xác định và giải quyết các vấn đề liên quan đến việc các tiến trình có thể gây ra khi sử dụng các tệp hoặc thư mục cụ thể trên hệ thống của bạn.
+
+## 3. iostat:
+- Lệnh `iostat` là một công cụ dòng lệnh hữu ích để giám sát hiệu suất CPU và I/O của đĩa. Nó là một phần của gói sysstat và cung cấp thông tin chi tiết về việc sử dụng tài nguyên của hệ thống, giúp xác định các điểm nghẽn và tối ưu hóa hiệu suất.
+- Cú pháp:
+```
+iostat [options] [devices] [interval] [count]
+```
+- Các tuỳ chọn phổ biến:
+  - `-c`: Hiển thị thống kê CPU.
+  - `-d`: Hiển thị thống kê I/O của đĩa.
+  - `-x`: Hiển thị thống kê chi tiết về I/O của đĩa.
+  - `-k`: Hiển thị thống kê với đơn vị kilobyte
+  
+- Cài đặt gói sysstat nếu chưa có trong máy chủ:
+```
+sudo apt-get install sysstat      # Debian/Ubuntu-based
+sudo yum install sysstat          # RHEL/CentOS/Fedora-based
+```
+
+- Hiển thị thống kê cơ bản về CPU và I/O của đĩa: `iostat`
+![image](https://github.com/user-attachments/assets/27cfba65-f2a8-48fb-b4e8-c166b8876280)
+
+- Hiển thị thống kê với khoảng thời gian cập nhật: `iostat 5` . Lệnh này sau 5 giây sẽ cập nhật trạng thái:
+![image](https://github.com/user-attachments/assets/340cec19-bc1b-4d23-9117-8a6e13635f67)
+
+- Hiển thị thống kê cho một thiết bị cụ thể: `iostat -d /dev/sda`
+![image](https://github.com/user-attachments/assets/f0329f55-431e-4189-9b44-7d99f44477f4)
+
+- Giải thích các trường dữ liệu ở đầu ra của lệnh:
+- **CPU Statistics**:
+  - `%user`: Phần trăm thời gian CPU dành cho các tiến trình người dùng.
+  - `%nice`: Phần trăm thời gian CPU dành cho các tiến trình người dùng với giá trị nice dương.
+  - `%system`: Phần trăm thời gian CPU dành cho các tiến trình hệ thống.
+  - `%iowait`: Phần trăm thời gian CPU chờ đợi các hoạt động I/O hoàn thành.
+  - `%idle`: Phần trăm thời gian CPU không hoạt động.
+
+- **Devices Statistics**:
+  - `Device`: Tên thiết bị (ví dụ: sda, sdb).
+
+  - `tps`: Số lần chuyển mỗi giây (yêu cầu I/O) gửi đến thiết bị.
+
+  - `kB_read/s`: Số kilobyte đọc từ thiết bị mỗi giây.
+
+  - `kB_wrtn/s`: Số kilobyte ghi vào thiết bị mỗi giây.
+
