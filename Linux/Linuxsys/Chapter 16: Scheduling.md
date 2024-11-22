@@ -1,18 +1,10 @@
-# Quản trị viên Linux sử dụng `at` để lên lịch các công việc một lần. Các công việc định kỳ được lên lịch tốt hơn với `cron`. Hai phần tiếp theo sẽ thảo luận về cả hai công cụ.
+# Quản trị viên Linux sử dụng `at` để lên lịch các công việc một lần. Các công việc định kỳ được lên lịch tốt hơn với `cron`.
 
-## A. Lệnh `at`:
-```
-at [times]
-```
+##  Cron:
+- `Cron` là một dịch vụ quản lý thời gian trong hệ thống Unix và Linux, cho phép lên lịch cho việc thực hiện các tác vụ tự động vào các thời điểm cụ thể hoặc theo lịch trình định kỳ.
+- Dịch vụ `cron` sử dụng một tệp cấu hình được gọi là "crontab" để định rõ các tác vụ cần thực hiện và thời gian chúng sẽ được thực hiện.
 
-### 1. Lên lịch thực hiện 1 lệch vào 1 thời điểm cụ thể:
-
-
-# Cron
-
-Cron là một dịch vụ quản lý thời gian trong hệ thống Unix và Linux, cho phép lên lịch cho việc thực hiện các tác vụ tự động vào các thời điểm cụ thể hoặc theo lịch trình định kỳ. Dịch vụ cron sử dụng một tệp cấu hình được gọi là "crontab" để định rõ các tác vụ cần thực hiện và thời gian chúng sẽ được thực hiện.
-
-`crontab` là một công cụ dòng lệnh được sử dụng trong hệ điều hành Unix và Linux để quản lý và chỉnh sửa crontab của người dùng. Crontab là một tệp cấu hình chứa các tác vụ được lên lịch để thực hiện tự động vào các thời điểm cụ thể.
+- `crontab` là một công cụ dòng lệnh được sử dụng trong hệ điều hành Unix và Linux để quản lý và chỉnh sửa crontab của người dùng. Crontab là một tệp cấu hình chứa các tác vụ được lên lịch để thực hiện tự động vào các thời điểm cụ thể.
 
 Dưới đây là một số chức năng cơ bản của `crontab`:
 
@@ -30,11 +22,9 @@ Dưới đây là một số chức năng cơ bản của `crontab`:
 
 Với `crontab`, người dùng có thể lên lịch cho các tác vụ như sao lưu dữ liệu, chạy các tác vụ hằng ngày, hàng tuần hoặc hàng tháng, và thực hiện các công việc định kỳ khác mà không cần can thiệp thủ công. Điều này giúp tự động hóa các quy trình hệ thống và làm giảm công sức của người quản trị hệ thống.
 
-## Thời gian trong crontab
-
-Trong crontab, thời gian được thiết lập sử dụng năm cột đại diện cho phút, giờ, ngày trong tháng, tháng và ngày trong tuần. Mỗi cột này có các giá trị được phân tách bằng dấu cách hoặc ký tự tab.
-
-Dưới đây là cách thiết lập thời gian trong crontab:
+### Thời gian trong crontab
+- Trong crontab, thời gian được thiết lập sử dụng năm cột đại diện cho phút, giờ, ngày trong tháng, tháng và ngày trong tuần. Mỗi cột này có các giá trị được phân tách bằng dấu cách hoặc ký tự tab.
+- Dưới đây là cách thiết lập thời gian trong crontab:
 
 1. **Phút (Minute)**: Cột đầu tiên trong crontab đại diện cho phút. Các giá trị có thể từ 0 đến 59 hoặc sử dụng dấu sao (*) để chỉ định mọi giá trị phút.
 
@@ -59,19 +49,19 @@ Trong đó:
 - "command_to_execute" là lệnh hoặc tác vụ mà bạn muốn thực hiện.
 
 
-## Ví dụ
+### Ví dụ
 
 ```sh
 crontab -e
-```
-
-![](./images/Sceenshot_8.png)
-
+``
+![image](https://github.com/user-attachments/assets/a3320e37-e157-4aa3-882d-60a8916aad86)
 
 Sử dụng `crontab -l` để xem nội dung các crontab 
 
 ```sh
-ngocnd@web02:~$ crontab -l
+anhldl@anhldl:~$ crontab -e
+crontab: installing new crontab
+anhldl@anhldl:~$ crontab -l
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
@@ -96,13 +86,7 @@ ngocnd@web02:~$ crontab -l
 #
 # m h  dom mon dow   command
 
-0 3 * * 1 /path/to/weekly_report.sh
+# Cap nhat he thong vao luc 2 gio sang moi ngay
+0 2 * * * sudo apt update
 
-
-# Moi gio, ghi nhat ky he thong vao tep syslog.log
-@hourly /usr/sbin/syslogd -n > /var/log/syslog.log
-
-# Moi thang vao ngay 1 luc 0 gio, chay lenh cleanup de don dep he thong
-
-0 0 1 * * /usr/local/bin/cleanup
 ```
