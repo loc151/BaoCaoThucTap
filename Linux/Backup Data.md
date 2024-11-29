@@ -1,1 +1,10 @@
-# `rsync` hoặc đồng bộ hóa từ xa là một tiện ích phần mềm cho các hệ thống giống Unix đồng bộ hóa hiệu quả các tệp và thư mục giữa hai máy chủ hoặc máy. Một là nguồn hoặc máy chủ cục bộ mà từ đó các tệp sẽ được đồng bộ hóa, cái còn lại là máy chủ từ xa, trên đó quá trình đồng bộ hóa sẽ diễn ra. Về cơ bản có hai cách trong đó rsync can copy/sync data
+# `rsync` hoặc đồng bộ hóa từ xa là một tiện ích phần mềm cho các hệ thống giống Unix đồng bộ hóa hiệu quả các tệp và thư mục giữa hai máy chủ hoặc máy. 
+- Một là nguồn hoặc máy chủ cục bộ mà từ đó các tệp sẽ được đồng bộ hóa, cái còn lại là máy chủ từ xa, trên đó quá trình đồng bộ hóa sẽ diễn ra.
+- Về cơ bản có hai cách trong đó rsync can copy/sync data:
+  - Sao chép/đồng bộ đến/từ 1 máy chủ khác qua bất kỳ trình kết nối từ xa như ssh.
+  - Sao chép/đồng bộ hoá thông qua `rsync daemon` bằng TCP
+
+## Cấu trúc: 
+```
+rsync local-file user@remote-host:remote-file
+```
