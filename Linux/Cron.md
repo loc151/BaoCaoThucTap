@@ -1,4 +1,3 @@
-
 # Cron
 - **Cron** là một dịch vụ có sẵn trên hầu hết các hệ thống Linux, cho phép người dùng lập lịch cho các tác vụ để chúng tự động chạy vào các thời điểm cụ thể, như hàng ngày, hàng tuần, hoặc theo các khung thời gian tùy chỉnh.
 - Cron hoạt động dựa trên các file cấu hình gọi là "cron jobs" (công việc cron). Các công việc này được lưu trữ trong các file có tên là "crontab" (cron table), mỗi người dùng có một crontab riêng để định nghĩa các công việc cho họ.
