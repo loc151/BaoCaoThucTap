@@ -46,11 +46,23 @@
 sudo resize2fs /dev/myvg/mylv
 ```
 
-blkid
+- **blkid**: Hiển thị thông tin về các thiết bị lưu trữ vè hệ thống tệp
+
 ![image](https://github.com/user-attachments/assets/bbc1ab37-5a48-471c-8693-1e9f88add10b)
 
-fsck
+- **fsck (File System Consistency Check)**: sử dụng để kiểm tra và sửa chữa các lỗi trên hệ thống tệp
+  - Các tuỳ chọn phổ biến:
+    - `-a`: Tự động sửa chữa các lỗi mà không hỏi xác nhận.
+    - `-r`: Hỏi xác nhận trước khi sửa chữa các lỗi.
+    - `-y`: Trả lời "yes" cho tất cả các câu hỏi xác nhận
+    - `-C`: Hiển thị tiến trình kiểm tra.
+  - **Lưu ý:**
+    - **Không chạy `fsck` trên hệ thống tệp đang được gắn kết**: Điều này có thể gây ra hỏng hóc dữ liệu. Đảm bảo rằng hệ thống tệp đã được tháo gắn kết trước khi chạy `fsck`.
+    - **Sao lưu dữ liệu quan trọng**: Trước khi chạy `fsck`, sao lưu dữ liệu quan trọng để tránh mất mát dữ liệu trong quá trình sửa chữa.
+
 ![image](https://github.com/user-attachments/assets/e86dde35-4542-4886-aeea-89cfd364d61b)
 
-/etc/fstab
+  
+- **/etc/fstab**:
+
 ![image](https://github.com/user-attachments/assets/77069d33-ae9a-4ed8-80f8-addaf5c2b491)
