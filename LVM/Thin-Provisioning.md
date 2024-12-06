@@ -8,28 +8,24 @@ Sử dụng thin provisioning, ta có thể quản lý dung lượng còn trốn
 Thin pool có thể mở rộng động, tận dụng tối đa tài nguyên và tối ưu chi phí.
 
 __VD:__
-- có 10 user yêu cầu cấp phát 100gb FS cho app của họ.
+- Có 10 user yêu cầu cấp phát 100gb FS cho app của họ.
 - Storage administrator có thể tạo 100gb cho từng người ngay cả khi dung lượng thực tế của storage nhỏ hơn.
 
 > Nếu cung cấp Provisioning nhiều hơn dung lượng hiện có, nó gọi là __Over Provisioning.__
 
-### Cấu trúc
-![](PIC/thin-lvm-overview.jpg)
-
-## Chuẩn bị
-### Thiết lập máy ảo như sau:
-![](PIC/basic-lvm-1.png)
+## Cấu trúc:
+![image](https://github.com/user-attachments/assets/2b226c33-a220-4db2-a697-5d3c5c2cfe96)
 
 ## Bắt đầu
 ### Tạo VG
 ```
-# vgcreate -s 32M vg_thin /dev/sdc1
+# vgcreate -s 5G vg_thin /dev/sdc1
 ```
 #### Kiểm tra thông số hiện có
 ```
 # pvs
 ```
-![](PIC/lvm-thin-1.PNG)
+![image](https://github.com/user-attachments/assets/fc022dfe-72f9-4ba6-9dc6-6bf4201e014d)
 
 ### Tạo __Thin Pool__
 ```
