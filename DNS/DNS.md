@@ -1,3 +1,27 @@
 # DNS (Domain Name System)
 ## Tên miền (domain), là địa chỉ trang web mà mọi người nhập vào thanh URL của trình duyệt để truy cập vào một website.
 ## Hệ thống tên miền (DNS) là một thành phần quan trọng của cơ sở hạ tầng Internet đóng vai trò cơ bản trong việc kết nối người dùng với các trang web, dịch vụ và tài nguyên trên World Wide Web. Về cơ bản, nó là "danh bạ điện thoại" của internet, dịch các tên miền thân thiện với người dùng (như www.example.com) thành địa chỉ IP số (chẳng hạn như 192.0.2.1) mà máy tính và thiết bị mạng sử dụng để xác định vị trí của nhau trên internet.
+### 1. Các loại máy chủ DNS:
+- **Domain Name**: là một nhãn mà con người có thể đọc được đại diện cho một vị trí hoặc tài nguyên cụ thể trên internet. Tên miền được cấu trúc như một hệ thống phân cấp, với các cấp độ được phân tách bằng dấu chấm (dấu chấm). Ví dụ: "[www.example.com](http://www.example.com/)" có ba phần: "www" (miền phụ), "ví dụ" (miền cấp hai) và "com" (miền cấp cao nhất)
+- **Top-Level Domain**: TLD là cấp cao nhất trong hệ thống phân cấp DNS và đại diện cho các danh mục tên miền. Các ví dụ phổ biến bao gồm ".com", ".org", ".net" và các TLD mã quốc gia như ".uk" (Vương quốc Anh) và "vn" (Việt Nam). ICANN (Internet Corporation for Assigned Names and Numbers) quản lý việc gán TLD.
+- **Domain Name Registrar**: Nhà đăng ký là các tổ chức được ICANN công nhận để bán đăng ký tên miền. Chúng cho phép các cá nhân và tổ chức đặt trước và quản lý tên miền trong các TLD cụ thể
+- **Authoritative Name Server**: là những máy chủ DNS lưu trữ và quản lý các bản ghi DNS cho một miền cụ thể. Ví dụ: "[ns1.example.com](http://ns1.example.com/)" có thể là máy chủ tên có thẩm quyền cho miền "[example.com](http://example.com/)".
+- **Recursive Resolver**: là những máy chủ DNS được vận hành bởi các nhà cung cấp dịch vụ internet (ISP) hoặc nhà cung cấp dịch vụ DNS bên thứ ba. Họ chịu trách nhiệm nhận các truy vấn DNS từ các thiết bị khách và giải quyết tên miền đệ quy bằng cách truy vấn các máy chủ định danh có thẩm quyền.
+- **Root Name Servers**: Ở đầu hệ thống phân cấp DNS là 13 máy chủ tên gốc được duy trì bởi các tổ chức khác nhau trên toàn thế giới. Các máy chủ này lưu giữ thông tin về TLD và cung cấp các con trỏ quan trọng đến các máy chủ tên có thẩm quyền cho mỗi TLD.
+- **Caching DNS Servers**: Chúng thường được cung cấp bởi các nhà cung cấp dịch vụ internet (ISP) hoặc được sử dụng bởi các cá nhân và tổ chức. Các máy chủ DNS lưu trữ tạm thời các bản ghi DNS mà họ đã tra cứu gần đây. Khi người dùng truy vấn một miền, các máy chủ này sẽ kiểm tra bộ nhớ cache của họ trước khi truy vấn các máy chủ DNS có thẩm quyền, điều này giúp giảm tải truy vấn DNS
+- **Forwading DNS Servers**: Các máy chủ này được cấu hình để chuyển tiếp các truy vấn DNS đến các máy chủ DNS khác thay vì tự giải quyết
+- **Load Balancing DNS Servers**: Các máy chủ này phân phối các truy vấn DNS trên nhiều địa chỉ IP hoặc phiên bản máy chủ để cân bằng tải lưu lượng và cải thiện tính khả dụng và hiệu suất của dịch vụ
+
+### 2. Ví dụ về DNS: 
+![image](https://github.com/user-attachments/assets/68a6f37f-a05a-44a7-ab22-04487f26a9fe)
+
+### Giải thích quy trình:
+**1. Từ máy tính người dùng, thực hiện truy vấn DNS đến máy chủ DNS đệ quy của ISP**: Khi người dùng nhập tên miền vào trình duyệt web, máy tính của họ sẽ gửi truy vấn DNS đến máy chủ DNS đệ quy của Nhà cung cấp dịch vụ Internet (ISP). Máy chủ DNS đệ quy chịu trách nhiệm xử lý các truy vấn DNS thay mặt cho người dùng và cố gắng giải quyết tên miền. <p>
+**2. Thực hiện truy vấn DNS đến máy chủ DNS gốc**: Nếu máy chủ DNS đệ quy không có địa chỉ IP cho miền được yêu cầu trong bộ nhớ cache của nó, nó sẽ bắt đầu quá trình giải quyết bằng cách truy vấn máy chủ DNS gốc. Máy chủ DNS gốc là máy chủ cấp cao nhất trong hệ thống phân cấp DNS và nó chứa thông tin về các máy chủ DNS có thẩm quyền cho các miền cấp cao nhất (TLD), chẳng hạn như ".com", ".org", ".net", v.v. <p>
+**3. Yêu cầu máy chủ .com đến máy chủ DNS đệ quy của ISP**: Máy chủ DNS gốc phản hồi truy vấn của máy chủ DNS đệ quy bằng cách giới thiệu đến máy chủ DNS có thẩm quyền cho TLD ".com". Sau đó, máy chủ DNS đệ quy truy vấn máy chủ DNS TLD ".com" cho địa chỉ IP của tên miền được đề cập. <p>
+**4. Truy vấn DNS đến máy chủ DNS tên miền Cấp cao nhất ".com"**: Máy chủ DNS TLD ".com", để đáp ứng truy vấn từ máy chủ DNS đệ quy, cung cấp giới thiệu đến máy chủ DNS có thẩm quyền chịu trách nhiệm cho tên miền cụ thể, trong trường hợp này là "example.com". <p>
+**5. Yêu cầu máy chủ DYN đến máy chủ DNS đệ quy của ISP**: Máy chủ DNS đệ quy truy vấn máy chủ DNS có thẩm quyền cho "example.com". Máy chủ DNS có thẩm quyền cho "example.com" thường là máy chủ DNS động (DYN) chứa các bản ghi DNS cụ thể cho miền, chẳng hạn như bản ghi A (đối với địa chỉ IP), bản ghi MX (đối với máy chủ thư), v.v. <p>
+**6. Truy vấn DNS đến Máy chủ DNS DYN có thẩm quyền**: Máy chủ DNS DYN có thẩm quyền nhận truy vấn và tra cứu bản ghi DNS được yêu cầu <p>
+**7. Phản hồi có thẩm quyền đối với máy chủ DNS đệ quy của ISP**: Máy chủ DNS DYN có thẩm quyền phản hồi máy chủ DNS đệ quy với bản ghi DNS được yêu cầu, bao gồm địa chỉ IP được liên kết với "www.example.com" <p>
+**8. Phản hồi cho máy tính của người dùng**: Máy chủ DNS đệ quy gửi địa chỉ IP mà nó nhận được từ máy chủ DNS DYN có thẩm quyền trở lại máy tính của người dùng. Sau đó, máy tính của người dùng có thể sử dụng địa 
+chỉ IP này để thiết lập kết nối với máy chủ web lưu trữ "www.example.com".
