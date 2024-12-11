@@ -146,3 +146,6 @@ sudo apache2ctl configtest
 ```
 sudo systemctl restart apache2
 ```
+
+## Kết quả: Truy cập địa chỉ IP của server (192.16.2.100). Nếu kết quả hiển thị như ảnh tức là đã cấu hình thành công:
+![image](https://github.com/user-attachments/assets/141972e9-e610-4efc-b98d-8cf034a21e72)
