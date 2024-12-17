@@ -65,3 +65,63 @@ sudo ufw allow from client_ip to any port nfs
 sudo apt update
 sudo apt install nfs-common -y
 ```
+
+### 2. Tạo mountpoint và mount thư mục trên Client: (Sau khi hoàn thành bước 4 của NFS Server)
+- Tạo các thư mục:
+```
+sudo mkdir -p /nfs/share
+sudo mkdir -p /nfs/home
+```
+- Mount file cần chia sẻ. Các lệnh này sẽ mount các file chia sẻ từ máy host đến các máy client
+```
+sudo mount host_ip:/var/nfs/share /nfs/share
+sudo mount host_ip:/home /nfs/home
+```
+- Kiểm tra xem mount đã thành công chưa: `df -h`
+![image](https://github.com/user-attachments/assets/83ff5264-ce63-484d-9ad2-6c79b9f26e92)
+
+- Kiểm tra xem có bao nhiêu không gian đang được sử dụng với mỗi mountpoint: `du -sh /nfs/home`
+![image](https://github.com/user-attachments/assets/eca6898c-c0f9-42a7-9306-8ea48c9a59a7)
+
+### 3. Kiểm tra truy cập NFS:
+- **Trường hợp 1**: Share dùng chung:
+  - Ghi một file kiểm tra vào tệp `/var/nfs/share`:
+  ```
+  sudo touch /nfs/share/share.test
+  ```
+  - Kiểm tra quyền sở hữu file:
+  ```
+  ls -l /nfs/share/share.test
+  ```
+- Do mount volume này mà không thay đổi hành vi mặc định của NFS, đồng thời tạo file dưới dạng root user của client thông qua lệnh sudo, cho nên quyền sử hữu của file vẫn mặc định là nobody:nogroup. Client `superuser` sẽ không thể thực hiện các hoạt động quản trị tính năng thông thường như thay đổi chủ sở hữu file hoặc tạo thư mục mới cho một nhóm user trên folder share được mount bằng NFS này.
+![image](https://github.com/user-attachments/assets/ba4e7aba-0514-48a6-acbe-6547c4ac3188)
+
+- **Trường hợp 2**: Share thư mục `home`:
+  - Để so sánh quyền hạn của share dùng chung và share thư mục home, tạo một file trong `/nfs/home` tương tự:
+  ```
+  sudo touch /nfs/home/home.test
+  ```
+  - Kiểm tra quyền sở hữu file:
+  ```
+  ls -l /nfs/home/home.test
+  ```
+- Tạo `home.test` với quyền root bằng cách sử dụng lệnh `sudo` tương tự như cách tạo file `share.test`. Tuy nhiên trong trường hợp này, `home.test` được sở hữu bởi root do bạn đã ghi đè lệnh hành vi mặc định khi chỉ định tùy chọn no_root_squash trên mount này. Điều này cho phép người dùng root trên client thao tác như root và giúp việc quản trị tài khoản người dùng thuận tiện hơn. Ta cũng không cần phải cấp quyền truy cập root cho người dùng trên host nữa.
+![image](https://github.com/user-attachments/assets/da37dae0-ff12-4f74-a973-c7d183b9c441)
+
+### 4. Mount các thư mục NFS từ xa khi khởi động: 
+- Mount các thư mục NFS từ xa khi khởi động bằng cách thêm vào file `/etc/fstab` trên client:
+- Thêm mỗi dòng sau cho mỗi folder share:
+```
+host_ip:/var/nfs/share      /nfs/share   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+host_ip:/home               /nfs/home      nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+```
+
+### 5. Ngắt kết nối NFS remote share:
+- Sử dụng các lệnh sau để ngắt kết nối thư mục từ xa:
+```
+cd ~
+sudo umount /nfs/home
+sudo umount /nfs/share
+```
+- Kiểm tra lại xem đã ngắt kết nối chưa: `df -h`
+![image](https://github.com/user-attachments/assets/037941b0-f922-46ad-bc4f-b0329a0fe5c3)
