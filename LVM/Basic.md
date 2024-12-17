@@ -76,7 +76,7 @@ mkfs -t ext4 /dev/vg-test1/lv-test1
 ### Bước 7: Mount và sử dụng
 - Tạo thư mục *mount*: `mkdir test1`
 - Tiến hành mount Logical Volume  lv-test1 vào thư mục test1: `mount /dev/vg-test1/lv-test1 test1`
-- Kiểm tra lại dung lượng: `df -h`
+- Kiểm tra lại dung lượng: `df -h` <p>
 ![image](https://github.com/user-attachments/assets/774d28c3-95b6-4d1a-b581-575f25c86e14)
 
 ## Phần 2: Thay đổi dung lượng Logical Volume trên LVM:
