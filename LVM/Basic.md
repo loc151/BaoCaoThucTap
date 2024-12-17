@@ -22,7 +22,7 @@ fdisk /dev/sdb
 
 - Các thao tác:
   - `t`: Thay đổi định dạng partition
-  - `8e`: đổi định dạng sang LVM
+  - `8e`: đổi định dạng sang LVM <p>
 ![image](https://github.com/user-attachments/assets/a15bcf3b-5e6b-47cd-84ae-f414cb958822)
 
 - Tương tự các bước với **sdc**:
