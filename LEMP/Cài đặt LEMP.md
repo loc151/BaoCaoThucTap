@@ -160,5 +160,6 @@ sudo systemctl restart nginx
 phpinfo();
 ?>
 ```
-- **Kết quả**: Mở trình duyệt và truy cập `http://your_domain_or_IP/info.php` để kiểm tra thông tin PHP
+---
+## Kết quả: Mở trình duyệt và truy cập `http://your_domain_or_IP/info.php` để kiểm tra thông tin PHP
 ![image](https://github.com/user-attachments/assets/38764974-f044-4952-afc4-47c10daa76f4)
