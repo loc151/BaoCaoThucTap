@@ -31,7 +31,7 @@ Hầu hết thao tác sẽ sử dụng chính trên table filter. Nếu khi vi�
 ---
 ## Các câu lệnh cơ bản:
 ### 1. Hiển thị trạng thái của Iptables:
-```
+```shell
 iptables -L -n -v
 ```
 - `-L`: Liệt kê danh sách
@@ -56,7 +56,7 @@ service iptables stop
 service iptables restart
 ```
 - Cũng có thể sử dụng lệnh `iptables` để dừng dịch vụ hoặc xoá các rule:
-```
+```shell
 iptables -F
 iptables -X
 iptables -t nat -F
@@ -75,16 +75,16 @@ iptables -P FORWARD ACCEPT
 
 ### 3. Xoá rule:
 - Để hiển thị số thứ tự của dòng và các thông tin khác của rule đang có, sử dụng:
-```
+```shell
 iptables -L INPUT -n --line-numbers
 iptables -L OUTPUT -n --line-numbers
 iptables -L OUTPUT -n --line-numbers | less
 iptables -L OUTPUT -n --line-numbers | grep 103.28.120.1
 ```
 - Sau khi tìm được rule cần thao tác, ví dụ cần xoá dòng 5, sử dụng lệnh sau:
-```
+```shell
 iptables -D INPUT 4
-```
+```shellz
 - Hoặc xoá theo source IP:
 ```
 iptables -D INPUT -s 103.28.120.1 -j DROP
@@ -100,15 +100,15 @@ num  target     prot opt source               destination
 2    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state NEW,ESTABLISHED
 ```
 - Để thêm rule vào giữa dòng 1 và 2, sử dụng lệnh:
-```
+```shell
 iptables -I INPUT 2 -s 103.28.120.1 -j DROP
 ```
 - Để xem rule vừa cập nhật, sử dụng:
-```
+```shell
 iptables -L INPUT -n --line-numbers
 ```
 
-```
+```shell
 > OUTPUT
 Chain INPUT (policy DROP)
 num  target     prot opt source               destination
@@ -124,7 +124,7 @@ iptables-save > /root/my.active.firewall.rules     # Another Linux
 ```
 
 ### 6. Khôi phục rule:
-```
+```shell
 service iptables restart                           # CentOS/RHEL/Fedora
 iptables-restore > /root/my.active.firewall.rules  # Another Linux
 ```
@@ -177,7 +177,7 @@ iptables -A OUTPUT -p tcp -d www.google.com -j DROP
 
 ### 12. Ghi lại log loại bỏ gói:
 - Lệnh sau giúp ta ghi lại log và loại bỏ gói tin IP giả mạo trên giao diện mạng public `eth1`:
-```
+```shell
 iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j LOG --log-prefix "IP_SPOOF A: "
 iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP
 ```
@@ -229,13 +229,13 @@ iptables -t nat -A POSTROUTING -j SNAT --to-source 192.168.1.20-192.168.1.25
 
 ### 18. Thiết lập kết nối và restart iptables:
 - Khi ta restart iptables, mặc định các kết nối đã thiết lập sẽ bị hủy khi các module sẽ bị gỡ khỏi hệ thống. Để tránh điều này ta có thể chỉnh sửa file sau và đặt trường IPTABLES_MODULES_UNLOAD thành no:
-```
+```shell
 nano /etc/sysconfig/iptables-config
 IPTABLES_MODULES_UNLOAD = no
 ```
 
 ### 19. Giới hạn số lượng kết nối cùng thời điểm tới máy chủ theo client IP:
-```
+```shell
 iptables -A INPUT -p tcp --syn --dport 22 -m connlimit --connlimit-above 3 -j REJECT
 iptables -p tcp --syn --dport 80 -m connlimit --connlimit-above 20 --connlimit-mask 24 -j DROP
 ```
@@ -243,7 +243,7 @@ iptables -p tcp --syn --dport 80 -m connlimit --connlimit-above 20 --connlimit-m
 - **–connlimit-mask**: nhóm các máy khách theo độ dài tiền tố (prefix), giá trị có thể từ 0 đến 32 đối với IPv4
 
 ### 20. Liệt kê các rule NAT:
-```
+```shell
 iptables -t nat -L -n -v
 ```
 
