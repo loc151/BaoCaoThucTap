@@ -8,15 +8,15 @@ sudo mysql
 ```
 
 ### **Bước 2: Tạo người dùng mới**
-Sử dụng câu lệnh `CREATE USER` để tạo một người dùng mới. Trong ví dụ này, chúng ta sẽ tạo một người dùng có tên là `phat` và mật khẩu là `Phat12345@@@`.
+Sử dụng câu lệnh `CREATE USER` để tạo một người dùng mới. Trong ví dụ này, chúng ta sẽ tạo một người dùng có tên là `anhldl` và mật khẩu là `Loc1512002!`.
 
 ```sql
-CREATE USER ''phat''@'localhost' IDENTIFIED BY 'Phat12345@@@';
+CREATE USER 'anhlld'@'localhost' IDENTIFIED BY 'Loc1512002!';
 ```
 
-- `'phat'` là tên người dùng bạn muốn tạo.
+- `anhldl` là tên người dùng bạn muốn tạo.
 - `'localhost'` chỉ ra rằng người dùng này chỉ có thể kết nối từ máy chủ địa phương. Nếu bạn muốn người dùng có thể kết nối từ bất kỳ đâu, bạn có thể thay `'localhost'` bằng `'%'` (kết nối từ mọi địa chỉ IP).
-- `'Phat12345@@@'` là mật khẩu của người dùng mới.
+- `Loc1512002!` là mật khẩu của người dùng mới.
 
 ### **Bước 3: Cấp quyền cho người dùng**
 Tiếp theo, bạn cần cấp quyền cho người dùng mới để họ có thể truy cập và thao tác trên cơ sở dữ liệu. Ví dụ, để cấp quyền **đọc và ghi (SELECT, INSERT, UPDATE, DELETE)** cho người dùng `newuser` trên cơ sở dữ liệu `new_schema`, bạn có thể sử dụng lệnh sau:
@@ -61,7 +61,6 @@ mysql -u root -p
 Khi được yêu cầu, nhập mật khẩu cho người dùng `root`.
 
 ---
-
 
 Connect MySQL Workbench on Windows to MySQL server on Linux
 
@@ -133,19 +132,11 @@ Connect MySQL Workbench on Windows to MySQL server on Linux
    - **Password**: Mật khẩu của người dùng MySQL.
 4. **Kiểm tra kết nối**:
    - Click vào nút `Test Connection` để kiểm tra kết nối]
-![](https://img001.prntscr.com/file/img001/8nA7vX8RSe2BwTh0z2cn7A.png)
+![image](https://github.com/user-attachments/assets/c46342b8-1ad3-43b3-9690-04fef1d35a61)
 
-
-![](https://img001.prntscr.com/file/img001/BbhbigSJT0-FetzPyu_cwQ.png)
+![image](https://github.com/user-attachments/assets/f2642081-366c-4538-9368-2d77867407a1)
 
 ---
 
+![image](https://github.com/user-attachments/assets/40bab001-2df3-4b38-912d-5c45758d5b27)
 
-![](https://img001.prntscr.com/file/img001/u9L1zFLgSj2f26ZCXO_n1g.png)
-
-
-
-![](https://img001.prntscr.com/file/img001/v5cRUFtKSauoXsq66n_x2A.png)
-Link tham khảo
-
-https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-create-connection.html
