@@ -1,6 +1,6 @@
 # Hướng Dẫn Cài Đặt RAID 1 Trên Máy Chủ Dell PowerEdge R620
 
-RAID 5 là một cấu hình RAID phổ biến cung cấp khả năng dự phòng dữ liệu và hiệu suất đọc tốt. Hướng dẫn này sẽ giúp bạn cài đặt RAID 5 trên máy chủ Dell PowerEdge R620.
+RAID 1 là một cấu hình RAID phổ biến cung cấp khả năng dự phòng dữ liệu và hiệu suất đọc tốt. Hướng dẫn này sẽ giúp bạn cài đặt RAID 1 trên máy chủ Dell PowerEdge R620.
 
 ## Bước 1: Truy Cập Dell PERC
 
@@ -9,22 +9,22 @@ RAID 5 là một cấu hình RAID phổ biến cung cấp khả năng dự phòn
 
    ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_6.png)
 
-## Bước 2: Tạo RAID 5
+## Bước 2: Tạo RAID 1
 
 1. **Chọn Create Virtual Disk**:
    - Trong giao diện Dell PERC, chọn **Create Virtual Disk** để bắt đầu cấu hình RAID.
 
 
 2. **Chọn RAID Level**:
-   - Trong màn hình tiếp theo, chọn **RAID 5** từ danh sách các cấp RAID.
+   - Trong màn hình tiếp theo, chọn **RAID 1** từ danh sách các cấp RAID.
 
 3. **Chọn Các Ổ Đĩa**:
-   - Chọn ít nhất ba ổ đĩa mà bạn muốn sử dụng cho RAID 5. Đảm bảo các ổ đĩa đã được kết nối và nhận diện bởi PERC.
+   - Chọn ít nhất hai ổ đĩa mà bạn muốn sử dụng cho RAID 1. Đảm bảo các ổ đĩa đã được kết nối và nhận diện bởi PERC.
 
    ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_7.png)
 
 4. **Xác Nhận Cấu Hình**:
-   - Kiểm tra lại cấu hình RAID 5 của bạn và chọn **OK** để xác nhận và tạo RAID 5.
+   - Kiểm tra lại cấu hình RAID 1 của bạn và chọn **OK** để xác nhận và tạo RAID 1.
 
    ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_8.png)
 
